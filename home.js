@@ -69,12 +69,10 @@
   const pauseBtn = $('#pauseBtn'), dots = $$('#dots button');
   // A cena roda em loop sozinha (LOOP segundos); a rolagem da página continua normal.
   const LOOP = 22, STAGE_AT = { a: .27, b: .6, c: .88 };
-  // ?modo=uma-vez → conta a história uma vez (≈21 s) e descansa no quadro final, com botão "rever"
-  const ONCE = new URLSearchParams(location.search).get('modo') === 'uma-vez', END = LOOP * .97;
-  let curStage = '', t0 = performance.now(), P = reduce ? 1 : 0, clock = 0, last = performance.now(), paused = false, heroVisible = true, done = false;
+  let curStage = '', t0 = performance.now(), P = reduce ? 1 : 0, clock = 0, last = performance.now(), paused = false, heroVisible = true;
   new IntersectionObserver(es => { heroVisible = es[0].isIntersecting; }, { threshold: .1 }).observe(track);
-  function setPaused(v) { paused = v; pauseBtn.setAttribute('aria-pressed', String(v)); pauseBtn.setAttribute('aria-label', done ? 'Rever animação' : v ? 'Retomar animação' : 'Pausar animação'); pauseBtn.classList.toggle('is-paused', v || done); }
-  pauseBtn.addEventListener('click', () => { if (ONCE && done) { done = false; clock = 0; setPaused(false); } else setPaused(!paused); });
+  function setPaused(v) { paused = v; pauseBtn.setAttribute('aria-pressed', String(v)); pauseBtn.setAttribute('aria-label', v ? 'Retomar animação' : 'Pausar animação'); pauseBtn.classList.toggle('is-paused', v); }
+  pauseBtn.addEventListener('click', () => setPaused(!paused));
   dots.forEach(b => b.addEventListener('click', () => { clock = STAGE_AT[b.dataset.go] * LOOP; P = clock / LOOP; }));
   if (reduce) { pauseBtn.hidden = true; $('#dots').hidden = true; }
   const GAUGE = { a: ['ok', 'Linha de carga visível'], b: ['bad', 'Linha de carga submersa'], c: ['ok', 'Linha de carga restaurada'] };
@@ -88,9 +86,8 @@
 
   function frame(now) {
     const dt = Math.min(.1, (now - last) / 1000); last = now;
-    if (!reduce && !paused && heroVisible && !done) {
-      if (ONCE) { clock = Math.min(END, clock + dt); if (clock >= END) { done = true; setPaused(false); } }
-      else clock = (clock + dt) % LOOP;
+    if (!reduce && !paused && heroVisible) {
+      clock = (clock + dt) % LOOP;
       P = clock / LOOP;
     }
     const p = P, time = (now - t0) / 1000;

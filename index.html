@@ -28,7 +28,7 @@
   <div><h1 class="h2">Mapa dos protótipos</h1><p class="lead" style="margin-top:12px">Todas as telas do inventário em HTML navegável, para discutir fluxo, funcionalidades e abas. Os dados são de exemplo e nada aqui está publicado.</p></div>
   <div class="note"><b>Como ver</b>
     <span>Clique em qualquer cartão. Dentro do portal e do painel interno os menus e botões navegam entre as telas. O tema escuro vale para o site (botão no cabeçalho ou <code>?tema=dark</code>).</span>
-    <span>Várias telas têm estados: <code>?estado=</code> (login, erros, solicitação), <code>?resultado=aep|pgr|mei</code> (diagnóstico), <code>?ver=todas</code> (pesquisa), <code>?modo=uma-vez</code> (hero da Home).</span>
+    <span>Várias telas têm estados: <code>?estado=</code> (login, erros, solicitação), <code>?resultado=aep|pgr|mei</code> (diagnóstico), <code>?ver=todas</code> (pesquisa).</span>
     <span>Pontos marcados "proposta" não foram pedidos pelos sócios e entram na pauta para validar.</span></div>
   <div id="out" style="display:grid;gap:40px"></div>
 </div>
@@ -36,8 +36,7 @@
 <script>
   const G = [
     ['Site público', 'Vitrine, educação e captação', [
-      ['S01','Home — hero em loop','home.html','Página de vendas com a descida ao lastro'],
-      ['S01','Home — hero toca uma vez','home.html?modo=uma-vez','Opção B, guardada para os sócios'],
+      ['S01','Home','home.html','Página de vendas com a descida ao lastro'],
       ['S02','Sobre a Lastro','sobre.html',''],['S03','NR-1 explicada','nr1.html',''],['S04','Serviços','servicos.html','Programa Lastro NR-1'],['S05','Como funciona','como-funciona.html','Mês a mês'],
       ['S06','Por que a Lastro','por-que.html','Benefícios e diferenciais'],['S07','Diagnóstico grátis','diagnostico.html','4 perguntas'],['S08','Resultado do diagnóstico','diagnostico.html?resultado=aep','Variantes aep, pgr, mei'],
       ['S09','Conteúdos','conteudos.html',''],['S10','Artigo','artigo.html','Modelo de artigo'],['S11','FAQ','faq.html',''],['S12','Contato','contato.html',''],
