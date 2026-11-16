@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Portal · Ajuda (P18) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+<style>
+  details.q { border-top:1px solid var(--line); padding:16px 0; } details.q:first-of-type { border-top:0; } details.q summary { list-style:none; display:flex; justify-content:space-between; gap:16px; font-weight:600; font-size:15px; cursor:pointer; } details.q summary::-webkit-details-marker { display:none; } details.q summary svg { transition:transform var(--t-base) var(--ease); } details.q[open] summary svg { transform:rotate(45deg); } details.q p { margin-top:10px; color:var(--fg-2); font-size:14px; max-width:68ch; }
+  .topic { display:grid; gap:8px; text-decoration:none; } .topic:hover { background:var(--bg-surface); }
+</style>
+</head>
+<body data-shell="portal" data-page="ajuda" data-nav="" data-crumb="Ajuda">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Como podemos ajudar?</h1><p>Respostas rápidas sobre o programa e o portal. Se não achar aqui, fale com a equipe.</p></div></section>
+  <label class="field" style="max-width:560px"><span class="sr-only">Buscar na ajuda</span><input type="text" placeholder="Buscar: pesquisa, prazo, documento…" aria-label="Buscar na ajuda"></label>
+  <div class="grid4">
+    <a class="card topic" href="#faq"><i data-i="flag" class="l"></i><b>Entender o programa</b><span class="muted-s">Etapas, meses e o que cada um pede</span></a>
+    <a class="card topic" href="#faq"><i data-i="chart" class="l"></i><b>Pesquisa dos colaboradores</b><span class="muted-s">Como divulgar e o que é anônimo</span></a>
+    <a class="card topic" href="#faq"><i data-i="file" class="l"></i><b>Documentos e assinatura</b><span class="muted-s">Quem assina e como conferir</span></a>
+    <a class="card topic" href="#faq"><i data-i="card" class="l"></i><b>Pagamento e renovação</b><span class="muted-s">Parcelas, 2ª via e contrato</span></a>
+  </div>
+  <div class="cols">
+    <section class="card" id="faq"><h2>Perguntas frequentes</h2>
+      <details class="q" open><summary>O que é AEP e DIR?<i data-i="plus"></i></summary><p>AEP é a Avaliação Ergonômica Preliminar, usada por empresas de grau de risco 1 e 2. A DIR é a declaração de inexistência de risco, registrada no site do governo quando a AEP não encontra riscos relevantes. Quem decide o caminho é o enquadramento feito no mês 1.</p></details>
+      <details class="q"><summary>Os colaboradores vão ser identificados?<i data-i="plus"></i></summary><p>Não. A pesquisa não pede nome nem login e a Lastro não guarda quem respondeu. Grupos com menos de 5 pessoas nunca aparecem nos resultados.</p></details>
+      <details class="q"><summary>Por que ainda não vejo os resultados?<i data-i="plus"></i></summary><p>Eles aparecem depois que o psicólogo parceiro fecha a análise, para que cheguem com contexto e sem pressionar a liderança durante a coleta.</p></details>
+      <details class="q"><summary>A Lastro emite laudo?<i data-i="plus"></i></summary><p>Não. A Lastro entrega insumo técnico e documentação. Quem assina é o responsável técnico ou o psicólogo, cada um no escopo da sua profissão.</p></details>
+      <details class="q"><summary>Existe multa hoje?<i data-i="plus"></i></summary><p>O STF suspendeu a eficácia sancionatória por enquanto (ADPF 1316), mas a obrigação continua e os registros podem ser usados em ação trabalhista. Atualizado em 15/11/2026 — a regra pode mudar.</p></details>
+    </section>
+    <aside class="stack">
+      <section class="card stack"><h2 style="margin:0">Falar com a equipe</h2><a class="btn btn-primary" href="portal-mensagens.html"><i data-i="chat"></i> Abrir uma conversa</a><a class="btn btn-secondary" href="#"><i data-i="wa"></i> WhatsApp</a><p class="muted-s">Horário comercial · resposta em até 1 dia útil (prazo a confirmar)</p></section>
+      <section class="card stack"><h2 style="margin:0">Glossário rápido</h2><p class="small"><b>PGR</b> — Programa de Gerenciamento de Riscos.</p><p class="small"><b>AEP</b> — Avaliação Ergonômica Preliminar.</p><p class="small"><b>DIR</b> — Declaração de Inexistência de Risco.</p><p class="small"><b>RT</b> — Responsável técnico.</p></section>
+    </aside>
+  </div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

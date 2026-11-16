@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — 404, 500 e manutenção (S19) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="home.css"><link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('lastro-tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<style>
+  .err { min-height:70vh; display:grid; place-items:center; text-align:center; padding:72px 24px; }
+  .err .in { max-width:560px; display:grid; gap:18px; justify-items:center; }
+  .err svg.ship { width:min(340px,80vw); height:auto; color:var(--fg); }
+  .drift { animation:drift 5s ease-in-out infinite alternate; transform-origin:50% 80%; } @keyframes drift { from { transform:rotate(-3deg) translateY(0); } to { transform:rotate(3deg) translateY(5px); } }
+  .wv2 { animation:wv 7s linear infinite; } @keyframes wv { to { transform:translateX(-60px); } }
+  .previewbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; justify-content:center; padding:20px 20px 0; font-size:13px; color:var(--fg-2); }
+  .num404 { font-size:clamp(64px,12vw,120px); line-height:1; font-weight:700; letter-spacing:-.04em; color:var(--fg); }
+</style>
+</head>
+<body data-page="erro">
+<main id="conteudo">
+  <div class="previewbar"><span>Ver estado:</span><div class="seg" id="st"><button data-v="404" aria-pressed="true">404 · não achamos</button><button data-v="500">500 · erro nosso</button><button data-v="manut">Manutenção</button></div></div>
+  <section class="err"><div class="in" id="out"></div></section>
+</main>
+<script src="assets/icons.js"></script><script src="assets/site.js"></script><script src="assets/logo.js"></script><script src="assets/chrome.js"></script>
+<script>
+  const SH = (kind) => `<svg class="ship" viewBox="0 0 340 190" fill="none" aria-hidden="true"><g class="${kind === '404' ? 'drift' : ''}">${kind === 'manut' ? '<path d="M70 120h200l-30 38H100z" fill="currentColor"/><path d="M120 120V70h90v50M150 70V44h30v26" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M250 120V60M250 60l36 22" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>' : '<path d="M70 120h200l-30 38H100z" fill="currentColor"/><path d="M92 112h156v8H92z" fill="var(--fg-2)"/><path d="M110 92h44v20h-44z" fill="currentColor"/><path d="M180 112l24-14 24 14-24 14z" fill="var(--water-deep)"/>'}</g>${kind === '500' ? '<path d="M178 40l-10 22 14 4-8 22" stroke="var(--alert)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>' : ''}<g class="wv2"><path d="M-60 150 q15 -10 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 V190 H-60z" fill="var(--water)" fill-opacity=".6"/></g></svg>`;
+  const V = {
+    '404': () => `${SH('404')}<p class="num404">404</p><h1 class="h2">Esta página saiu à deriva.</h1><p class="lead">O endereço pode ter mudado ou não existir. Vamos levar você de volta ao porto.</p><div class="cta-row" style="justify-content:center"><a class="btn btn-primary" href="home.html">Voltar ao início</a><a class="btn btn-secondary" href="contato.html">Falar com a Lastro</a></div>`,
+    '500': () => `${SH('500')}<p class="num404">500</p><h1 class="h2">O problema foi nosso, não seu.</h1><p class="lead">Algo falhou do nosso lado. Tente de novo em instantes; se continuar, avise a equipe.</p><div class="cta-row" style="justify-content:center"><button class="btn btn-primary" onclick="location.reload()">Tentar de novo</button><a class="btn btn-secondary" href="contato.html">Avisar a equipe</a></div>`,
+    'manut': () => `${SH('manut')}<h1 class="h2">Estamos ajustando o casco.</h1><p class="lead">O site está em manutenção programada e volta às 08:00. Para algo urgente, chame a gente no WhatsApp.</p><div class="cta-row" style="justify-content:center"><a class="btn btn-secondary" href="contato.html">WhatsApp</a></div>`
+  };
+  const b = [...document.querySelectorAll('#st button')];
+  function show(v) { b.forEach(x => x.setAttribute('aria-pressed', x.dataset.v === v)); document.getElementById('out').innerHTML = V[v](); }
+  b.forEach(x => x.onclick = () => show(x.dataset.v)); show(new URLSearchParams(location.search).get('estado') || '404');
+</script>
+</body>
+</html>

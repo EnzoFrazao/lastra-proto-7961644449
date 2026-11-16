@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Painel interno · Inventário e plano de ação (A09) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+</head>
+<body data-shell="interno" data-page="inventario" data-crumb="Inventário e plano de ação">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Inventário e plano de ação</h1><p>Riscos psicossociais identificados e medidas com responsável e prazo. O responsável técnico edita; o histórico fica guardado.</p></div><div class="inline"><label class="field" style="min-width:240px">Cliente<select><option>Padaria Sol Nascente</option></select></label><button class="btn btn-primary" data-open="dn"><i data-i="plus"></i> Novo risco</button></div></section>
+  <div class="banner"><i data-i="pen"></i><span>Rascunho v0.3 · última edição por RT 1 em 13/11. Ainda não publicado ao cliente.</span></div>
+  <div class="card flat"><div class="scroll-x"><table class="t pad rows"><thead><tr><th>Perigo / fator</th><th>Fonte</th><th>Exposição</th><th>Sev.</th><th>Prob.</th><th>Nível</th><th>Medida</th><th>Prazo</th></tr></thead><tbody>
+    <tr onclick="document.getElementById('dn').classList.add('on')" style="cursor:pointer"><td><b>Demandas excessivas</b><span class="muted-s" style="display:block">Produção</span></td><td>Pesquisa + entrevista</td><td>Diária</td><td>3</td><td>4</td><td><span class="chip warn">Alto</span></td><td>Rever escala de picos</td><td>30/12</td></tr>
+    <tr onclick="document.getElementById('dn').classList.add('on')" style="cursor:pointer"><td><b>Clareza de função</b><span class="muted-s" style="display:block">Atendimento</span></td><td>Pesquisa</td><td>Semanal</td><td>2</td><td>3</td><td><span class="chip info">Médio</span></td><td>Descrever funções</td><td>15/01</td></tr>
+    <tr onclick="document.getElementById('dn').classList.add('on')" style="cursor:pointer"><td><b>Apoio da chefia</b><span class="muted-s" style="display:block">Produção</span></td><td>Entrevista</td><td>Diária</td><td>2</td><td>2</td><td><span class="chip ok">Baixo</span></td><td>Reunião mensal de equipe</td><td>Contínuo</td></tr></tbody></table></div></div>
+  <section class="card"><h2>Evidências não-questionário</h2><p class="small muted">Questionário sozinho não basta: anexe entrevistas, oficinas ou observação.</p><div class="uploadbox"><i data-i="upload"></i><span>Arraste arquivos ou clique para anexar (exemplo)</span></div></section>
+  <div class="form-actions"><button class="btn btn-ghost" data-toast="Rascunho salvo (exemplo)">Salvar rascunho</button><a class="btn btn-primary" href="interno-revisao.html">Enviar para revisão e assinatura</a></div>
+</main></div></div>
+<div class="scrim" data-close></div>
+<aside class="drawer" id="dn" aria-label="Risco"><div class="drawer-h"><div><span class="label muted">Risco · Produção</span><h2 class="h4" style="margin-top:4px">Demandas excessivas</h2></div><button class="iconbtn" data-close aria-label="Fechar"><i data-i="x"></i></button></div>
+  <div class="drawer-b stack"><div class="grid2"><label class="field">Severidade (1–5)<select><option>3</option></select></label><label class="field">Probabilidade (1–5)<select><option>4</option></select></label></div>
+    <label class="field">Medida<textarea rows="3">Rever escala nos picos (sexta e sábado) e distribuir pausas.</textarea></label>
+    <div class="grid2"><label class="field">Responsável<select><option>Marina Costa (cliente)</option></select></label><label class="field">Prazo<input type="text" value="30/12/2026"></label></div></div>
+  <div class="drawer-f"><button class="btn btn-ghost" data-close>Cancelar</button><button class="btn btn-primary" data-toast="Risco salvo (exemplo)" data-close>Salvar</button></div></aside>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

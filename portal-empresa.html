@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Portal · Minha empresa e usuários (P16) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+</head>
+<body data-shell="portal" data-page="empresa" data-nav="" data-crumb="Minha empresa e usuários">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Minha empresa e usuários</h1><p>Os dados que usamos para enquadrar a empresa e quem pode entrar no portal.</p></div></section>
+  <div data-tabs>
+    <div class="tabs" role="tablist"><button role="tab" data-tab="empresa">Empresa</button><button role="tab" data-tab="setores">Setores e unidades</button><button role="tab" data-tab="usuarios">Usuários e papéis</button></div>
+
+    <section role="tabpanel">
+      <div class="cols">
+        <div class="card stack"><div class="between"><h2 style="margin:0">Dados cadastrais</h2><button class="btn btn-secondary btn-sm" data-toast="Alteração enviada para conferência (exemplo)"><i data-i="pen"></i> Pedir alteração</button></div>
+          <div class="grid2" style="gap:18px"><div><span class="label muted">Razão social</span><p>Padaria Sol Nascente Ltda. <span class="caption">(fictícia)</span></p></div><div><span class="label muted">CNPJ</span><p>00.000.000/0001-00</p></div><div><span class="label muted">Atividade principal (CNAE)</span><p>10.91-1/02 · Padaria e confeitaria</p></div><div><span class="label muted">Cidade</span><p>São Luís · MA</p></div><div><span class="label muted">Porte</span><p>Empresa de pequeno porte (EPP)</p></div><div><span class="label muted">Empregados (CLT)</span><p>50</p></div></div></div>
+        <div class="card deep stack"><span class="label" style="color:var(--fg-on-deep-2)">Enquadramento feito pela Lastro</span><p class="h4">Grau de risco 2 · caminho AEP + DIR</p><p class="small" style="color:var(--fg-on-deep-2)">Por que: atividade de grau de risco 1–2 e sem agentes que exijam o PGR completo. Assinado pelo responsável técnico em 04/11/2026. Se algo mudar (atividade, nº de empregados), o enquadramento é refeito.</p><a class="btn btn-light btn-sm" href="portal-documentos.html" style="justify-self:start">Ver documento</a></div>
+      </div>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <div class="note"><i data-i="lock"></i><span>Setores servem só para agrupar resultados. Setores com menos de 5 pessoas são agrupados para ninguém ser identificado.</span></div>
+      <div class="card flat"><div class="card-head"><h2>Setores</h2><button class="btn btn-secondary btn-sm" data-toast="Setor adicionado (exemplo)"><i data-i="plus"></i> Adicionar</button></div>
+        <table class="t pad rows"><thead><tr><th>Setor</th><th>Unidade</th><th>Pessoas</th><th></th></tr></thead><tbody>
+          <tr><td><b>Produção</b></td><td>Matriz · Cohama</td><td>20</td><td></td></tr><tr><td><b>Atendimento</b></td><td>Matriz · Cohama</td><td>15</td><td></td></tr><tr><td><b>Entrega</b></td><td>Matriz · Cohama</td><td>11</td><td></td></tr><tr><td><b>Administrativo</b></td><td>Matriz · Cohama</td><td>4</td><td><span class="chip warn sm">&lt; 5 · agrupado</span></td></tr></tbody></table></div>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <div class="card flat"><div class="card-head"><h2>Quem acessa o portal</h2><button class="btn btn-primary btn-sm" data-open="di"><i data-i="plus"></i> Convidar</button></div>
+        <div class="scroll-x"><table class="t pad rows"><thead><tr><th>Pessoa</th><th>Papel</th><th>Acessa</th><th>Último acesso</th><th></th></tr></thead><tbody>
+          <tr><td><div class="inline"><span class="avatar sm">MC</span><div><b>Marina Costa</b><span class="muted-s" style="display:block">marina@padariasolnascente.example</span></div></div></td><td><span class="chip dark">Sócia-administradora</span></td><td>Tudo</td><td>Hoje</td><td></td></tr>
+          <tr><td><div class="inline"><span class="avatar sm soft">CS</span><div><b>Carlos Sousa</b><span class="muted-s" style="display:block">carlos@padariasolnascente.example</span></div></div></td><td><span class="chip">Gestor / RH</span></td><td>Tudo, menos contrato</td><td>12/11</td><td><button class="iconbtn" aria-label="Mais ações" data-toast="Menu de ações (exemplo)"><i data-i="dots"></i></button></td></tr>
+          <tr><td><div class="inline"><span class="avatar sm soft">JA</span><div><b>Júlia Almeida</b><span class="muted-s" style="display:block">contabilidade@example.com</span></div></div></td><td><span class="chip info">Contador · só leitura</span></td><td>Documentos assinados e enquadramento</td><td>Convite enviado</td><td><button class="iconbtn" aria-label="Mais ações" data-toast="Menu de ações (exemplo)"><i data-i="dots"></i></button></td></tr></tbody></table></div></div>
+      <div class="note"><i data-i="info"></i><span><b>O contador</b> vê documentos assinados e o enquadramento. Não vê resultados por setor (sugestão — pergunta 6 da pauta).</span></div>
+    </section>
+  </div>
+</main></div></div>
+<aside class="drawer" id="di" aria-label="Convidar usuário"><div class="drawer-h"><h2 class="h4">Convidar para o portal</h2><button class="iconbtn" data-close aria-label="Fechar"><i data-i="x"></i></button></div>
+  <div class="drawer-b"><label class="field">Nome<input type="text" placeholder="Nome completo"></label><label class="field">E-mail<input type="text" placeholder="nome@empresa.com.br"></label>
+    <label class="field">Papel<select><option>Gestor / RH</option><option>Contador · só leitura</option><option>Sócio-administrador</option></select><span class="hint">O convite vale por 7 dias e o acesso pode ser retirado a qualquer momento.</span></label></div>
+  <div class="drawer-f"><button class="btn btn-ghost" data-close>Cancelar</button><button class="btn btn-primary" data-toast="Convite enviado (exemplo)" data-close>Enviar convite</button></div></aside>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

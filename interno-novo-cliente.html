@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Painel interno · Novo cliente e enquadramento (A04) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+<style>
+  .wiz { display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:24px; align-items:start; } .wsteps { display:flex; gap:6px; margin-bottom:6px; } .wsteps i { flex:1; height:6px; border-radius:3px; background:var(--line); } .wsteps i.on { background:var(--fg); }
+  .rule { display:grid; gap:10px; font-size:14px; } .rule .r { display:grid; grid-template-columns:20px 1fr; gap:10px; align-items:start; } .rule .r i { width:20px; height:20px; border-radius:50%; background:var(--water-soft); display:grid; place-items:center; } .rule .r i svg { width:11px; height:11px; stroke-width:3; }
+  code.k { font-size:12px; background:var(--bg-surface-strong); padding:2px 6px; border-radius:3px; }
+  @media (max-width:1100px) { .wiz { grid-template-columns:1fr; } }
+</style>
+</head>
+<body data-shell="interno" data-page="clientes" data-crumb="Novo cliente e enquadramento">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><p class="crumbs"><a href="interno-clientes.html">Clientes</a> / Novo</p><h1 class="h2" style="margin-top:6px">Novo cliente e enquadramento</h1><p>O sistema sugere o caminho (PGR, AEP ou DIR) a partir do CNAE e do porte. O responsável técnico confirma.</p></div></section>
+  <div class="wiz">
+    <section class="card stack">
+      <div class="wsteps" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i></div><p class="label muted">Passo 2 de 4 · enquadramento</p>
+      <div class="grid2"><label class="field">CNPJ<input type="text" value="00.000.000/0001-00"></label><label class="field">Razão social<input type="text" value="Padaria Sol Nascente Ltda."></label>
+        <label class="field">CNAE principal<select><option>10.91-1/02 · Padaria e confeitaria</option><option>47.11-3/02 · Comércio varejista</option></select></label><label class="field">Empregados CLT<input type="text" value="50"></label>
+        <label class="field">Porte<select><option>EPP</option><option>ME</option></select></label><label class="field">Optante pelo Simples<select><option>Sim</option><option>Não</option></select></label></div>
+      <div class="note"><i data-i="info"></i><span>Grau de risco lido da tabela da NR-4 pelo CNAE: <b>2</b>. Confirme com o cartão do CNPJ e com o responsável técnico.</span></div>
+      <div class="grid2"><label class="field">Existe algum agente de risco que exija PGR completo?<select><option>Não identificado</option><option>Sim — agentes físicos</option><option>Sim — agentes químicos</option></select></label><label class="field">Possibilidade de DIR<select><option>Possível (grau 1–2, sem riscos relevantes)</option><option>Não</option></select></label></div>
+      <div class="grid2"><label class="field">Responsável técnico<select><option>RT 1</option><option>RT 2</option></select></label><label class="field">Psicólogo<select><option>Psicólogo 2</option><option>Psicólogo 1 (no limite)</option></select></label></div>
+      <div class="form-actions" style="justify-content:space-between"><a class="btn btn-secondary" href="interno-clientes.html">Cancelar</a><div class="inline"><button class="btn btn-ghost" data-toast="Rascunho salvo (exemplo)">Salvar rascunho</button><button class="btn btn-primary" data-toast="Enquadramento enviado ao RT para assinar (exemplo)">Gerar enquadramento <i data-i="arrow"></i></button></div></div>
+    </section>
+    <aside class="stack">
+      <section class="card deep stack"><span class="label" style="color:var(--fg-on-deep-2)">Sugestão do sistema</span><p class="h4">AEP + DIR · grau de risco 2</p>
+        <div class="rule"><div class="r"><i data-i="check" style="background:#fff;color:#013D31"></i><span>Porte EPP e atividade de grau 2 → caminho simplificado</span></div><div class="r"><i data-i="check" style="background:#fff;color:#013D31"></i><span>Sem agente de risco informado → PGR completo não exigido</span></div><div class="r"><i data-i="check" style="background:#fff;color:#013D31"></i><span>DIR possível se a AEP não achar riscos relevantes</span></div></div>
+        <p class="caption" style="color:var(--fg-on-deep-2)">Motor de regras versão 2026-11-15 · parâmetro <code class="k" style="background:rgba(255,255,255,.14);color:#fff">SUSPENSAO_STF_ATIVA = true</code> 🔎</p></section>
+      <section class="card stack-s"><h3>Antes de contratar</h3><div class="check"><input type="checkbox" checked> Proposta enviada e aceita</div><div class="check"><input type="checkbox" checked> Contrato assinado</div><div class="check"><input type="checkbox"> Convite ao portal enviado</div></section>
+    </aside>
+  </div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

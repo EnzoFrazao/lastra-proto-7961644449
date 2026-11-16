@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Portal · Estados globais e onboarding (P19) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+<style>
+  .tour { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; } .tour .card { display:grid; gap:10px; align-content:start; } .tour .n { width:32px; height:32px; border-radius:50%; background:var(--fg); color:var(--bg-page); display:grid; place-items:center; font-weight:700; }
+  .big-empty { padding:56px 24px; } .ill { width:150px; height:100px; color:var(--fg); }
+  @media (max-width:900px) { .tour { grid-template-columns:1fr; } }
+</style>
+</head>
+<body data-shell="portal" data-page="estados" data-nav="" data-crumb="Estados e onboarding">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Estados globais e onboarding</h1><p>Como o portal se comporta quando algo é novo, vazio, falha ou muda. Escolha um estado para ver.</p></div></section>
+  <div class="seg" data-seg="e"><button data-v="tour" aria-pressed="true">Primeiro acesso</button><button data-v="semciclo">Sem ciclo ativo</button><button data-v="renov">Renovação</button><button data-v="carregando">Carregando</button><button data-v="erro">Erro</button><button data-v="perm">Sem permissão</button><button data-v="sessao">Sessão expirada</button><button data-v="manut">Manutenção</button></div>
+
+  <section data-seg-panel="e:tour" class="stack" style="gap:20px">
+    <div class="banner deep"><div class="inline"><i data-i="ship"></i><span><b>Bem-vinda ao portal da Padaria Sol Nascente.</b> Três passos e você já sabe onde tudo está.</span></div><button class="btn btn-light btn-sm" data-toast="Tour fechado (exemplo)">Começar</button></div>
+    <div class="tour"><div class="card"><span class="n">1</span><b>Veja o ciclo</b><p class="small muted">Na Visão geral você acompanha as 6 etapas e a próxima ação do mês.</p></div><div class="card"><span class="n">2</span><b>Resolva as pendências</b><p class="small muted">Cada item mostra prazo, quem faz e o que anexar.</p></div><div class="card"><span class="n">3</span><b>Guarde a prova</b><p class="small muted">Documentos assinados e evidências ficam no dossiê, prontos para uma fiscalização.</p></div></div>
+  </section>
+
+  <section data-seg-panel="e:semciclo" hidden><div class="card big-empty"><div class="empty"><svg class="ill" viewBox="0 0 150 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 68h114l-14 20H34z"/><path d="M36 68V44h40v24M52 44V28h16v16"/><path d="M6 92c10-6 18-6 28 0s18 6 28 0 18-6 28 0 18 6 28 0 18-6 28 0" opacity=".45"/></svg><b>Nenhum ciclo ativo no momento.</b><span>Seu último ciclo terminou em 02/03/2027. O resumo e os documentos continuam em Meu programa › Ciclos anteriores. Quando quiser começar outro, é só pedir.</span><div class="inline"><a class="btn btn-primary btn-sm" href="portal-mensagens.html">Pedir novo ciclo</a><a class="btn btn-secondary btn-sm" href="portal-programa.html#historico">Ver ciclos anteriores</a></div></div></div></section>
+
+  <section data-seg-panel="e:renov" hidden class="stack"><div class="banner"><div class="inline"><i data-i="refresh"></i><span><b>Seu contrato renova em 01/09/2027.</b> Falta decidir sobre o 2º ano. Avisamos 60 dias antes.</span></div><div class="inline"><button class="btn btn-primary btn-sm" data-toast="Renovação confirmada (exemplo)">Renovar</button><button class="btn btn-ghost btn-sm" data-toast="Pedido de conversa enviado (exemplo)">Conversar antes</button></div></div></section>
+
+  <section data-seg-panel="e:carregando" hidden><div class="card stack"><div class="skel" style="width:34%;height:22px"></div><div class="skel" style="width:70%"></div><div class="grid3"><div class="skel" style="height:110px"></div><div class="skel" style="height:110px"></div><div class="skel" style="height:110px"></div></div><div class="skel" style="width:90%"></div><div class="skel" style="width:64%"></div></div></section>
+
+  <section data-seg-panel="e:erro" hidden><div class="card big-empty"><div class="empty"><i data-i="warn" class="xl"></i><b>Não conseguimos carregar esta tela.</b><span>Foi um problema nosso, não da sua empresa. Seus dados estão seguros. Tente de novo; se continuar, avise a equipe (código de erro: LST-5xx).</span><div class="inline"><button class="btn btn-primary btn-sm" data-toast="Tentando de novo (exemplo)"><i data-i="refresh"></i> Tentar de novo</button><a class="btn btn-secondary btn-sm" href="portal-mensagens.html">Avisar a equipe</a></div></div></div></section>
+
+  <section data-seg-panel="e:perm" hidden><div class="card big-empty"><div class="empty"><i data-i="lock" class="xl"></i><b>Você não tem acesso a esta área.</b><span>Seu papel (contador, só leitura) não inclui Pesquisa e resultados por setor. Peça à sócia-administradora para ajustar, se precisar.</span><a class="btn btn-secondary btn-sm" href="portal-dashboard.html">Voltar à visão geral</a></div></div></section>
+
+  <section data-seg-panel="e:sessao" hidden><div class="state-box"><span class="state-cap">Janela sobre a tela atual</span><div class="modal on" style="position:static;transform:none;margin:0 auto" role="dialog" aria-label="Sessão expirada"><div class="inline"><i data-i="clock" class="xl"></i><h2 class="h4">Sua sessão expirou</h2></div><p class="small muted">Por segurança, desconectamos depois de 30 minutos parado. Entre de novo para continuar — o que você estava fazendo fica salvo.</p><a class="btn btn-primary" href="portal-login.html">Entrar de novo</a></div></div></section>
+
+  <section data-seg-panel="e:manut" hidden><div class="card big-empty"><div class="empty"><svg class="ill" viewBox="0 0 150 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 68h114l-14 20H34z"/><path d="M36 68V44h40v24"/><path d="M110 68V38M110 38l16 10"/><path d="M6 92c10-6 18-6 28 0s18 6 28 0 18-6 28 0 18 6 28 0 18-6 28 0" opacity=".45"/></svg><b>Estamos ajustando o casco.</b><span>O portal está em manutenção programada até as 08:00. Nada se perde e os prazos do programa não são afetados.</span></div></div></section>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Painel interno · Clientes (A02) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+</head>
+<body data-shell="interno" data-page="clientes" data-crumb="Clientes">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Clientes</h1><p>Todas as empresas atendidas. Clique em uma linha para abrir a ficha.</p></div><a class="btn btn-primary" href="interno-novo-cliente.html"><i data-i="plus"></i> Novo cliente</a></section>
+  <div class="toolbar"><input class="inp" placeholder="Buscar por nome ou CNPJ" aria-label="Buscar" style="min-width:280px">
+    <select class="inp" aria-label="Etapa"><option>Todas as etapas</option><option>Mês 1</option><option>Mês 2</option><option>Mês 3</option><option>Mês 4–5</option><option>Mês 6</option></select>
+    <select class="inp" aria-label="Perfil"><option>Todos os perfis</option><option>AEP / DIR</option><option>PGR</option></select>
+    <select class="inp" aria-label="Responsável"><option>Qualquer responsável</option><option>Ana Ribeiro</option><option>RT 1</option></select>
+    <span class="spacer-auto"></span><button class="btn btn-secondary btn-sm" data-toast="Lista exportada (exemplo)"><i data-i="download"></i> Exportar</button></div>
+  <div class="card flat"><div class="scroll-x"><table class="t pad rows"><thead><tr><th>Empresa</th><th>Porte</th><th>Perfil</th><th>Etapa</th><th>Adesão</th><th>Situação</th><th>Responsável</th></tr></thead><tbody>
+    <tr onclick="location.href='interno-cliente.html'" style="cursor:pointer"><td><b>Padaria Sol Nascente</b><span class="muted-s" style="display:block">00.000.000/0001-00 · 50 empregados</span></td><td>EPP</td><td><span class="chip dark">AEP</span></td><td>Mês 2 · Avaliação</td><td>62%</td><td><span class="chip ok">No prazo</span></td><td>Ana Ribeiro</td></tr>
+    <tr onclick="location.href='interno-cliente.html'" style="cursor:pointer"><td><b>Clínica Vida Plena</b><span class="muted-s" style="display:block">00.000.000/0002-00 · 28 empregados</span></td><td>ME</td><td><span class="chip">PGR</span></td><td>Mês 3 · Entrega</td><td>71%</td><td><span class="chip warn">Entrega hoje</span></td><td>Ana Ribeiro</td></tr>
+    <tr onclick="location.href='interno-cliente.html'" style="cursor:pointer"><td><b>Mercadinho Bom Preço</b><span class="muted-s" style="display:block">00.000.000/0003-00 · 17 empregados</span></td><td>ME</td><td><span class="chip dark">AEP</span></td><td>Mês 1 · Levantamento</td><td>—</td><td><span class="chip warn">1 atraso</span></td><td>Bruno Lima</td></tr>
+    <tr onclick="location.href='interno-cliente.html'" style="cursor:pointer"><td><b>Oficina Rota 135</b><span class="muted-s" style="display:block">00.000.000/0004-00 · 22 empregados</span></td><td>ME</td><td><span class="chip">PGR</span></td><td>Mês 4 · Acompanhamento</td><td>58%</td><td><span class="chip ok">No prazo</span></td><td>Bruno Lima</td></tr>
+    <tr onclick="location.href='interno-cliente.html'" style="cursor:pointer"><td><b>Escola Pequeno Navegador</b><span class="muted-s" style="display:block">00.000.000/0005-00 · 41 empregados</span></td><td>EPP</td><td><span class="chip dark">AEP</span></td><td>Mês 5 · Ajustes</td><td>80%</td><td><span class="chip ok">No prazo</span></td><td>Ana Ribeiro</td></tr>
+    <tr onclick="location.href='interno-cliente.html'" style="cursor:pointer"><td><b>Studio Maré</b><span class="muted-s" style="display:block">00.000.000/0006-00 · 6 empregados</span></td><td>ME</td><td><span class="chip dark">AEP</span></td><td>Mês 6 · Revisão</td><td>83%</td><td><span class="chip info">Renovação em 20 dias</span></td><td>Bruno Lima</td></tr></tbody></table></div>
+    <div class="pager"><span>6 de 12 clientes</span><span class="inline"><button class="btn btn-ghost btn-sm" disabled>Anterior</button><button class="btn btn-ghost btn-sm">Próxima</button></span></div></div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

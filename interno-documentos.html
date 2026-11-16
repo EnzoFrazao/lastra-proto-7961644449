@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Painel interno · Documentos e modelos (A11) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+</head>
+<body data-shell="interno" data-page="documentos" data-crumb="Documentos">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Documentos</h1><p>Gere PDFs a partir dos modelos, acompanhe versões e publique ao cliente depois da assinatura.</p></div><button class="btn btn-primary" data-open="dg"><i data-i="plus"></i> Gerar documento</button></section>
+  <div class="toolbar"><input class="inp" placeholder="Buscar documento ou cliente" aria-label="Buscar" style="min-width:280px"><select class="inp" aria-label="Situação"><option>Todas as situações</option><option>Rascunho</option><option>Em revisão</option><option>Assinado</option><option>Publicado</option></select></div>
+  <div class="card flat"><div class="scroll-x"><table class="t pad rows"><thead><tr><th>Documento</th><th>Cliente</th><th>Versão</th><th>Situação</th><th>Código de verificação</th></tr></thead><tbody>
+    <tr><td><b>Enquadramento</b></td><td>Padaria Sol Nascente</td><td>v1</td><td><span class="chip ok">Publicado</span></td><td>LST-2026-0388-9F3K</td></tr>
+    <tr><td><b>Inventário de riscos</b></td><td>Padaria Sol Nascente</td><td>v0.3</td><td><span class="chip warn">Em revisão</span></td><td>—</td></tr>
+    <tr><td><b>PGR</b></td><td>Clínica Vida Plena</td><td>v1</td><td><span class="chip warn">Em revisão</span></td><td>—</td></tr>
+    <tr><td><b>Relatório psicossocial</b></td><td>Escola Pequeno Navegador</td><td>v2</td><td><span class="chip ok">Publicado</span></td><td>LST-2026-0201-7M2Q</td></tr>
+    <tr><td><b>Relatório (versão anterior)</b></td><td>Escola Pequeno Navegador</td><td>v1</td><td><span class="chip">Revogado</span></td><td>LST-2026-0101-REV1</td></tr></tbody></table></div></div>
+</main></div></div>
+<div class="scrim" data-close></div>
+<aside class="drawer" id="dg" aria-label="Gerar documento"><div class="drawer-h"><div><span class="label muted">Novo documento</span><h2 class="h4" style="margin-top:4px">Gerar a partir de modelo</h2></div><button class="iconbtn" data-close aria-label="Fechar"><i data-i="x"></i></button></div>
+  <div class="drawer-b stack"><label class="field">Cliente<select><option>Padaria Sol Nascente</option></select></label><label class="field">Modelo<select><option>Inventário de riscos</option><option>PGR</option><option>AEP</option><option>Relatório psicossocial</option><option>Plano de ação</option></select></label>
+    <div class="note"><i data-i="info"></i><span>O documento sai como rascunho e entra na fila de revisão. A Lastro não emite laudo: quem assina é o profissional habilitado.</span></div></div>
+  <div class="drawer-f"><button class="btn btn-ghost" data-close>Cancelar</button><button class="btn btn-primary" data-toast="Rascunho gerado (exemplo)" data-close>Gerar rascunho</button></div></aside>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

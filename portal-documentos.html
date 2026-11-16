@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Portal · Documentos e dossiê (P09–P11) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+</head>
+<body data-shell="portal" data-page="documentos" data-crumb="Documentos e dossiê">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Documentos e dossiê</h1><p>Tudo o que a Lastro entrega e o que a sua empresa precisa guardar. Cada documento mostra quem assinou, quando e como conferir se é autêntico.</p></div>
+    <button class="btn btn-secondary" data-toast="Pacote do dossiê (ZIP) preparado — exemplo"><i data-i="download"></i> Exportar pacote</button></section>
+
+  <div data-tabs>
+    <div class="tabs" role="tablist"><button role="tab" data-tab="biblioteca">Biblioteca</button><button role="tab" data-tab="dossie">Dossiê de evidências</button></div>
+
+    <section role="tabpanel">
+      <div class="toolbar"><input class="inp" placeholder="Buscar documento" aria-label="Buscar documento" style="min-width:260px"><div class="pillrow"><button aria-pressed="true">Todos</button><button>Assinados</button><button>Em revisão</button><button>Rascunhos</button></div></div>
+      <div class="card flat">
+        <div class="item" data-open="dv"><span class="doc">PDF</span><div><b>Enquadramento e grau de risco</b><span class="s">v1 · 04/11/2026 · assinado pelo responsável técnico</span></div><div class="inline"><span class="chip ok">Assinado</span><button class="btn btn-secondary btn-sm" data-open="dv">Abrir</button></div></div>
+        <div class="item"><span class="doc">PDF</span><div><b>Inventário de riscos psicossociais</b><span class="s">v2 · em revisão pelo responsável técnico</span></div><div class="inline"><span class="chip warn">Em revisão</span><button class="btn btn-secondary btn-sm" disabled>Aguarde</button></div></div>
+        <div class="item"><span class="doc">PDF</span><div><b>Plano de ação</b><span class="s">rascunho · publica na entrega (mês 3)</span></div><span class="chip ghost">Rascunho</span></div>
+        <div class="item"><span class="doc">PDF</span><div><b>Contrato de prestação de serviço</b><span class="s">assinado em 02/09/2026 · duas vias</span></div><div class="inline"><span class="chip ok">Assinado</span><button class="btn btn-secondary btn-sm" data-open="dv">Abrir</button></div></div>
+        <div class="item"><span class="doc" style="background:var(--water-soft)">anexo</span><div><b>Parecer jurídico de conformidade</b><span class="s">contratado diretamente pela empresa · anexe aqui o seu (decisão nº 3)</span></div><button class="btn btn-secondary btn-sm" data-toast="Arquivo anexado (exemplo)"><i data-i="upload"></i> Anexar</button></div>
+      </div>
+      <div class="note"><i data-i="info"></i><span>Os documentos oficiais ficam guardados pelo prazo exigido pela norma (a confirmar 🔎). O relatório psicossocial traz só dados agregados e é assinado pelo psicólogo.</span></div>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <div class="grid3" style="grid-template-columns:1.4fr 1fr">
+        <div class="card"><h2>Linha do tempo auditável</h2>
+          <div class="tl">
+            <div class="tl-i"><span class="p dark"></span><div><b>Inventário v2 enviado para revisão do RT</b><span>15/11/2026 09:12 · Lastro · registro #0412</span></div></div>
+            <div class="tl-i"><span class="p"></span><div><b>Coleta anônima aberta (31 respostas até agora)</b><span>01/11/2026 · automático</span></div></div>
+            <div class="tl-i"><span class="p dark"></span><div><b>Enquadramento assinado pelo responsável técnico</b><span>04/11/2026 · assinatura avançada · registro #0388</span></div></div>
+            <div class="tl-i"><span class="p"></span><div><b>Consulta aos trabalhadores realizada</b><span>22/10/2026 · ata anexada</span></div></div>
+            <div class="tl-i"><span class="p dark"></span><div><b>Contrato assinado pelas partes</b><span>02/09/2026 · registro #0001</span></div></div>
+          </div></div>
+        <div class="stack"><div class="card stack"><h2 style="margin:0">Guarda e integridade</h2><p class="small muted">Cada registro tem data, quem fez e um código que permite conferir se o arquivo não foi alterado.</p><div class="inline"><span class="chip ok">Integridade verificada</span><span class="chip">Guarda: prazo da norma 🔎</span></div><a class="btn btn-secondary btn-sm" href="verificar.html" style="justify-self:start">Conferir um documento</a></div>
+          <div class="card soft stack"><h3>Para uma fiscalização</h3><p class="small">Exporte o pacote completo: documentos assinados, atas, evidências e linha do tempo em um único arquivo.</p><button class="btn btn-primary btn-sm" style="justify-self:start" data-toast="Pacote do dossiê (ZIP) preparado — exemplo"><i data-i="download"></i> Exportar pacote</button></div></div>
+      </div>
+    </section>
+  </div>
+</main></div></div>
+
+<!-- P10 visualizador -->
+<aside class="drawer" id="dv" style="width:min(680px,100%)" aria-label="Visualizador de documento"><div class="drawer-h"><div><span class="label muted">Documento · v1</span><h2 class="h4" style="margin-top:4px">Enquadramento e grau de risco</h2></div><button class="iconbtn" data-close aria-label="Fechar"><i data-i="x"></i></button></div>
+  <div class="drawer-b">
+    <div class="docview" aria-label="Pré-visualização do documento (ilustração)"><i class="h"></i><i class="s"></i><i></i><i class="m"></i><i></i><i class="m"></i><i class="s"></i><i></i><i class="m"></i><i></i></div>
+    <div class="grid2" style="gap:14px"><div><span class="label muted">Data</span><p class="small">04/11/2026</p></div><div><span class="label muted">Versão do instrumento</span><p class="small">v1 · norma vigente em 04/11/2026</p></div><div><span class="label muted">Taxa de resposta</span><p class="small">—</p></div><div><span class="label muted">Código de verificação</span><p class="small"><code>LST-2026-0388-9F3K</code></p></div></div>
+    <div><span class="label muted">Trilha de assinatura</span><div class="stack-s" style="margin-top:8px"><div class="sigline"><i data-i="sig"></i><div><b>Responsável técnico de SST</b><span class="muted-s" style="display:block">Assinou em 04/11/2026 14:02 · assinatura eletrônica avançada</span></div><span class="chip ok spacer-auto">Válida</span></div><div class="sigline"><i data-i="eye"></i><div><b>Marina Costa — ciência da empresa</b><span class="muted-s" style="display:block">Visualizou em 05/11/2026 08:41</span></div></div></div></div>
+    <div class="note"><i data-i="shield"></i><span>Este documento é <b>insumo técnico</b> assinado por quem responde tecnicamente. Não é laudo emitido pela Lastro.</span></div>
+  </div>
+  <div class="drawer-f"><a class="btn btn-ghost" href="verificar.html">Verificar autenticidade</a><button class="btn btn-primary" data-toast="PDF baixado — exemplo"><i data-i="download"></i> Baixar PDF</button></div></aside>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

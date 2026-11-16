@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Dúvidas frequentes (S11) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="home.css"><link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('lastro-tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<style>
+  .qa details { border-top:1px solid var(--line); padding:22px 0; } .qa details:last-child { border-bottom:1px solid var(--line); }
+  .qa summary { list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; font-weight:600; font-size:18px; cursor:pointer; } .qa summary::-webkit-details-marker { display:none; } .qa summary svg { transition:transform var(--t-base) var(--ease); } .qa details[open] summary svg { transform:rotate(45deg); }
+  .qa details p { margin-top:14px; color:var(--fg-2); max-width:66ch; animation:emerge var(--t-base) var(--ease); }
+  .cat { margin-top:56px; } .cat:first-child { margin-top:0; } .cat h2 { margin-bottom:12px; }
+  .search { display:flex; gap:10px; align-items:center; border:1.5px solid var(--line); border-radius:var(--r-sm); padding:14px 18px; background:var(--bg-card); max-width:560px; margin-top:28px; } .search input { border:0; outline:0; font:inherit; font-size:17px; background:transparent; color:var(--fg); width:100%; }
+</style>
+</head>
+<body data-page="faq">
+<main id="conteudo">
+<section class="phero"><div class="wrap">
+  <p class="crumbs"><a href="home.html">Início</a> / Dúvidas frequentes</p>
+  <p class="eyebrow-s"><i></i>FAQ</p>
+  <h1 class="h1" style="margin-top:14px">O que costumam perguntar.</h1>
+  <label class="search"><i data-i="search"></i><input id="q" type="search" placeholder="Buscar uma dúvida" aria-label="Buscar uma dúvida"></label>
+</div></section>
+<section class="sec tight" data-wave style="--sec:var(--bg-page)"><div class="wrap doc-grid">
+  <nav class="toc" aria-label="Categorias"><p class="label">Categorias</p><a href="#c1">NR-1</a><a href="#c2">Serviços</a><a href="#c3">Prazos e multa</a><a href="#c4">Contratação</a><a href="#c5">Anonimato e LGPD</a><a href="#c6">Preço e pagamento</a></nav>
+  <div class="qa" id="qa">
+    <div class="cat" id="c1"><h2 class="h3">NR-1</h2>
+      <details open><summary>Minha empresa é obrigada?<i data-i="plus"></i></summary><p>Se você tem pelo menos um empregado CLT, a NR-1 vale desde 26/05/2026. MEI sem empregado fica fora. O <a href="diagnostico.html">diagnóstico</a> confirma em dois minutos.</p></details>
+      <details><summary>O que são riscos psicossociais?<i data-i="plus"></i></summary><p>Características do trabalho que podem adoecer: metas, jornada, autonomia, relações, clareza de função e mudanças. Não é diagnóstico de ninguém.</p></details></div>
+    <div class="cat" id="c2"><h2 class="h3">Serviços</h2>
+      <details><summary>A Lastro assina o PGR?<i data-i="plus"></i></summary><p>Quem assina é o responsável técnico habilitado, no escopo dele. A Lastro entrega o insumo técnico e a organização — não emitimos laudo.</p></details>
+      <details><summary>Vocês atendem fora de São Luís?<i data-i="plus"></i></summary><p>Por enquanto atendemos empresas de São Luís. Fora daqui, converse com a gente para ver o que é possível.</p></details></div>
+    <div class="cat" id="c3"><h2 class="h3">Prazos e multa</h2>
+      <details><summary>Ainda há multa?<i data-i="plus"></i></summary><p>O STF suspendeu a eficácia sancionatória por enquanto (ADPF 1316). A obrigação continua e os registros podem ser usados em ação trabalhista. Atualizado em 15/11/2026 — o prazo da suspensão vai até cerca de 23/12/2026 🔎.</p></details>
+      <details><summary>A Lastro garante que não haverá multa?<i data-i="plus"></i></summary><p>Não. Nenhuma empresa pode prometer isso. O que entregamos é documentação e prova de que a empresa agiu.</p></details></div>
+    <div class="cat" id="c4"><h2 class="h3">Contratação</h2>
+      <details><summary>Como é o contrato?<i data-i="plus"></i></summary><p>Anual, com dois ciclos de seis meses. Você acompanha tudo pelo portal.</p></details>
+      <details><summary>Preciso ter responsável técnico?<i data-i="plus"></i></summary><p>Não necessariamente. A Lastro trabalha com parceiros habilitados; se você já tem um, conversamos sobre como integrar.</p></details></div>
+    <div class="cat" id="c5"><h2 class="h3">Anonimato e LGPD</h2>
+      <details><summary>Os funcionários serão identificados?<i data-i="plus"></i></summary><p>Não. A pesquisa é anônima, sem login, e resultados de grupos com menos de 5 pessoas nunca aparecem.</p></details>
+      <details><summary>O que a Lastro faz com os dados da empresa?<i data-i="plus"></i></summary><p>Usamos para executar o contrato, com base na LGPD. Veja a <a href="legais.html#privacidade">Política de privacidade</a>.</p></details></div>
+    <div class="cat" id="c6"><h2 class="h3">Preço e pagamento</h2>
+      <details><summary>Quanto custa?<i data-i="plus"></i></summary><p>Depende do número de empregados e do grau de risco. O contrato é anual, com pagamento à vista ou em até 12 vezes. <a href="planos.html">Veja as faixas</a> e peça uma proposta.</p></details></div>
+    <p class="small muted" id="none" hidden style="margin-top:32px">Nenhuma dúvida encontrada. <a href="contato.html">Pergunte para a gente.</a></p>
+    <div class="callout" style="margin-top:56px"><b>Não achou o que procurava?</b>Fale com a equipe: <a href="contato.html">contato</a>.</div>
+  </div>
+</div></section>
+</main>
+<script src="assets/icons.js"></script><script src="assets/site.js"></script><script src="assets/logo.js"></script><script src="assets/chrome.js"></script>
+<script>
+  document.getElementById('q').addEventListener('input', e => { const v = e.target.value.toLowerCase(); let n = 0;
+    document.querySelectorAll('#qa details').forEach(d => { const m = !v || d.textContent.toLowerCase().includes(v); d.hidden = !m; if (m) n++; });
+    document.querySelectorAll('#qa .cat').forEach(c => c.hidden = ![...c.querySelectorAll('details')].some(d => !d.hidden)); document.getElementById('none').hidden = n > 0; });
+</script>
+</body>
+</html>

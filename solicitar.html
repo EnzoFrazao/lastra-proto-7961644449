@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Solicitar atendimento (S13) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="home.css"><link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('lastro-tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<style>
+  .sol { max-width:720px; margin:0 auto; } .sol .cardx { padding:40px; gap:20px; }
+  .draft { display:flex; gap:6px; } .draft i { flex:1; height:8px; background:var(--line); clip-path:polygon(0 0,100% 0,94% 100%,6% 100%); transition:background var(--t-slow); } .draft i.on { background:var(--fg); }
+  .stepl { display:flex; justify-content:space-between; font-size:13px; font-weight:600; color:var(--fg-2); }
+  .acts { display:flex; justify-content:space-between; gap:12px; margin-top:8px; flex-wrap:wrap; }
+  .radiocards { display:grid; gap:10px; } .rc { display:flex; gap:12px; align-items:flex-start; padding:14px 16px; border:1.5px solid var(--line); border-radius:var(--r-md); cursor:pointer; font-size:15px; background:var(--bg-card); } .rc input { margin-top:3px; accent-color:var(--fg); } .rc:has(input:checked) { border-color:var(--fg); background:var(--bg-surface); } .rc b { display:block; font-weight:600; } .rc span { font-size:13px; color:var(--fg-2); }
+  .bigok { display:grid; gap:14px; justify-items:start; } .bigok .big { width:64px; height:64px; border-radius:50%; background:var(--water-soft); display:grid; place-items:center; } .bigok .big svg.i { width:30px; height:30px; stroke-width:2.5; }
+  .previewbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:28px; justify-content:center; font-size:13px; color:var(--fg-2); }
+  @media (max-width:700px) { .sol .cardx { padding:24px; } }
+</style>
+</head>
+<body data-page="solicitar">
+<main id="conteudo">
+<section class="phero"><div class="wrap">
+  <p class="crumbs"><a href="home.html">Início</a> / Solicitar atendimento</p>
+  <p class="eyebrow-s"><i></i>Solicitação de atendimento</p>
+  <h1 class="h1" style="margin-top:14px">Conte sobre a sua empresa. A gente responde.</h1>
+  <p class="lead">Três passos curtos. Você recebe o enquadramento e a proposta pelo WhatsApp ou e-mail.</p>
+</div></section>
+<section class="sec tight" data-wave style="--sec:var(--bg-page)"><div class="wrap">
+  <div class="previewbar"><span>Ver estado:</span><div class="seg" id="st"><button data-v="form" aria-pressed="true">Preenchendo</button><button data-v="valid">Erro de validação</button><button data-v="erro">Erro de envio</button><button data-v="ok">Sucesso</button></div></div>
+  <div class="sol"><form class="cardx static" id="fm" novalidate></form></div>
+</div></section>
+</main>
+<script src="assets/icons.js"></script><script src="assets/site.js"></script><script src="assets/logo.js"></script><script src="assets/chrome.js"></script>
+<script>
+  let step = 0, showErr = false; const fm = document.getElementById('fm'); const D = {};
+  const draft = n => `<div class="draft" aria-hidden="true">${[0, 1, 2].map(i => `<i class="${i <= n ? 'on' : ''}"></i>`).join('')}</div><p class="stepl"><span>Passo ${n + 1} de 3</span><span>${['A empresa', 'O que você procura', 'Como falar com você'][n]}</span></p>`;
+  const f = (id, label, html, req, err) => `<label class="field ${showErr && req && !D[id] ? 'err' : ''}">${label}${html}${showErr && req && !D[id] ? `<span class="errmsg">${err || 'Preencha este campo.'}</span>` : ''}</label>`;
+  function render() {
+    if (step === 0) fm.innerHTML = `${draft(0)}<h2 class="h3">Fale um pouco da empresa</h2>
+      ${f('emp', 'Nome da empresa', `<input type="text" data-k="emp" value="${D.emp || ''}" placeholder="Ex.: Padaria Sol Nascente">`, 1)}
+      ${f('cnpj', 'CNPJ (opcional)', `<input type="text" data-k="cnpj" value="${D.cnpj || ''}" placeholder="00.000.000/0000-00"><span class="hint">Ajuda a estimar o grau de risco. Pode deixar em branco.</span>`)}
+      <div class="rowf">${f('n', 'Quantos empregados?', `<select data-k="n"><option value="">Selecione</option>${['Até 9', '10 a 19', '20 a 49', '50 ou mais'].map(o => `<option ${D.n === o ? 'selected' : ''}>${o}</option>`).join('')}</select>`, 1, 'Escolha uma faixa.')}${f('ativ', 'Atividade principal', `<input type="text" data-k="ativ" value="${D.ativ || ''}" placeholder="Ex.: padaria, loja, clínica">`, 1)}</div>
+      <div class="acts"><span></span><button class="btn btn-primary" type="button" id="nx">Continuar <i data-i="arrow" class="arrow"></i></button></div>`;
+    if (step === 1) fm.innerHTML = `${draft(1)}<h2 class="h3">O que você procura?</h2>
+      <div class="radiocards" role="radiogroup">${[['Entender se sou obrigado', 'Quero saber o caminho para a minha empresa'], ['Receber uma proposta', 'Já sei que preciso e quero o valor'], ['Conversar com alguém', 'Tenho dúvidas e prefiro falar']].map(([t, s], i) => `<label class="rc"><input type="radio" name="i" ${(D.i || 'Receber uma proposta') === t ? 'checked' : ''} data-k="i" value="${t}"><span><b>${t}</b>${s}</span></label>`).join('')}</div>
+      ${f('msg', 'Mensagem (opcional)', `<textarea data-k="msg" placeholder="Algo que a gente deva saber?">${D.msg || ''}</textarea>`)}
+      <div class="acts"><button class="btn btn-secondary" type="button" id="bk">Voltar</button><button class="btn btn-primary" type="button" id="nx">Continuar <i data-i="arrow" class="arrow"></i></button></div>`;
+    if (step === 2) fm.innerHTML = `${draft(2)}<h2 class="h3">Como podemos falar com você?</h2>
+      ${f('nome', 'Seu nome', `<input type="text" data-k="nome" value="${D.nome || ''}">`, 1)}
+      <div class="rowf">${f('tel', 'WhatsApp', `<input type="tel" data-k="tel" value="${D.tel || ''}" placeholder="(98) 9 0000-0000">`, 1, 'Informe um número com DDD.')}${f('mail', 'E-mail (opcional)', `<input type="text" data-k="mail" value="${D.mail || ''}">`)}</div>
+      <label class="check"><input type="checkbox" data-k="lg" ${D.lg ? 'checked' : ''}> Concordo em ser contatado e com o uso dos dados conforme a <a href="legais.html#privacidade">Política de privacidade</a>.</label>${showErr && !D.lg ? '<span class="errmsg" style="color:var(--alert);font-size:12px;font-weight:500">Precisamos da sua ciência para continuar.</span>' : ''}
+      <div class="acts"><button class="btn btn-secondary" type="button" id="bk">Voltar</button><button class="btn btn-primary" type="button" id="nx">Enviar solicitação</button></div>`;
+    expandIcons(fm);
+    fm.querySelectorAll('[data-k]').forEach(e => { e.addEventListener('input', () => D[e.dataset.k] = e.type === 'checkbox' ? e.checked : e.value); e.addEventListener('change', () => D[e.dataset.k] = e.type === 'checkbox' ? e.checked : e.value); });
+    const nx = fm.querySelector('#nx'), bk = fm.querySelector('#bk');
+    if (bk) bk.onclick = () => { step--; showErr = false; render(); };
+    nx.onclick = () => { const need = [['emp', 'n', 'ativ'], [], ['nome', 'tel', 'lg']][step]; if (need.some(k => !D[k])) { showErr = true; render(); return; } showErr = false; if (step < 2) { step++; render(); } else setSt('ok'); };
+  }
+  function okv() { fm.innerHTML = `<div class="bigok"><div class="big">${ic('check')}</div><h2 class="h3">Recebemos a sua solicitação.</h2><p class="muted">Vamos responder pelo WhatsApp com o enquadramento e a proposta. Prazo de resposta a confirmar (exemplo: 1 dia útil). <span class="caption">Protótipo: nada foi enviado.</span></p><a class="btn btn-primary" href="home.html">Voltar ao início</a></div>`; }
+  function errv() { fm.innerHTML = `<div class="banner warn"><i data-i="warn"></i><span><b>Não conseguimos enviar agora.</b> Seus dados continuam aqui. Tente de novo ou chame a gente no WhatsApp.</span></div><div class="acts"><a class="btn btn-secondary" href="contato.html">Falar no WhatsApp</a><button class="btn btn-primary" id="rt" type="button">Tentar de novo</button></div>`; expandIcons(fm); fm.querySelector('#rt').onclick = () => setSt('form'); }
+  const sb = [...document.querySelectorAll('#st button')];
+  function setSt(v) { sb.forEach(b => b.setAttribute('aria-pressed', b.dataset.v === v)); if (v === 'ok') okv(); else if (v === 'erro') errv(); else if (v === 'valid') { step = 0; showErr = true; render(); } else { step = 0; showErr = false; render(); } }
+  sb.forEach(b => b.onclick = () => setSt(b.dataset.v)); setSt(new URLSearchParams(location.search).get('estado') || 'form');
+</script>
+</body>
+</html>

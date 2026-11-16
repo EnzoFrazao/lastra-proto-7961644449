@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Painel interno · Modelos e regras normativas (A17/A18) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+<style> .tabs-wrap section[role=tabpanel] { padding-top:24px; display:grid; gap:20px; } code.k { font-size:12px; background:var(--bg-surface-strong); padding:2px 6px; border-radius:3px; } </style>
+</head>
+<body data-shell="interno" data-page="config" data-crumb="Modelos e regras">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Modelos e regras</h1><p>Modelos de documento e as regras normativas que alimentam o enquadramento e o diagnóstico grátis.</p></div></section>
+  <div data-tabs class="tabs-wrap">
+    <div class="tabs" role="tablist" aria-label="Seções"><button role="tab" data-tab="modelos">Modelos (A17)</button><button role="tab" data-tab="regras">Regras normativas (A18)</button></div>
+
+    <section role="tabpanel">
+      <div class="card flat"><div class="scroll-x"><table class="t pad rows"><thead><tr><th>Modelo</th><th>Versão</th><th>Revisado por</th><th>Situação</th></tr></thead><tbody>
+        <tr><td><b>Inventário de riscos</b></td><td>v1.4</td><td>RT 1</td><td><span class="chip ok">Ativo</span></td></tr>
+        <tr><td><b>PGR</b></td><td>v1.2</td><td>RT 2</td><td><span class="chip ok">Ativo</span></td></tr>
+        <tr><td><b>AEP</b></td><td>v1.1</td><td>RT 1 + Psicólogo 2</td><td><span class="chip ok">Ativo</span></td></tr>
+        <tr><td><b>Questionário psicossocial</b></td><td>v1.2</td><td>Psicólogo 2</td><td><span class="chip ok">Ativo</span></td></tr>
+        <tr><td><b>Mensagem de convite à pesquisa</b></td><td>v1.0</td><td>Ana Ribeiro</td><td><span class="chip warn">Em revisão</span></td></tr></tbody></table></div></div>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <div class="banner"><i data-i="warn"></i><span>Regra com data de validade: revisar em 23/12/2026 (a verificar) 🔎. Ao mudar um parâmetro, o sistema registra a versão e a data.</span></div>
+      <article class="card stack"><h2>Parâmetros vigentes</h2>
+        <div class="setting"><div><b><code class="k">SUSPENSAO_STF_ATIVA</code></b><span class="muted-s" style="display:block">Eficácia sancionatória suspensa (ADPF 1316). A obrigação e o uso em ação trabalhista continuam. Texto do site e do resultado do diagnóstico acompanham este parâmetro.</span></div><label class="sw"><input type="checkbox" checked><i></i></label></div>
+        <div class="grid3"><label class="field">Versão da norma<input type="text" value="NR-1 · 2026-10-29" readonly></label><label class="field">Atualizado em<input type="text" value="24/09/2026" readonly></label><label class="field">Fonte<input type="text" value="Portal oficial do MTE (a verificar)" readonly></label></div>
+        <div class="note"><i data-i="info"></i><span>Mudar este parâmetro troca o texto em todos os lugares ao mesmo tempo. Quem altera fica registrado na auditoria.</span></div>
+        <div class="form-actions"><button class="btn btn-ghost">Descartar</button><button class="btn btn-primary" data-toast="Nova versão das regras registrada (exemplo)">Publicar nova versão</button></div></article>
+    </section>
+  </div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Entrar (P00 / S17) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/ui.css">
+<style>
+  body { min-height:100vh; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); background:var(--bg-page); }
+  .pane { padding:40px clamp(24px,6vw,88px); display:flex; flex-direction:column; min-height:100vh; }
+  .pane-in { margin:auto 0; max-width:440px; width:100%; display:grid; gap:20px; }
+  .side-art { background:var(--bg-deep); color:#fff; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; padding:56px; }
+  .side-art svg.bgw { position:absolute; left:0; bottom:0; width:200%; height:55%; }
+  .side-art p { position:relative; max-width:34ch; font-size:26px; line-height:1.3; font-weight:600; }
+  .side-art small { position:relative; color:var(--fg-on-deep-2); margin-top:14px; font-size:14px; display:block; }
+  .w1 { fill:#01493B; animation:dr 18s linear infinite; } .w2 { fill:#012B23; animation:dr 12s linear infinite reverse; } @keyframes dr { to { transform:translateX(-25%); } }
+  .tabsbar { display:flex; justify-content:space-between; align-items:center; }
+  .links { font-size:14px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  .btn.full { width:100%; }
+  .states { margin-top:18px; padding-top:18px; border-top:1px dashed var(--line); }
+  @media (max-width:900px) { body { grid-template-columns:1fr; } .side-art { display:none; } }
+</style>
+</head>
+<body>
+<section class="pane">
+  <div class="tabsbar"><a class="logo" data-logo="horizontal" style="height:30px" href="home.html" aria-label="Lastro — site"></a><a class="small" href="home.html">← Voltar ao site</a></div>
+  <div class="pane-in">
+    <span class="chip warn" style="justify-self:start">Protótipo — nada é enviado</span>
+
+    <!-- entrar -->
+    <form data-seg-panel="est:entrar" onsubmit="event.preventDefault();location.href='portal-dashboard.html'" class="stack" style="gap:18px">
+      <div><h1 class="h3">Entrar no portal do cliente</h1><p class="muted small" style="margin-top:6px">Acompanhe o programa, as pendências e os documentos da sua empresa.</p></div>
+      <label class="field">E-mail<input type="text" value="marina@padariasolnascente.example" autocomplete="username"></label>
+      <label class="field">Senha<input type="password" value="exemplo-123" autocomplete="current-password"></label>
+      <div class="links"><label class="check"><input type="checkbox" checked> Manter conectado neste computador</label><a href="#" data-seg-go="esqueci">Esqueci a senha</a></div>
+      <button class="btn btn-primary full" type="submit">Entrar <i data-i="arrow"></i></button>
+      <p class="small muted">Não tem acesso? O convite chega por e-mail depois da contratação. <a href="contato.html">Falar com a Lastro</a></p>
+    </form>
+
+    <!-- primeiro acesso -->
+    <form data-seg-panel="est:primeiro" hidden onsubmit="event.preventDefault();toast('Senha criada (exemplo)')" class="stack" style="gap:18px">
+      <div><h1 class="h3">Bem-vinda, Marina.</h1><p class="muted small" style="margin-top:6px">Você foi convidada para o portal da <b>Padaria Sol Nascente</b>. Crie uma senha para começar.</p></div>
+      <label class="field">Nova senha<input type="password" value="exemplo-123"><span class="hint">Mínimo de 10 caracteres. Use uma frase fácil de lembrar.</span></label>
+      <div class="bar thin dark" style="--v:70%"><i></i></div>
+      <label class="field">Repita a senha<input type="password" value="exemplo-123"></label>
+      <label class="check"><input type="checkbox" checked> Li e concordo com os <a href="legais.html#termos">Termos</a> e a <a href="legais.html#privacidade">Política de privacidade</a>.</label>
+      <button class="btn btn-primary full" type="submit">Criar senha e entrar</button>
+    </form>
+
+    <!-- esqueci -->
+    <form data-seg-panel="est:esqueci" hidden onsubmit="event.preventDefault();toast('Link enviado (exemplo)')" class="stack" style="gap:18px">
+      <div><h1 class="h3">Recuperar acesso</h1><p class="muted small" style="margin-top:6px">Enviamos um link para você criar uma nova senha. Ele vale por 30 minutos.</p></div>
+      <label class="field">E-mail<input type="text" placeholder="voce@empresa.com.br"></label>
+      <button class="btn btn-primary full" type="submit">Enviar link</button>
+      <a class="small" href="#" data-seg-go="entrar">← Voltar para entrar</a>
+    </form>
+
+    <!-- 2FA -->
+    <form data-seg-panel="est:dois" hidden onsubmit="event.preventDefault();toast('Código aceito (exemplo)')" class="stack" style="gap:18px">
+      <div><h1 class="h3">Confirme que é você</h1><p class="muted small" style="margin-top:6px">Digite o código de 6 dígitos enviado ao e-mail <b>m•••@padariasolnascente.example</b>. <span class="caption">(Verificação em duas etapas — decisão em aberto nº 11.)</span></p></div>
+      <div class="inline" style="gap:8px"><input class="inp" style="width:48px;text-align:center;font-size:20px" value="4"><input class="inp" style="width:48px;text-align:center;font-size:20px" value="8"><input class="inp" style="width:48px;text-align:center;font-size:20px" value="1"><input class="inp" style="width:48px;text-align:center;font-size:20px"><input class="inp" style="width:48px;text-align:center;font-size:20px"><input class="inp" style="width:48px;text-align:center;font-size:20px"></div>
+      <button class="btn btn-primary full" type="submit">Confirmar</button>
+      <p class="small muted">Não chegou? <a href="#">Reenviar em 0:42</a></p>
+    </form>
+
+    <!-- erro -->
+    <form data-seg-panel="est:erro" hidden onsubmit="event.preventDefault()" class="stack" style="gap:18px">
+      <div><h1 class="h3">Entrar no portal do cliente</h1></div>
+      <div class="banner warn" role="alert"><div class="inline"><i data-i="warn"></i><span>E-mail ou senha incorretos. Confira e tente de novo. Depois de 5 tentativas o acesso é bloqueado por 15 minutos.</span></div></div>
+      <label class="field err">E-mail<input type="text" value="marina@padariasolnascente.example"><span class="errmsg">Não encontramos esse e-mail ou a senha não confere.</span></label>
+      <label class="field err">Senha<input type="password" value="erro"></label>
+      <button class="btn btn-primary full" type="submit">Tentar de novo</button>
+    </form>
+
+    <!-- convite expirado -->
+    <div data-seg-panel="est:expirado" hidden class="stack" style="gap:18px">
+      <div><h1 class="h3">Este convite expirou</h1><p class="muted small" style="margin-top:6px">Por segurança, o link de convite vale por 7 dias. Peça um novo à pessoa que convidou você ou à Lastro.</p></div>
+      <a class="btn btn-primary full" href="contato.html">Pedir novo convite</a>
+    </div>
+
+    <div class="states"><span class="state-cap">Ver outro estado desta tela</span>
+      <div class="seg" data-seg="est" id="estSeg"><button data-v="entrar" aria-pressed="true">Entrar</button><button data-v="primeiro">Primeiro acesso</button><button data-v="esqueci">Esqueci a senha</button><button data-v="dois">Código (2 etapas)</button><button data-v="erro">Erro</button><button data-v="expirado">Convite expirado</button></div>
+    </div>
+  </div>
+  <p class="caption muted">Endereço do portal em aberto: <code>app.</code> (recomendado) ou <code>/cliente</code> — decisão nº 1.</p>
+</section>
+<aside class="side-art" aria-hidden="true">
+  <svg class="bgw" viewBox="0 0 1600 300" preserveAspectRatio="none"><path class="w1" d="M0 120 q100 -40 200 0 t200 0 t200 0 t200 0 t200 0 t200 0 t200 0 t200 0 V300 H0z"/><path class="w2" d="M0 170 q80 -30 160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 V300 H0z"/></svg>
+  <span class="logo" data-logo="simbolo" style="height:72px;color:#fff;margin-bottom:28px;position:relative"></span>
+  <p>O chão firme da sua empresa, na ordem certa.</p>
+  <small>Programa Lastro NR-1 · São Luís, MA</small>
+</aside>
+<script src="assets/icons.js"></script><script src="assets/logo.js"></script>
+<script>
+  const T = { toast: msg => { let t = document.getElementById('toast'); if (!t) { t = document.createElement('div'); t.id = 'toast'; t.className = 'toast'; document.body.appendChild(t); } t.innerHTML = ic('check') + msg; t.classList.add('on'); setTimeout(() => t.classList.remove('on'), 2400); } };
+  window.toast = T.toast;
+  const btns = [...document.querySelectorAll('#estSeg button')];
+  function show(v) { btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.v === v)); document.querySelectorAll('[data-seg-panel]').forEach(p => p.hidden = p.dataset.segPanel !== 'est:' + v); }
+  btns.forEach(b => b.onclick = () => show(b.dataset.v));
+  document.querySelectorAll('[data-seg-go]').forEach(a => a.onclick = e => { e.preventDefault(); show(a.dataset.segGo); });
+  const q = new URLSearchParams(location.search).get('estado'); if (q) show(q);
+</script>
+</body>
+</html>

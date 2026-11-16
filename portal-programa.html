@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Portal · Meu programa (P02–P04, P12) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+<style>
+  .stp { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr); gap:24px; align-items:start; }
+  .stp-list { padding:8px; display:grid; gap:4px; }
+  .stp-btn { display:grid; grid-template-columns:28px 1fr auto; gap:12px; align-items:center; text-align:left; padding:14px 16px; border:0; background:transparent; border-radius:var(--r-md); }
+  .stp-btn:hover { background:var(--bg-surface); } .stp-btn[aria-pressed=true] { background:var(--bg-surface-strong); }
+  .stp-btn b { font-size:14px; display:block; } .stp-btn span.s { font-size:12px; color:var(--fg-2); }
+  .dotn { width:24px; height:24px; border-radius:50%; border:3px solid var(--line); display:grid; place-items:center; background:var(--bg-card); } .dotn.done { background:var(--fg); border-color:var(--fg); color:var(--bg-page); } .dotn.now { border-color:var(--fg); } .dotn.now::after { content:""; width:8px; height:8px; border-radius:50%; background:var(--fg); } .dotn svg { width:12px; height:12px; stroke-width:3; }
+  .chk { display:grid; gap:0; } .chk > div { display:grid; grid-template-columns:22px 1fr auto; gap:12px; align-items:start; padding:12px 0; border-top:1px solid var(--line); font-size:14px; } .chk > div:first-child { border-top:0; }
+  .chk .ico { width:20px; height:20px; border-radius:50%; display:grid; place-items:center; background:var(--bg-surface-strong); } .chk .ico.ok { background:var(--fg); color:var(--bg-page); } .chk .ico svg { width:11px; height:11px; stroke-width:3; } .chk .ico.pend { border:2px solid var(--alert); background:transparent; }
+  .month { display:grid; gap:0; } .monthhead { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+  @media (max-width:900px) { .stp { grid-template-columns:1fr; } }
+</style>
+</head>
+<body data-shell="portal" data-page="programa" data-crumb="Meu programa">
+<div class="app"><div class="app-main"><main>
+  <section class="head">
+    <div><h1 class="h2">Meu programa</h1><p>Programa Lastro NR-1 · contrato anual com 2 ciclos. Aqui você vê onde está, quando vence cada coisa e o que já ficou para trás.</p></div>
+    <div class="inline"><span class="chip dark">Caminho: AEP (grau 1–2)</span><span class="chip">Ciclo 1 de 2 · mês 2 de 6</span></div>
+  </section>
+
+  <div data-tabs>
+    <div class="tabs" role="tablist" aria-label="Seções de Meu programa">
+      <button role="tab" data-tab="etapas">Etapas</button><button role="tab" data-tab="cronograma">Cronograma</button><button role="tab" data-tab="contrato">Contrato e pagamento</button><button role="tab" data-tab="historico">Ciclos anteriores</button>
+    </div>
+
+    <!-- P03 etapas -->
+    <section role="tabpanel">
+      <div class="stp">
+        <div class="card stp-list" id="stpList" role="group" aria-label="Etapas do ciclo"></div>
+        <div class="card stack" id="stpDet" aria-live="polite"></div>
+      </div>
+      <div class="note"><i data-i="info"></i><span>Perguntas sobre uma etapa? Use <a href="portal-mensagens.html"><b>Mensagens</b></a>. Fora do escopo do programa (NR-15/16, LTCAT, PCMSO, atendimento clínico) a Lastro avisa aqui quando surgir e indica o caminho.</span></div>
+    </section>
+
+    <!-- P04 cronograma -->
+    <section role="tabpanel" hidden>
+      <div class="cols">
+        <div class="card"><div class="monthhead"><h2 style="margin:0">Novembro de 2026</h2><button class="btn btn-secondary btn-sm" data-toast="Calendário exportado (.ics) — exemplo"><i data-i="download"></i> Exportar .ics</button></div><div class="cal" id="cal"></div>
+          <div class="legend" style="margin-top:14px"><span><i style="background:var(--fg)"></i>Prazo da empresa</span><span><i style="background:var(--water-soft)"></i>Prazo da Lastro</span><span><i style="background:var(--alert-soft)"></i>Atenção</span></div></div>
+        <div class="card"><h2>Próximos prazos</h2><div class="list">
+          <div class="row"><span class="doc" style="background:var(--alert-soft);color:var(--alert)">20</span><div><b>Divulgar o link da pesquisa</b><span class="s">Empresa · nov</span></div><span class="chip warn">em 5 dias</span></div>
+          <div class="row"><span class="doc">27</span><div><b>Confirmar a lista de setores</b><span class="s">Empresa · nov</span></div><span class="chip">em 12 dias</span></div>
+          <div class="row"><span class="doc">30</span><div><b>Coleta anônima encerra</b><span class="s">Lastro · fecha com ou sem meta</span></div><span class="chip ok">Lastro</span></div>
+          <div class="row"><span class="doc">05</span><div><b>Entrega do PGR/AEP</b><span class="s">Lastro · dez</span></div><span class="chip ok">Lastro</span></div></div></div>
+      </div>
+    </section>
+
+    <!-- P02 contrato -->
+    <section role="tabpanel" hidden>
+      <div class="grid3">
+        <div class="card"><span class="label muted">Plano</span><p class="h4" style="margin-top:6px">Programa Lastro NR-1</p><p class="small muted" style="margin-top:6px">2 ciclos por ano · atendimento em São Luís</p></div>
+        <div class="card"><span class="label muted">Vigência</span><p class="h4" style="margin-top:6px">02/09/2026 – 01/09/2027</p><p class="small muted" style="margin-top:6px">Renova em 12 meses · aviso 60 dias antes</p></div>
+        <div class="card"><span class="label muted">Pagamento</span><p class="h4" style="margin-top:6px">12 parcelas</p><p class="small muted" style="margin-top:6px">Boleto ou Pix · valores de exemplo</p></div>
+      </div>
+      <div class="card flat">
+        <div class="card-head"><h2>Parcelas e faturas</h2><span class="chip warn">valores de exemplo</span></div>
+        <div class="scroll-x"><table class="t pad rows"><thead><tr><th>Parcela</th><th>Vencimento</th><th>Valor</th><th>Situação</th><th></th></tr></thead><tbody>
+          <tr><td>1 de 12</td><td>10/09/2026</td><td class="num">R$ •••,••</td><td><span class="chip ok">Paga</span></td><td><a href="#" data-toast="2ª via baixada (exemplo)">Recibo</a></td></tr>
+          <tr><td>2 de 12</td><td>10/10/2026</td><td class="num">R$ •••,••</td><td><span class="chip ok">Paga</span></td><td><a href="#" data-toast="2ª via baixada (exemplo)">Recibo</a></td></tr>
+          <tr><td>3 de 12</td><td>10/11/2026</td><td class="num">R$ •••,••</td><td><span class="chip warn">Vence em 25/11</span></td><td><a href="#" data-toast="Boleto aberto (exemplo)">2ª via</a></td></tr>
+          <tr><td>4 de 12</td><td>10/12/2026</td><td class="num">R$ •••,••</td><td><span class="chip">A vencer</span></td><td></td></tr></tbody></table></div>
+        <div class="pager"><span>Mostrando 4 de 12</span><a href="#">Ver todas</a></div>
+      </div>
+      <div class="grid2">
+        <div class="card stack"><h2 style="margin:0">Quem responde tecnicamente</h2>
+          <div class="inline"><span class="avatar soft">RT</span><div><b class="small">Responsável técnico de SST</b><span class="muted-s" style="display:block">Parceiro habilitado · assina PGR/AEP e inventário</span></div></div>
+          <div class="inline"><span class="avatar soft">PS</span><div><b class="small">Psicólogo · CRP-22/MA</b><span class="muted-s" style="display:block">Parceiro habilitado · assina o relatório psicossocial</span></div></div></div>
+        <div class="card stack"><h2 style="margin:0">Contrato e renovação</h2><p class="small muted">Contrato assinado em 02/09/2026. A renovação para o 2º ano é decidida no mês 6 do 2º ciclo.</p><div class="inline"><a class="btn btn-secondary btn-sm" href="portal-documentos.html">Ver contrato (PDF)</a><button class="btn btn-ghost btn-sm" data-toast="Pedido de alteração enviado (exemplo)">Pedir alteração</button></div></div>
+      </div>
+    </section>
+
+    <!-- P12 histórico -->
+    <section role="tabpanel" hidden>
+      <div class="card"><div class="empty"><svg class="scene-ill" viewBox="0 0 120 84" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 56h92l-12 18H26z"/><path d="M30 56V36h32v20M44 36V22h14v14"/><path d="M4 76c8-5 14-5 22 0s14 5 22 0 14-5 22 0 14 5 22 0 14-5 22 0" opacity=".5"/></svg><b>Este é o seu primeiro ciclo.</b><span>Quando ele terminar, o resumo, os documentos e a comparação com o ciclo seguinte ficam guardados aqui.</span><a class="btn btn-secondary btn-sm" href="portal-ajuda.html">Como funciona o histórico</a></div></div>
+      <div class="note"><i data-i="clock"></i><span>Pedidos e solicitações anteriores também aparecem aqui, com status e resposta da Lastro.</span></div>
+    </section>
+  </div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+<script>
+  const ST = [
+    { n: 'Levantamento', m: 'Mês 1', k: 'done', r: 'Lastro e empresa', d: '02/09 – 30/09', c: [['ok', 'Dados da empresa confirmados (CNPJ, CNAE, empregados, setores)', 'Empresa'], ['ok', 'Levantamento preliminar de perigos', 'Lastro'], ['ok', 'Enquadramento: porte, grau de risco (NR-4) e caminho AEP/DIR', 'RT'], ['ok', 'Consulta aos trabalhadores agendada', 'Empresa']], e: ['Enquadramento e grau de risco (assinado)'] },
+    { n: 'Avaliação', m: 'Mês 2', k: 'now', r: 'Lastro, empresa e psicólogo', d: '01/10 – 30/11', c: [['ok', 'Pesquisa anônima aberta', 'Lastro'], ['pend', 'Divulgar o link e o QR aos colaboradores', 'Empresa · 20/11'], ['pend', 'Liberar horário para entrevistas e grupos', 'Empresa · 27/11'], ['', 'Análise da organização do trabalho (jornadas, metas, escalas)', 'Lastro'], ['', 'Inventário de riscos psicossociais (rascunho)', 'RT']], e: ['Inventário de riscos (rascunho)'] },
+    { n: 'Entrega', m: 'Mês 3', k: '', r: 'RT, psicólogo e Lastro', d: '01/12 – 31/12', c: [['', 'PGR ou AEP com plano de ação, assinado pelo RT', 'RT'], ['', 'Relatório psicossocial, só dados agregados, assinado pelo psicólogo', 'Psicólogo'], ['', 'Dar ciência nos documentos', 'Empresa'], ['', 'Devolutiva coletiva com direção e trabalhadores', 'Lastro + empresa']], e: ['PGR/AEP', 'Relatório psicossocial', 'Plano de ação'] },
+    { n: 'Acompanhamento', m: 'Mês 4', k: '', r: 'Empresa, com apoio da Lastro', d: '01/01 – 31/01', c: [['', 'Executar as medidas do plano de ação', 'Empresa'], ['', 'Anexar a evidência de cada medida (foto, ata, treinamento, comunicado)', 'Empresa'], ['', 'Lastro valida e orienta', 'Lastro']], e: ['Dossiê de evidências (parcial)'] },
+    { n: 'Ajustes', m: 'Mês 5', k: '', r: 'Empresa, com apoio da Lastro', d: '01/02 – 28/02', c: [['', 'Concluir medidas pendentes', 'Empresa'], ['', 'Corrigir apontamentos da validação', 'Empresa']], e: ['Dossiê de evidências'] },
+    { n: 'Revisão', m: 'Mês 6', k: '', r: 'Lastro, psicólogo e empresa', d: '01/03 – 02/03', c: [['', 'Reavaliação (pesquisa curta ou repetida — a definir)', 'Empresa'], ['', 'Avaliação de eficácia e comparação ciclo × ciclo', 'Psicólogo'], ['', 'Decidir sobre o 2º ciclo', 'Empresa']], e: ['Relatório de eficácia', 'Dossiê fechado do ciclo'] }
+  ];
+  let sel = 1;
+  const list = document.getElementById('stpList'), det = document.getElementById('stpDet');
+  function render() {
+    list.innerHTML = ST.map((s, i) => `<button class="stp-btn" type="button" data-i2="${i}" aria-pressed="${i === sel}"><span class="dotn ${s.k}">${s.k === 'done' ? ic('check') : ''}</span><div><b>${s.n}</b><span class="s">${s.m} · ${s.k === 'done' ? 'Concluído' : s.k === 'now' ? 'Em andamento' : 'Próxima'}</span></div>${ic('arrow', 's')}</button>`).join('');
+    const s = ST[sel];
+    det.innerHTML = `<div class="between"><div><span class="label muted">${s.m} · ${s.d}</span><h2 class="h3" style="margin-top:4px">${s.n}</h2></div><span class="chip ${s.k === 'done' ? 'ok' : s.k === 'now' ? 'dark' : 'ghost'}">${s.k === 'done' ? 'Concluído' : s.k === 'now' ? 'Em andamento' : 'Ainda não começou'}</span></div>
+      <p class="small muted">Quem faz: ${s.r}</p>
+      <div class="chk">${s.c.map(([k, t, w]) => `<div><span class="ico ${k}">${k === 'ok' ? ic('check') : ''}</span><span>${t}</span><span class="muted-s">${w}</span></div>`).join('')}</div>
+      <div><span class="label muted">Entregas desta etapa</span><div class="pillrow" style="margin-top:8px">${s.e.map(x => `<a class="chip info" href="portal-documentos.html">${ic('file', 's')} ${x}</a>`).join('')}</div></div>`;
+    list.querySelectorAll('.stp-btn').forEach(b => b.onclick = () => { sel = +b.dataset.i2; render(); });
+  }
+  render();
+  /* calendário: novembro de 2026 começa num domingo */
+  const EV = { 4: [['Enquadramento assinado', 'al0']], 13: [['Pesquisa: 62% de adesão', '']], 20: [['Divulgar pesquisa', 'co'], ['Prazo!', 'al']], 27: [['Confirmar setores', 'co']], 30: [['Coleta encerra', '']] };
+  let h = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map(d => `<div class="dh">${d}</div>`).join('');
+  for (let d = 1; d <= 30; d++) h += `<div>${d === 15 ? `<b style="background:var(--fg);color:#fff;width:22px;height:22px;border-radius:50%;display:grid;place-items:center">${d}</b>` : d}${(EV[d] || []).map(([t, c]) => `<span class="ev ${c === 'al0' ? '' : c}">${t}</span>`).join('')}</div>`;
+  h += '<div class="mut"></div>'.repeat(5);
+  document.getElementById('cal').innerHTML = h;
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Diagnóstico grátis e resultado (S07/S08) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="home.css"><link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('lastro-tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<style>
+  .dg { max-width:820px; margin:0 auto; }
+  .dg .card { padding:40px; } .dg .card:hover { transform:none; box-shadow:none; }
+  .draft { display:flex; gap:6px; margin-bottom:22px; } .draft i { flex:1; height:8px; border-radius:2px; background:var(--line); clip-path:polygon(0 0,100% 0,94% 100%,6% 100%); transition:background var(--t-slow); } .draft i.on { background:var(--fg); }
+  .qn { font-size:13px; font-weight:600; color:var(--fg-2); } .qq { font-size:clamp(22px,3vw,30px); line-height:1.25; font-weight:600; margin:10px 0 24px; letter-spacing:-.01em; }
+  .opts { display:grid; gap:12px; } .opt { text-align:left; padding:18px 20px; border:1.5px solid var(--line); border-radius:var(--r-md); background:var(--bg-card); font-weight:500; font-size:17px; transition:border-color var(--t-fast), background var(--t-fast), transform var(--t-fast); } .opt:hover { border-color:var(--fg); background:var(--bg-surface); } .opt:active { transform:scale(.99); }
+  .hintline { margin-top:22px; display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:14px; color:var(--fg-2); flex-wrap:wrap; }
+  .lin { position:relative; height:46px; margin:8px 0 26px; } .lin svg { width:100%; height:100%; }
+  .blocks { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:28px; } .blk { border:1px solid var(--line); border-radius:var(--r-md); padding:22px; display:grid; gap:8px; align-content:start; background:var(--bg-card); } .blk h3 { font-size:16px; font-weight:600; } .blk p { font-size:14px; color:var(--fg-2); line-height:1.5; } .blk .src { font-size:12px; color:var(--fg-2); margin-top:4px; padding:0; }
+  .blk.alert { border-left:4px solid var(--alert); }
+  .share { display:flex; gap:10px; flex-wrap:wrap; margin-top:24px; padding-top:24px; border-top:1px solid var(--line); align-items:center; }
+  .previewbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:28px; justify-content:center; font-size:13px; color:var(--fg-2); }
+  @media (max-width:700px) { .dg .card { padding:24px; } .blocks { grid-template-columns:1fr; } }
+</style>
+</head>
+<body data-page="diag">
+<main id="conteudo">
+<section class="phero" style="padding-bottom:80px"><div class="wrap">
+  <p class="crumbs"><a href="home.html">Início</a> / Diagnóstico grátis</p>
+  <p class="eyebrow-s"><i></i>Diagnóstico grátis · 2 minutos</p>
+  <h1 class="h1" style="margin-top:14px">A NR-1 vale para a sua empresa?</h1>
+  <p class="lead">Quatro perguntas, sem cadastro. O resultado traz a fonte oficial de cada afirmação.</p>
+</div></section>
+
+<section class="sec tight" data-wave style="--sec:var(--bg-page)"><div class="wrap">
+  <div class="previewbar"><span>Ver resultado de exemplo:</span><div class="seg" id="ex"><button data-v="aep">Comércio (AEP)</button><button data-v="pgr">Alimentação/indústria (PGR)</button><button data-v="mei">Sem empregado CLT</button><button data-v="" aria-pressed="true">Fazer o diagnóstico</button></div></div>
+  <div class="dg"><div class="card" id="box" aria-live="polite"></div></div>
+</div></section>
+</main>
+<script src="assets/icons.js"></script><script src="assets/site.js"></script><script src="assets/logo.js"></script><script src="assets/chrome.js"></script>
+<script>
+  const Q = [
+    { q: 'A empresa tem pelo menos um empregado com carteira assinada (CLT)?', o: ['Sim', 'Não'] },
+    { q: 'Quantos empregados a empresa tem?', o: ['Até 9', '10 a 19', '20 a 49', '50 ou mais'] },
+    { q: 'Qual é a atividade principal?', o: ['Comércio ou serviços de escritório', 'Alimentação, construção ou indústria', 'Não sei'] },
+    { q: 'A empresa é optante pelo Simples Nacional?', o: ['Sim', 'Não', 'Não sei'] }
+  ];
+  const box = document.getElementById('box'); let step = 0; const ans = [];
+  const prog = n => `<div class="draft" aria-hidden="true">${[0, 1, 2, 3].map(i => `<i class="${i <= n ? 'on' : ''}"></i>`).join('')}</div>`;
+  function ask() {
+    const c = Q[step];
+    box.innerHTML = `${prog(step)}<p class="qn">Pergunta ${step + 1} de 4</p><h2 class="qq">${c.q}</h2><div class="opts">${c.o.map(o => `<button class="opt" type="button">${o}</button>`).join('')}</div><div class="hintline"><span>${step ? '<a href="#" id="bk">← Voltar</a>' : '&nbsp;'}</span><span>${ic('lock', 's')} Nada é guardado nesta etapa</span></div>`;
+    [...box.querySelectorAll('.opt')].forEach(b => b.onclick = () => { ans[step] = b.textContent; step++; (ans[0] === 'Não' || step >= 4) ? result(ans[0] === 'Não' ? 'mei' : (ans[2] || '').startsWith('Alimentação') ? 'pgr' : 'aep') : ask(); });
+    const bk = box.querySelector('#bk'); if (bk) bk.onclick = e => { e.preventDefault(); step--; ask(); };
+  }
+  function line(pct) { return `<div class="lin" aria-hidden="true"><svg viewBox="0 0 600 46" preserveAspectRatio="none"><path d="M0 28 q15 -8 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 V46 H0z" fill="var(--water)" fill-opacity=".55"/><path d="M${pct * 6} 4 V40" stroke="var(--alert)" stroke-width="3" stroke-dasharray="5 4"/></svg></div>`; }
+  function result(kind) {
+    const mei = kind === 'mei', pgr = kind === 'pgr';
+    const via = pgr ? 'PGR completo (grau de risco estimado 3–4)' : 'AEP e DIR (grau de risco estimado 1–2)';
+    const share = `<div class="share"><span class="small muted">Compartilhar com o contador:</span><button class="btn btn-secondary btn-sm" id="cp">${ic('copy')} Copiar link</button><a class="btn btn-secondary btn-sm" href="#" onclick="event.preventDefault();window.toast&&0">${ic('wa')} WhatsApp</a><a class="btn btn-secondary btn-sm" href="#">${ic('mail')} E-mail</a></div>`;
+    box.innerHTML = mei ? `${prog(3)}<p class="qn">Resultado</p><h2 class="qq">Sem empregado CLT, a NR-1 não se aplica diretamente.</h2><p style="font-size:17px;line-height:1.6;color:var(--fg-2)">Quando a empresa contratar o primeiro empregado, a regra passa a valer. Se há trabalho sem registro, vale conversar com um contador ou advogado.</p>
+      <div class="blocks"><div class="blk"><h3>MEI sem empregados</h3><p>A NR-1 trata de empregadores com empregados regidos pela CLT.</p><p class="src">Fonte: NR-1 (MTE) · conferir redação 🔎</p></div><div class="blk"><h3>Se for contratar</h3><p>Antes do primeiro contrato, o enquadramento já mostra o caminho. A Lastro explica sem compromisso.</p></div></div>${share}
+      <div class="cta-row" style="margin-top:24px"><button class="btn btn-secondary" id="re">Refazer</button><a class="btn btn-primary" href="contato.html">Falar com a Lastro</a></div>`
+    : `${prog(3)}<p class="qn">Resultado — <span class="chip warn sm">grau de risco estimado</span></p><h2 class="qq">A NR-1 vale para a sua empresa desde 26/05/2026.</h2>
+      <span class="chip ok" style="font-size:14px;padding:8px 14px">Caminho provável: ${via}</span>${line(pgr ? 70 : 38)}
+      <p class="small muted" style="margin-top:-12px">A linha tracejada é um limite de atenção ilustrativo — não é um cálculo da sua empresa.</p>
+      <div class="blocks">
+        <div class="blk"><h3>Riscos psicossociais</h3><p>Entram no gerenciamento de riscos: metas, jornada, autonomia, relações e clareza de função precisam ser identificados e tratados.</p><p class="src">Fonte: Portaria MTE 1.419/2024 · conferir 🔎</p></div>
+        <div class="blk"><h3>${pgr ? 'PGR completo' : 'AEP e DIR'}</h3><p>${pgr ? 'Pelo grau estimado, o caminho é o PGR com inventário e plano de ação assinados pelo responsável técnico.' : 'Pelo grau estimado, o caminho é a AEP. Se ela não achar riscos relevantes, a empresa registra a DIR no site do governo.'}</p><p class="src">Fonte: NR-1 e NR-4 (MTE) · grau confirmado no enquadramento</p></div>
+        <div class="blk"><h3>CIPA e prevenção ao assédio</h3><p>Se a empresa tem CIPA, ela passa a ter também ações de prevenção ao assédio (Lei 14.457/2022). Sem CIPA, indica-se um representante.</p><p class="src">Fonte: Lei 14.457/2022 · conferir aplicação por porte 🔎</p></div>
+        <div class="blk alert"><h3>Multas e o STF</h3><p>O STF suspendeu a eficácia sancionatória por enquanto. A <b>obrigação continua</b> e os registros podem ser usados em ação trabalhista.</p><p class="src">ADPF 1316 · atualizado em 15/11/2026 · prazo a verificar 🔎</p></div>
+      </div>
+      <p class="small muted" style="margin-top:18px">Este resultado é uma <b>estimativa</b> a partir de quatro respostas. O enquadramento definitivo é feito pelo responsável técnico, com os dados da empresa.</p>${share}
+      <div class="cta-row" style="margin-top:24px"><a class="btn btn-primary" href="solicitar.html">Pedir atendimento <i data-i="arrow" class="arrow"></i></a><button class="btn btn-secondary" id="re">Refazer</button></div>`;
+    expandIcons(box);
+    const re = box.querySelector('#re'); if (re) re.onclick = () => { step = 0; ans.length = 0; setEx(''); ask(); };
+    const cp = box.querySelector('#cp'); if (cp) cp.onclick = () => { try { navigator.clipboard.writeText(location.href); } catch (e) {} cp.lastChild.textContent = ' Link copiado'; };
+  }
+  const exb = [...document.querySelectorAll('#ex button')];
+  function setEx(v) { exb.forEach(b => b.setAttribute('aria-pressed', b.dataset.v === v)); }
+  exb.forEach(b => b.onclick = () => { setEx(b.dataset.v); if (b.dataset.v) result(b.dataset.v); else { step = 0; ans.length = 0; ask(); } });
+  const r = new URLSearchParams(location.search).get('resultado'); if (r) { setEx(r); result(r); } else ask();
+</script>
+</body>
+</html>

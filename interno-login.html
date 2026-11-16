@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Painel interno · Entrar (A00) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/ui.css">
+<style>
+  body { min-height:100vh; display:grid; place-items:center; background:var(--bg-deep); padding:24px; }
+  .box { width:min(440px,100%); background:var(--bg-card); border-radius:var(--r-lg); padding:40px; display:grid; gap:20px; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+  .env { justify-self:start; font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:3px 8px; border-radius:3px; background:var(--bg-deep); color:#fff; }
+  .btn.full { width:100%; }
+</style>
+</head>
+<body>
+<form class="box" onsubmit="event.preventDefault();location.href='interno-carteira.html'">
+  <div class="inline" style="justify-content:space-between"><span class="logo" data-logo="horizontal" style="height:28px"></span><span class="env">Painel interno</span></div>
+  <div><h1 class="h3">Entrar na operação</h1><p class="small muted" style="margin-top:6px">Acesso da equipe Lastro e dos parceiros habilitados. Todo acesso a dados fica registrado.</p></div>
+  <label class="field">E-mail<input type="text" value="ana@lastro.example"></label>
+  <label class="field">Senha<input type="password" value="exemplo-123"></label>
+  <label class="field">Código de verificação<input type="text" value="482 913"><span class="hint">Obrigatório no painel interno: protege dados de todos os clientes.</span></label>
+  <button class="btn btn-primary full" type="submit">Entrar <i data-i="arrow"></i></button>
+  <p class="caption muted">Parceiros (responsável técnico, psicólogo) entram aqui se a decisão nº 4 for liberar o painel a eles; senão, só a equipe Lastro. <a href="portal-login.html">É cliente? Entre no portal.</a></p>
+</form>
+<script src="assets/icons.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

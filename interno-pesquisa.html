@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Painel interno · Pesquisa e análise (A07/A08) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+<style>
+  .tabs-wrap section[role=tabpanel] { padding-top:24px; display:grid; gap:20px; }
+  .qr { width:120px; height:120px; background:conic-gradient(var(--fg) 0 25%, var(--bg-surface-strong) 0 50%, var(--fg) 0 75%, var(--bg-surface-strong) 0); border-radius:8px; border:6px solid var(--bg-card); outline:1px solid var(--line); }
+</style>
+</head>
+<body data-shell="interno" data-page="pesquisa" data-crumb="Pesquisa e análise">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Pesquisa e análise</h1><p>Instrumento, coleta anônima e leitura agregada. Nunca mostra quem respondeu.</p></div>
+    <label class="field" style="min-width:260px">Cliente<select><option>Padaria Sol Nascente</option><option>Mercadinho Bom Preço</option></select></label></section>
+  <div data-tabs class="tabs-wrap">
+    <div class="tabs" role="tablist" aria-label="Seções"><button role="tab" data-tab="coleta">Coleta (A07)</button><button role="tab" data-tab="analise">Análise agregada (A08)</button></div>
+
+    <section role="tabpanel">
+      <div class="kpis"><article class="card kpi"><span class="label">Adesão</span><p class="v num">62%</p><p>31 de 50 empregados</p></article><article class="card kpi"><span class="label">Encerra em</span><p class="v num">7 dias</p><p>22/11/2026</p></article><article class="card kpi"><span class="label">Instrumento</span><p class="v num" style="font-size:22px">v1.2</p><p>Versão do questionário</p></article></div>
+      <div class="cols even">
+        <article class="card stack"><h2>Link e QR da coleta</h2><div class="inline" style="gap:20px;align-items:flex-start"><div class="qr" role="img" aria-label="QR code de exemplo"></div><div class="stack-s"><label class="field">Link<input type="text" value="https://pesquisa.lastro.example/sn-7K2P" readonly></label><div class="inline"><button class="btn btn-secondary btn-sm" data-toast="Link copiado (exemplo)"><i data-i="copy"></i> Copiar</button><button class="btn btn-secondary btn-sm" data-toast="QR baixado (exemplo)"><i data-i="download"></i> QR</button></div></div></div>
+          <div class="note"><i data-i="lock"></i><span>O link é igual para todos: o sistema não registra quem abriu nem liga resposta a pessoa.</span></div></article>
+        <article class="card stack"><h2>Controle da coleta</h2><div class="setting"><div><b>Coleta aberta</b><span class="muted-s" style="display:block">Fechar impede novas respostas</span></div><label class="sw"><input type="checkbox" checked><i></i></label></div>
+          <div class="setting"><div><b>Lembrete automático ao cliente</b><span class="muted-s" style="display:block">Se a adesão ficar abaixo de 50% a 5 dias do fim</span></div><label class="sw"><input type="checkbox" checked><i></i></label></div>
+          <div class="inline"><button class="btn btn-secondary" data-toast="Prazo prorrogado em 7 dias (exemplo)">Prorrogar prazo</button><button class="btn btn-danger" data-toast="Coleta encerrada (exemplo)">Encerrar coleta</button></div></article>
+      </div>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <div class="note"><i data-i="shield"></i><span>Leitura agregada: recortes com menos de 5 respostas ficam protegidos. O acesso a registros individuais depende da decisão nº 6 e, se liberado, é só do psicólogo e fica na auditoria.</span></div>
+      <article class="card"><h2>Mapa de calor por setor e fator</h2>
+        <div class="heat" role="table" aria-label="Mapa de calor">
+          <div class="hr"><span></span><span class="hh">Demandas</span><span class="hh">Autonomia</span><span class="hh">Apoio</span><span class="hh">Relações</span><span class="hh">Clareza</span><span class="hh">Mudanças</span></div>
+          <div class="hr"><b>Produção · 15</b><span class="hc l5">78</span><span class="hc l2">44</span><span class="hc l1">31</span><span class="hc l3">55</span><span class="hc l2">46</span><span class="hc l4">64</span></div>
+          <div class="hr"><b>Atendimento · 9</b><span class="hc l4">66</span><span class="hc l3">52</span><span class="hc l2">38</span><span class="hc l3">57</span><span class="hc l2">42</span><span class="hc l3">55</span></div>
+          <div class="hr"><b>Entrega · 4</b><span class="hc na" style="grid-column:2 / -1"><i data-i="lock" class="s"></i>&nbsp;Dados protegidos: menos de 5 respostas</span></div></div></article>
+      <div class="cols even"><article class="card"><h2>Ressalvas</h2><p class="small">Adesão de 62%: acima do mínimo de 50%. Texto livre não é exibido ao cliente; só o psicólogo revisa e resume.</p></article>
+        <article class="card"><h2>Próximo passo</h2><p class="small">Psicólogo 2 conclui a leitura e o RT cruza com o inventário.</p><a class="btn btn-secondary" href="interno-inventario.html" style="margin-top:12px">Ir ao inventário</a></article></div>
+    </section>
+  </div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

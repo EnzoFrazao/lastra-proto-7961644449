@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Verificar documento (S16, proposta) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="home.css"><link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('lastro-tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<style>
+  .vf { max-width:720px; margin:0 auto; display:grid; gap:24px; }
+  .vrow { display:grid; grid-template-columns:150px 1fr; gap:12px; padding:12px 0; border-top:1px solid var(--line); font-size:15px; } .vrow:first-child { border-top:0; } .vrow span { color:var(--fg-2); font-size:13px; font-weight:600; }
+  .res { display:grid; gap:12px; } .res .big { width:60px; height:60px; border-radius:50%; display:grid; place-items:center; } .res .big svg.i { width:28px; height:28px; stroke-width:2.6; } .res.ok .big { background:var(--water-soft); } .res.no .big { background:var(--alert-soft); color:var(--alert); } .res.rev .big { background:var(--bg-surface-strong); }
+  .try { display:flex; gap:10px; flex-wrap:wrap; align-items:center; font-size:13px; color:var(--fg-2); }
+  .code { display:flex; gap:10px; flex-wrap:wrap; } .code input { flex:1; min-width:220px; font:inherit; font-size:18px; letter-spacing:.04em; padding:16px; border:1.5px solid var(--line); border-radius:var(--r-sm); background:var(--bg-page); color:var(--fg); text-transform:uppercase; }
+</style>
+</head>
+<body data-page="verificar">
+<main id="conteudo">
+<section class="phero"><div class="wrap">
+  <p class="crumbs"><a href="home.html">Início</a> / Verificar documento</p>
+  <p class="eyebrow-s"><i></i>Página proposta · integridade de documentos</p>
+  <h1 class="h1" style="margin-top:14px">Este documento é autêntico?</h1>
+  <p class="lead">Digite o código impresso no documento ou leia o QR. Mostramos se ele existe, quem assinou e se continua valendo.</p>
+</div></section>
+<section class="sec tight" data-wave style="--sec:var(--bg-page)"><div class="wrap"><div class="vf">
+  <form class="cardx static" id="f" style="padding:32px"><label class="field" for="c">Código de verificação</label><div class="code"><input id="c" value="LST-2026-0388-9F3K" autocomplete="off" aria-describedby="h"><button class="btn btn-primary" type="submit">Verificar</button></div>
+    <p class="try" id="h">Exemplos para testar: <button class="chip" type="button" data-c="LST-2026-0388-9F3K">válido</button><button class="chip" type="button" data-c="LST-2026-0101-REV1">revogado</button><button class="chip" type="button" data-c="LST-0000">inválido</button></p></form>
+  <div class="cardx static" id="out" aria-live="polite" style="padding:32px"></div>
+  <p class="small muted">A verificação confere a integridade do arquivo (se não foi alterado) e o registro de assinatura. Ela não substitui a análise do conteúdo do documento.</p>
+</div></div></section>
+</main>
+<script src="assets/icons.js"></script><script src="assets/site.js"></script><script src="assets/logo.js"></script><script src="assets/chrome.js"></script>
+<script>
+  const out = document.getElementById('out'), c = document.getElementById('c');
+  const R = r => `<div class="vrow"><span>${r[0]}</span><div>${r[1]}</div></div>`;
+  function check() {
+    const v = c.value.trim().toUpperCase();
+    if (v === 'LST-2026-0388-9F3K') out.innerHTML = `<div class="res ok"><div class="big">${ic('check')}</div><h2 class="h3">Documento válido</h2></div><div style="margin-top:8px">${[['Documento', 'Enquadramento e grau de risco · v1'], ['Empresa', 'Padaria Sol Nascente Ltda. (fictícia)'], ['Assinado por', 'Responsável técnico de SST · assinatura eletrônica avançada'], ['Data', '04/11/2026 14:02'], ['Norma vigente na data', 'NR-1 · versão de 04/11/2026 🔎'], ['Integridade', 'Arquivo não alterado desde a assinatura']].map(R).join('')}</div>`;
+    else if (v === 'LST-2026-0101-REV1') out.innerHTML = `<div class="res rev"><div class="big">${ic('refresh')}</div><h2 class="h3">Documento revogado</h2><p class="muted">Este documento foi substituído por uma versão mais nova em 20/10/2026. Peça a versão atual à empresa.</p></div>`;
+    else out.innerHTML = `<div class="res no"><div class="big">${ic('x')}</div><h2 class="h3">Código não encontrado</h2><p class="muted">Confira se digitou o código completo. Se o código estiver certo e o documento não for encontrado, desconfie dele e fale com a Lastro.</p><a class="btn btn-secondary btn-sm" style="justify-self:start" href="contato.html">Falar com a Lastro</a></div>`;
+    expandIcons(out);
+  }
+  document.getElementById('f').addEventListener('submit', e => { e.preventDefault(); check(); });
+  document.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { c.value = b.dataset.c; check(); });
+  check();
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Portal · Notificações (P14) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+</head>
+<body data-shell="portal" data-page="notif" data-nav="" data-crumb="Notificações">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Notificações</h1><p>Avisos do programa e como você quer receber. O sino no topo mostra só o que é novo.</p></div><button class="btn btn-secondary btn-sm" data-toast="Tudo marcado como lido (exemplo)">Marcar tudo como lido</button></section>
+  <div class="cols">
+    <div class="card flat">
+      <div class="item"><span class="dot" style="color:var(--alert)"></span><div><b>Inventário enviado para revisão</b><span class="s">Hoje, 09:12 · Meu programa</span></div><a class="btn btn-ghost btn-sm" href="portal-documentos.html">Ver</a></div>
+      <div class="item"><span class="dot" style="color:var(--alert)"></span><div><b>Nova pendência: divulgar a pesquisa</b><span class="s">Ontem, 16:40 · Pendências · prazo 20/11</span></div><a class="btn btn-ghost btn-sm" href="portal-pendencias.html">Ver</a></div>
+      <div class="item"><span class="dot" style="color:var(--line)"></span><div><b>Pesquisa atingiu 62% de adesão</b><span class="s">13/11 · Pesquisa e resultados</span></div><a class="btn btn-ghost btn-sm" href="portal-resultados.html">Ver</a></div>
+      <div class="item"><span class="dot" style="color:var(--line)"></span><div><b>Enquadramento assinado</b><span class="s">04/11 · Documentos</span></div><a class="btn btn-ghost btn-sm" href="portal-documentos.html">Ver</a></div>
+      <div class="item"><span class="dot" style="color:var(--line)"></span><div><b>Parcela 3 vence em 25/11</b><span class="s">03/11 · Contrato e pagamento</span></div><a class="btn btn-ghost btn-sm" href="portal-programa.html#contrato">Ver</a></div>
+      <div class="pager"><span>5 de 14</span><a href="#">Ver mais antigas</a></div>
+    </div>
+    <div class="card"><h2>Como receber</h2>
+      <div class="setting"><div><b>No portal</b><span class="s">Sempre ligado</span></div><label class="sw"><input type="checkbox" checked disabled><i></i></label></div>
+      <div class="setting"><div><b>Por e-mail</b><span class="s">marina@padariasolnascente.example</span></div><label class="sw"><input type="checkbox" checked><i></i></label></div>
+      <div class="setting"><div><b>Por WhatsApp</b><span class="s">Só prazos e pendências · (98) 9 0000-0000</span></div><label class="sw"><input type="checkbox"><i></i></label></div>
+      <div class="setting"><div><b>Lembrete 3 dias antes do prazo</b><span class="s">Pendências da empresa</span></div><label class="sw"><input type="checkbox" checked><i></i></label></div>
+      <div class="setting"><div><b>Resumo semanal</b><span class="s">Segunda-feira, 8h</span></div><label class="sw"><input type="checkbox"><i></i></label></div>
+      <button class="btn btn-primary btn-sm" style="margin-top:12px" data-toast="Preferências salvas (exemplo)">Salvar preferências</button></div>
+  </div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

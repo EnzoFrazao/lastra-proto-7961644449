@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Home (S01) · protótipo</title>
+<meta name="description" content="Protótipo visual da Home do site da Lastro, claro e escuro, com a descida ao lastro.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="home.css"><link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('lastro-tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v9H5z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-theme" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.6.7.7-2.5-.3-.4A8 8 0 0 1 12 4zm-3 3.5c-.3 0-.7.1-1 .5-.4.5-1 1.4-1 2.6s.9 2.6 1 2.8c.2.2 2 3.2 5 4.3 2.5 1 3 .8 3.5.7.6-.1 1.8-.8 2-1.5.3-.7.3-1.3.2-1.5l-.5-.3-1.8-.9c-.3-.1-.5-.2-.7.1l-.8 1c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.8-1.4-1.700-1.6-2-.2-.3 0-.4.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5l-.8-2c-.2-.5-.4-.5-.6-.5z"/></symbol>
+</svg>
+
+<a class="skip sr-only" href="#conteudo">Ir para o conteúdo</a>
+
+<header class="site-header" id="topo">
+  <div class="wrap hdr">
+    <a href="#topo" class="logo" data-logo="horizontal" aria-label="Lastro — início" style="height:34px"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="nr1.html">NR-1</a><a href="servicos.html">Serviços</a><a href="como-funciona.html">Como funciona</a><a href="por-que.html">Por que a Lastro</a><a href="conteudos.html">Conteúdos</a><a href="sobre.html">Sobre</a>
+    </nav>
+    <div class="hdr-actions">
+      <a class="area" href="portal-login.html" title="Leva ao portal (endereço em aberto: /cliente ou app.)"><svg width="18" height="18"><use href="#i-lock"/></svg><span>Área do cliente</span></a>
+      <a class="btn btn-primary btn-sm cta-hdr" href="#diagnostico">Diagnóstico grátis <svg class="arrow"><use href="#i-arrow"/></svg></a>
+      <button class="theme-toggle" type="button" id="themeToggle" aria-label="Alternar tema claro e escuro"><svg width="20" height="20"><use href="#i-theme"/></svg></button>
+      <button class="menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mnav" id="mnav" hidden><a href="nr1.html">NR-1</a><a href="servicos.html">Serviços</a><a href="como-funciona.html">Como funciona</a><a href="por-que.html">Por que a Lastro</a><a href="conteudos.html">Conteúdos</a><a href="sobre.html">Sobre</a><a href="faq.html">Dúvidas frequentes</a><a href="contato.html">Contato</a><a href="portal-login.html">Área do cliente</a><a class="btn btn-primary" href="#diagnostico">Diagnóstico grátis</a></div>
+
+<aside class="ruler" id="ruler" aria-hidden="true"><span class="ruler-zone" id="rulerZone">Superfície</span><span class="ruler-track"><i id="rulerFill"></i></span></aside>
+
+<main id="conteudo">
+
+<!-- ============ 1 · HERO CÊNICO (M0) ============ -->
+<section class="hero-track" id="hero" data-zone="Superfície" aria-label="Apresentação">
+  <div class="hero-stick">
+    <div class="wrap hero-grid">
+      <div class="stages">
+        <div class="stage on" data-stage="a">
+          <p class="label eyebrow"><i></i>NR-1 · riscos psicossociais · São Luís</p>
+          <h1 class="display">Toda empresa carrega um peso.</h1>
+          <p class="lead">Desde 26 de maio de 2026, a NR-1 exige que toda empresa com funcionário CLT saiba onde está o limite. A Lastro mede, organiza e documenta — para a sua empresa seguir à tona.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#diagnostico">Descobrir se minha empresa é obrigada — grátis <svg class="arrow"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-secondary" href="#contato">Falar com a Lastro</a>
+          </div>
+          <p class="small muted">2 minutos · sem cadastro · fonte oficial em cada resposta</p>
+        </div>
+        <div class="stage" data-stage="b">
+          <p class="label eyebrow alert"><i></i>A linha de carga sumiu</p>
+          <h2 class="display">Carga sem limite derruba qualquer empresa.</h2>
+          <p class="lead">Metas impossíveis, jornada sem fim, chefia hostil. Ninguém vê a água subir — até ela passar da marca. Quando o limite não é medido, o problema aparece sozinho: afastamentos, rotatividade, processo.</p>
+        </div>
+        <div class="stage" data-stage="c">
+          <p class="label eyebrow"><i></i>Medir · Agir · Provar</p>
+          <h2 class="display">Peso bem distribuído mantém a empresa à tona.</h2>
+          <p class="lead">O lastro é o peso certo no fundo do casco: não tira a carga, devolve o equilíbrio — e deixa o registro de que a linha voltou a aparecer.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#diagnostico">Descobrir se minha empresa é obrigada — grátis <svg class="arrow"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-secondary" href="#contato">Falar com a Lastro</a>
+          </div>
+        </div>
+      </div>
+
+      <figure class="scene" id="scene">
+        <svg id="sceneSvg" viewBox="0 0 600 560" role="img" aria-label="Ilustração: um navio carregado de cubos rotulados como metas impossíveis, jornada sem fim e assédio afunda até a linha de carga sumir; entra o lastro, o navio se endireita e a linha volta.">
+          <circle cx="500" cy="96" r="54" fill="var(--water-soft)"/>
+          <g id="seaBack"><path class="sea-wave back" d=""/></g>
+          <g id="ship">
+            <g id="keel"></g>
+            <path d="M64 292V246H116V292Z" fill="var(--fg)"/>
+            <path d="M74 256H106V266H74Z" fill="var(--water-soft)"/>
+            <path d="M88 206H92V246H88Z" fill="var(--fg)"/>
+            <path d="M52 300H548L488 420H112Z" fill="var(--fg)"/>
+            <path d="M46 292H554V300H46Z" fill="var(--fg-2)"/>
+            <path d="M88 372H512L501 394H99Z" fill="var(--alert)"/>
+            <path d="M150 333a17 17 0 1 0 .01 0ZM150 337a13 13 0 1 1-.01 0ZM128 348.500H172V351.500H128Z" fill="var(--bg-page)" fill-rule="evenodd"/>
+            <g id="cubes"></g>
+            <g id="chips"></g>
+          </g>
+          <g id="seaFront"><path class="sea-wave front" d=""/></g>
+        </svg>
+        <figcaption class="gauge" id="gauge" data-state="ok"><i class="dot"></i><span id="gaugeTxt">Linha de carga visível</span></figcaption>
+        <div class="scene-ctrl">
+          <div class="dots" id="dots" role="group" aria-label="Etapas da animação"><button type="button" data-go="a" class="on" aria-label="Ver: a carga entra"></button><button type="button" data-go="b" aria-label="Ver: a linha de carga some"></button><button type="button" data-go="c" aria-label="Ver: o lastro entra"></button></div>
+          <button class="pause" id="pauseBtn" type="button" aria-pressed="false" aria-label="Pausar animação"><svg class="ic-pause" width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><rect x="2" y="1" width="3.500" height="12" rx="1"/><rect x="8.500" y="1" width="3.500" height="12" rx="1"/></svg><svg class="ic-play" width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M3 1.500v11l9-5.500z"/></svg></button>
+        </div>
+      </figure>
+    </div>
+    <p class="scroll-hint label" id="scrollHint">Role para descer ao lastro</p>
+  </div>
+</section>
+
+<!-- ============ 2 · PROBLEMA ============ -->
+<section class="sec s-problema" id="problema" data-wave data-zone="Linha d'água" style="--sec:var(--depth-1)">
+  <div class="wrap">
+    <p class="label muted reveal">O peso que ninguém mede</p>
+    <h2 class="h1 reveal">Ninguém vê o limite — até passar dele.</h2>
+    <p class="lead reveal narrow">A NR-1 passou a exigir que a empresa identifique e trate os riscos psicossociais do trabalho. Para uma empresa pequena, isso é mais um assunto sem dono.</p>
+
+    <div class="cards3">
+      <article class="card metric reveal">
+        <span class="chip">Vale desde</span>
+        <p class="num big" data-count-date>26/05/2026</p>
+        <p>A gestão de riscos psicossociais passou a fazer parte do GRO da NR-1 (Portaria MTE 1.419/2024).</p>
+        <p class="src caption muted">Fonte: MTE · verificar redação final 🔎</p>
+      </article>
+      <article class="card metric reveal">
+        <span class="chip warn">Dado a verificar</span>
+        <p class="num big"><span data-count="546254">546.254</span></p>
+        <p>benefícios por transtornos mentais concedidos pelo INSS em 2025.</p>
+        <p class="src caption muted">Fonte: INSS/Previdência · conferir antes de publicar 🔎</p>
+      </article>
+      <article class="card metric reveal">
+        <span class="chip warn">Dado a verificar</span>
+        <p class="num big">~<span data-count="2650000">2,65</span> mi</p>
+        <p>de empresas com empregados no Brasil — quase todas pequenas.</p>
+        <p class="src caption muted">Fonte: a definir 🔎</p>
+      </article>
+    </div>
+
+    <div class="stf reveal">
+      <div class="stf-head"><span class="chip ok">Atualizado em 15/11/2026</span><h3 class="h4">O que o STF suspendeu — e o que não</h3></div>
+      <div class="stf-cols">
+        <div><p class="label muted">Suspenso, por enquanto</p><p>A eficácia sancionatória: as multas pela nova regra (ADPF 1316). A suspensão foi prorrogada em 24/09/2026 por 90 dias.</p></div>
+        <div><p class="label">Continua valendo</p><p>A obrigação de gerir os riscos psicossociais — e o uso desses registros em ação trabalhista.</p></div>
+      </div>
+      <p class="src caption muted">Fonte: STF · ADPF 1316 · prazo exato a confirmar 🔎</p>
+    </div>
+
+    <div class="signs reveal">
+      <p class="label muted">Sinais de carga demais</p>
+      <ul><li>Metas impossíveis</li><li>Jornada sem fim</li><li>Chefia hostil</li><li>Zero autonomia</li><li>Assédio</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 · SOLUÇÃO ============ -->
+<section class="sec s-solucao" id="solucao" data-wave data-zone="Casco" style="--sec:var(--depth-2)">
+  <div class="wrap">
+    <p class="label muted reveal">O lastro</p>
+    <h2 class="h1 reveal">Medir. Agir. Provar.</h2>
+    <p class="lead reveal narrow">Um programa de seis meses, feito por gente de São Luís, com responsável técnico e psicólogo habilitados. Você participa pouco; a empresa ganha o registro completo.</p>
+    <div class="trio">
+      <article class="piece reveal" style="--d:0ms">
+        <svg class="piece-ic" viewBox="10 10 175 200" aria-hidden="true"><path d="M15.80 67.00L94.20 112.00L94.00 153.20L52.00 128.73L51.00 177.00L49.00 177.43L15.80 158.00Z" fill="var(--fg)"/><path d="M96.40 16.00L175.60 62.00L97.00 107.38L71.00 92.43L62.00 87.11L62.87 86.00L104.24 61.00L62.11 36.00Z" fill="var(--water)" opacity=".35"/><path d="M133.50 93.00L136.00 93.00L136.00 141.00L179.00 116.88L179.50 157.00L101.00 203.33L100.66 112.00Z" fill="var(--water)" opacity=".35"/></svg>
+        <h3 class="h3">Medir</h3>
+        <p>Pesquisa anônima com os colaboradores e inventário dos riscos. Resultados só aparecem em grupos de 5 pessoas ou mais.</p>
+      </article>
+      <article class="piece reveal" style="--d:90ms">
+        <svg class="piece-ic" viewBox="10 10 175 200" aria-hidden="true"><path d="M15.80 67.00L94.20 112.00L94.00 153.20L52.00 128.73L51.00 177.00L49.00 177.43L15.80 158.00Z" fill="var(--water)" opacity=".35"/><path d="M96.40 16.00L175.60 62.00L97.00 107.38L71.00 92.43L62.00 87.11L62.87 86.00L104.24 61.00L62.11 36.00Z" fill="var(--fg)"/><path d="M133.50 93.00L136.00 93.00L136.00 141.00L179.00 116.88L179.50 157.00L101.00 203.33L100.66 112.00Z" fill="var(--water)" opacity=".35"/></svg>
+        <h3 class="h3">Agir</h3>
+        <p>Plano de ação com medidas, responsáveis e prazos — o que a empresa pode mudar já, sem virar projeto de RH.</p>
+      </article>
+      <article class="piece reveal" style="--d:180ms">
+        <svg class="piece-ic" viewBox="10 10 175 200" aria-hidden="true"><path d="M15.80 67.00L94.20 112.00L94.00 153.20L52.00 128.73L51.00 177.00L49.00 177.43L15.80 158.00Z" fill="var(--water)" opacity=".35"/><path d="M96.40 16.00L175.60 62.00L97.00 107.38L71.00 92.43L62.00 87.11L62.87 86.00L104.24 61.00L62.11 36.00Z" fill="var(--water)" opacity=".35"/><path d="M133.50 93.00L136.00 93.00L136.00 141.00L179.00 116.88L179.50 157.00L101.00 203.33L100.66 112.00Z" fill="var(--fg)"/></svg>
+        <h3 class="h3">Provar</h3>
+        <p>PGR ou AEP, relatório e dossiê assinados por quem responde tecnicamente, guardados no portal com histórico.</p>
+      </article>
+    </div>
+    <p class="note reveal"><svg width="18" height="18"><use href="#i-check"/></svg> A Lastro entrega o insumo técnico. Quem revisa e assina é o responsável técnico habilitado — não emitimos laudo.</p>
+    <div class="center reveal"><a class="btn btn-primary" href="#diagnostico">Ver se a NR-1 vale para mim <svg class="arrow"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ============ 4 · DIAGNÓSTICO GRÁTIS ============ -->
+<section class="sec s-diag" id="diagnostico" data-zone="Casco" style="--sec:var(--depth-2)">
+  <div class="wrap diag-grid">
+    <div>
+      <p class="label muted reveal">Diagnóstico grátis</p>
+      <h2 class="h1 reveal">Quatro perguntas. Dois minutos.</h2>
+      <p class="lead reveal">Sem cadastro. Cada resposta traz a fonte oficial. No fim, você leva o resultado para o contador.</p>
+    </div>
+    <div class="card diag reveal" id="diag" aria-live="polite">
+      <div class="diag-progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+      <p class="label muted" id="dStep">Pergunta 1 de 4</p>
+      <h3 class="h3" id="dQ"></h3>
+      <div class="diag-opts" id="dOpts"></div>
+      <div class="diag-nav"><button class="btn btn-secondary btn-sm" id="dBack" type="button" hidden>Voltar</button><span class="small muted" id="dHint">Escolha uma opção para continuar.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · COMO FUNCIONA ============ -->
+<section class="sec s-como" id="como-funciona" data-wave data-zone="Casco" style="--sec:var(--depth-3)">
+  <div class="wrap">
+    <p class="label muted reveal">Como funciona</p>
+    <h2 class="h1 reveal">Seis meses. Um cubo completo.</h2>
+    <p class="lead reveal narrow">A cada etapa uma peça do lastro se encaixa. No sexto mês o ciclo fecha — e a próxima avaliação já tem com o que se comparar.</p>
+    <div class="timeline" id="timeline">
+      <div class="tl-line"><i id="tlFill"></i></div>
+      <ol>
+        <li><span class="tl-node"></span><span class="label muted">Mês 1</span><h3 class="h4">Levantamento</h3><p class="small">Enquadramento da empresa, grau de risco e consulta ao responsável técnico.</p></li>
+        <li><span class="tl-node"></span><span class="label muted">Mês 2</span><h3 class="h4">Avaliação</h3><p class="small">Pesquisa anônima e inventário dos fatores de risco.</p></li>
+        <li><span class="tl-node"></span><span class="label muted">Mês 3</span><h3 class="h4">Entrega</h3><p class="small">PGR ou AEP, plano de ação e devolutiva coletiva.</p></li>
+        <li><span class="tl-node"></span><span class="label muted">Mês 4</span><h3 class="h4">Acompanhamento</h3><p class="small">Medidas em andamento, dúvidas respondidas pelo portal.</p></li>
+        <li><span class="tl-node"></span><span class="label muted">Mês 5</span><h3 class="h4">Ajustes</h3><p class="small">Plano revisto com o que mudou na empresa.</p></li>
+        <li><span class="tl-node"></span><span class="label muted">Mês 6</span><h3 class="h4">Revisão</h3><p class="small">Eficácia das medidas, dossiê fechado e renovação do ciclo.</p></li>
+      </ol>
+      <div class="tl-cube" aria-hidden="true"><span class="logo" data-logo="simbolo" id="tlCube" style="height:96px"></span></div>
+    </div>
+    <div class="center reveal"><a class="btn btn-primary" href="#contato">Quero conversar sobre o meu ciclo <svg class="arrow"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ============ 6 · RECEBE / NÃO FAZ ============ -->
+<section class="sec s-recebe" id="recebe" data-zone="Casco" style="--sec:var(--depth-3)">
+  <div class="wrap two">
+    <article class="card reveal">
+      <h3 class="h3">O que você recebe</h3>
+      <ul class="ticks">
+        <li>PGR ou AEP, conforme o enquadramento da empresa</li>
+        <li>Relatório psicossocial com resultados por grupo (n ≥ 5)</li>
+        <li>Plano de ação com responsável e prazo</li>
+        <li>Dossiê de evidências com assinatura e verificação</li>
+        <li>Acesso ao portal durante todo o ciclo</li>
+        <li>Devolutiva coletiva para a equipe</li>
+      </ul>
+    </article>
+    <article class="card reveal" style="--d:90ms">
+      <h3 class="h3">O que a Lastro não faz</h3>
+      <ul class="crosses">
+        <li>Não emite laudo nem faz avaliação psicológica individual</li>
+        <li>Não substitui NR-15/16, LTCAT ou PCMSO</li>
+        <li>Não promete isenção de multa nem resultado de fiscalização</li>
+        <li>Não identifica quem respondeu a pesquisa</li>
+        <li>Não é canal de denúncia</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 7 · POR QUE A LASTRO ============ -->
+<section class="sec on-deep s-por" id="por-que" data-wave data-zone="Porão" style="--sec:var(--bg-deep)">
+  <div class="wrap">
+    <p class="label reveal on-deep-2">Por que a Lastro</p>
+    <h2 class="h1 reveal">Peso no lugar certo, sem exagero.</h2>
+    <div class="cards4">
+      <article class="dcard reveal"><h3 class="h4">Honestidade normativa</h3><p class="small">Dizemos o que a norma exige — e o que o STF suspendeu. Cada afirmação traz fonte e data.</p></article>
+      <article class="dcard reveal" style="--d:70ms"><h3 class="h4">Anonimato por desenho</h3><p class="small">Não guardamos quem respondeu. Grupos com menos de 5 pessoas nunca aparecem.</p></article>
+      <article class="dcard reveal" style="--d:140ms"><h3 class="h4">Preço anual, sem surpresa</h3><p class="small">Um contrato por ano, dois ciclos, pago uma vez — ou em até 12 parcelas.</p></article>
+      <article class="dcard reveal" style="--d:210ms"><h3 class="h4">Gente de São Luís</h3><p class="small">Atendimento local, com responsável técnico e psicólogo habilitados no Maranhão.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8 · PROVA ============ -->
+<section class="sec on-deep s-prova" id="prova" data-zone="Porão" style="--sec:var(--bg-deep)">
+  <div class="wrap">
+    <h2 class="h2 reveal">Quem assina o trabalho</h2>
+    <div class="prova-grid">
+      <div class="reveal"><span class="chip ghost on-deep-chip">Responsável técnico de SST</span><p class="small on-deep-2">Profissional habilitado, registro no conselho. Assina PGR/AEP e inventário.</p></div>
+      <div class="reveal" style="--d:80ms"><span class="chip ghost on-deep-chip">Psicólogo · CRP-22/MA</span><p class="small on-deep-2">Analisa os resultados agregados e assina o relatório psicossocial.</p></div>
+    </div>
+    <div class="placeholder reveal" role="note">
+      <span class="label">Espaço reservado</span>
+      <p>Depoimentos de clientes entram aqui quando existirem. A Lastro ainda não tem clientes — nenhum depoimento será inventado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9 · CONTRATAÇÃO ============ -->
+<section class="sec on-deep s-contrata" id="contratacao" data-zone="Porão" style="--sec:var(--bg-deep)">
+  <div class="wrap">
+    <p class="label on-deep-2 reveal">Contratação</p>
+    <h2 class="h1 reveal">Um contrato por ano. Dois ciclos.</h2>
+    <p class="lead reveal narrow on-deep-2">Você contrata uma vez e tem acompanhamento no semestre. O valor depende do número de empregados e do grau de risco da atividade.</p>
+    <div class="cards3 faixas">
+      <article class="dcard reveal"><span class="label on-deep-2">Faixa 1 ◇</span><h3 class="h3">Até 19 empregados</h3><p class="small">Valor sob consulta</p></article>
+      <article class="dcard reveal" style="--d:80ms"><span class="label on-deep-2">Faixa 2 ◇</span><h3 class="h3">20 a 49 empregados</h3><p class="small">Valor sob consulta</p></article>
+      <article class="dcard reveal" style="--d:160ms"><span class="label on-deep-2">Faixa 3 ◇</span><h3 class="h3">50 ou mais</h3><p class="small">Valor sob consulta</p></article>
+    </div>
+    <p class="small on-deep-2 reveal">◇ Faixas provisórias, a confirmar. Pagamento à vista com desconto ou em até 12 vezes.</p>
+    <div class="reveal"><a class="btn btn-light" href="#contato">Pedir proposta <svg class="arrow"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ============ 10 · FAQ ============ -->
+<section class="sec on-deep s-faq" id="faq" data-zone="Porão" style="--sec:var(--bg-deep)">
+  <div class="wrap faq-grid">
+    <div><p class="label on-deep-2 reveal">Dúvidas</p><h2 class="h1 reveal">O que costumam perguntar.</h2></div>
+    <div class="faq reveal">
+      <details open><summary>Minha empresa é obrigada?<svg><use href="#i-plus"/></svg></summary><p>Se você tem pelo menos um empregado CLT, a NR-1 vale para a sua empresa desde 26/05/2026. MEI sem empregado fica fora. O diagnóstico acima confirma em dois minutos.</p></details>
+      <details><summary>Ainda há multa?<svg><use href="#i-plus"/></svg></summary><p>O STF suspendeu a eficácia sancionatória por enquanto (ADPF 1316). A obrigação continua e os registros podem ser usados em ação trabalhista. Atualizado em 15/11/2026.</p></details>
+      <details><summary>Os funcionários serão identificados?<svg><use href="#i-plus"/></svg></summary><p>Não. A pesquisa é anônima, sem login, e resultados de grupos com menos de 5 pessoas nunca aparecem.</p></details>
+      <details><summary>A Lastro assina o PGR?<svg><use href="#i-plus"/></svg></summary><p>Quem assina é o responsável técnico habilitado, no escopo dele. A Lastro entrega o insumo técnico — não emitimos laudo.</p></details>
+      <details><summary>Quanto custa?<svg><use href="#i-plus"/></svg></summary><p>Depende do número de empregados e do grau de risco. O contrato é anual, com pagamento à vista ou em até 12 vezes. Peça uma proposta.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11 · CTA FINAL ============ -->
+<section class="sec on-deep s-final" id="contato" data-wave data-zone="Lastro" style="--sec:var(--bg-deeper)">
+  <div class="wrap final-grid">
+    <div>
+      <span class="logo" data-logo="simbolo" style="height:64px"></span>
+      <h2 class="h1 reveal">O chão firme começa com uma conversa.</h2>
+      <p class="lead on-deep-2 reveal">Conte quantos empregados a empresa tem. Respondemos pelo WhatsApp com o enquadramento e a proposta.</p>
+    </div>
+    <form class="card form reveal" onsubmit="event.preventDefault();this.querySelector('.ok').hidden=false;">
+      <label>Seu nome<input type="text" placeholder="Como devemos chamar você?" required></label>
+      <label>Empresa<input type="text" placeholder="Nome da empresa"></label>
+      <label>WhatsApp<input type="tel" placeholder="(98) 9 0000-0000" required></label>
+      <label>Quantos empregados?<select><option>Selecione</option><option>Até 19</option><option>20 a 49</option><option>50 ou mais</option></select></label>
+      <label class="check"><input type="checkbox" required> Concordo em ser contatado e com o uso dos dados conforme a LGPD.</label>
+      <button class="btn btn-primary" type="submit">Pedir contato <svg class="arrow"><use href="#i-arrow"/></svg></button>
+      <p class="ok small" hidden>Recebido (protótipo: nada foi enviado). Resposta em até 1 dia útil — prazo a confirmar.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer on-deep" style="--sec:var(--bg-deeper)">
+  <div class="wrap foot">
+    <div><span class="logo" data-logo="horizontal" style="height:30px"></span><p class="small on-deep-2">Gestão de riscos psicossociais (NR-1) · São Luís, MA</p></div>
+    <nav class="small" aria-label="Rodapé"><a href="faq.html">Dúvidas</a><a href="contato.html">Contato</a><a href="planos.html">Planos</a><a href="legais.html#privacidade">Privacidade e LGPD</a><a href="legais.html#termos">Termos</a><a href="legais.html#cookies">Cookies</a><a href="legais.html#limites">Aviso de limites</a><a href="#">@lastro.sst</a></nav>
+    <p class="caption on-deep-2 disc">A Lastro entrega insumo técnico e documentação. Não emite laudo nem promete resultado de fiscalização. Dados de exemplo e números marcados 🔎 ainda serão verificados. Protótipo visual — não publicar.</p>
+  </div>
+</footer>
+
+<a class="wa" href="#contato" aria-label="Falar pelo WhatsApp"><svg width="26" height="26"><use href="#i-wa"/></svg></a>
+
+<script src="assets/logo.js"></script>
+<script src="home.js"></script>
+<script src="assets/chrome.js"></script>
+</body>
+</html>

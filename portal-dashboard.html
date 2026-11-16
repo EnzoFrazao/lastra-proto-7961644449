@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Portal · Visão geral (P01) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+</head>
+<body data-shell="portal" data-page="home" data-crumb="Visão geral">
+<div class="app"><div class="app-main"><main>
+
+  <section class="head">
+    <div>
+      <h1 class="h2" id="hello">Bom dia, Marina.</h1>
+      <p id="helloP"></p>
+    </div>
+    <span class="chip ok" id="statusChip"><span class="dot"></span> Dentro do prazo</span>
+  </section>
+
+  <div class="inline" style="gap:14px"><span class="small muted">Simular o mês do ciclo (só no protótipo):</span>
+    <div class="seg" data-seg="mes" id="mesSeg"><button data-v="1">Mês 1</button><button data-v="2" aria-pressed="true">Mês 2</button><button data-v="3">Mês 3</button><button data-v="4">Mês 4</button><button data-v="5">Mês 5</button><button data-v="6">Mês 6</button></div>
+  </div>
+
+  <section class="card" aria-labelledby="ciclo-t">
+    <div class="cycle-head"><h2 id="ciclo-t" style="margin:0">Ciclo atual · 1º semestre</h2><span class="small muted">Início 02/09/2026 · revisão prevista 02/03/2027 <span class="caption">(datas de exemplo)</span></span></div>
+    <ol class="steps" id="steps"></ol>
+  </section>
+
+  <section class="card next" aria-labelledby="prox-t">
+    <div><h2 id="prox-t">Próxima ação</h2><p class="t" id="nextT"></p><p id="nextP"></p></div>
+    <a class="btn btn-primary" href="portal-pendencias.html" id="nextB">Abrir pendência <i data-i="arrow"></i></a>
+  </section>
+
+  <section class="kpis" aria-label="Indicadores resumidos">
+    <article class="card kpi">
+      <span class="label">Adesão à pesquisa</span>
+      <p class="v num">62<small>%</small></p>
+      <div><div class="tank" role="img" aria-label="62% de adesão; linha de leitura confiável em 50%"><i></i></div><div class="mark"><span></span></div></div>
+      <p>31 de 50 colaboradores. Acima de 50%: leitura confiável.</p>
+    </article>
+    <article class="card kpi"><span class="label">Pendências abertas</span><p class="v num">3</p><p>2 da empresa · 1 da Lastro<br>Próximo prazo: 20/11</p></article>
+    <article class="card kpi"><span class="label">Documentos</span><p class="v num">4</p><p>1 em revisão pelo responsável técnico · 3 assinados</p></article>
+    <article class="card kpi"><span class="label">Resultados</span>
+      <div class="locked"><i data-i="lock"></i><span id="resT">Disponíveis após a análise do psicólogo, prevista para o mês 3.</span></div>
+      <span class="chip" style="align-self:flex-start">Grupos &lt; 5: dados protegidos</span></article>
+  </section>
+
+  <div class="cols">
+    <section class="card" aria-labelledby="pend-t">
+      <h2 id="pend-t">Pendências <a href="portal-pendencias.html">Ver todas</a></h2>
+      <div class="list">
+        <div class="row"><button class="ck" role="checkbox" aria-checked="false" aria-label="Marcar como feita"></button><div><b>Divulgar o link da pesquisa</b><span class="s">Empresa · mensagem pronta no WhatsApp</span></div><span class="chip warn">20/11</span></div>
+        <div class="row"><button class="ck" role="checkbox" aria-checked="false" aria-label="Marcar como feita"></button><div><b>Confirmar a lista de setores</b><span class="s">Empresa · usada só para agrupar resultados</span></div><span class="chip">27/11</span></div>
+        <div class="row"><span class="ck" style="border-style:dashed"></span><div><b>Revisar o inventário de riscos</b><span class="s">Lastro · responsável técnico</span></div><span class="chip ok">Em andamento</span></div>
+      </div>
+    </section>
+    <section class="card" aria-labelledby="atu-t">
+      <h2 id="atu-t">Atualizações <a href="portal-programa.html#historico">Histórico</a></h2>
+      <div class="tl">
+        <div class="tl-i"><span class="p"></span><div><b>Inventário enviado para revisão</b><span>Hoje, 09:12 · Lastro</span></div></div>
+        <div class="tl-i"><span class="p"></span><div><b>Pesquisa atingiu 62% de adesão</b><span>13/11 · automático</span></div></div>
+        <div class="tl-i"><span class="p"></span><div><b>Enquadramento assinado</b><span>04/11 · responsável técnico</span></div></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="cols">
+    <section class="card" aria-labelledby="doc-t">
+      <h2 id="doc-t">Documentos recentes <a href="portal-documentos.html">Biblioteca</a></h2>
+      <div class="list">
+        <div class="row"><span class="doc">PDF</span><div><b>Enquadramento e grau de risco</b><span class="s">v1 · 04/11/2026</span></div><span class="chip ok">Assinado</span></div>
+        <div class="row"><span class="doc">PDF</span><div><b>Inventário de riscos psicossociais</b><span class="s">v2 · em revisão</span></div><span class="chip warn">Em revisão</span></div>
+        <div class="row"><span class="doc">PDF</span><div><b>Plano de ação</b><span class="s">rascunho · publica na entrega</span></div><span class="chip ghost">Rascunho</span></div>
+      </div>
+    </section>
+    <section class="card stack" aria-labelledby="msg-t">
+      <h2 id="msg-t" style="margin-bottom:0">Mensagem da Lastro <a href="portal-mensagens.html">Responder</a></h2>
+      <div class="msg-meta"><span class="avatar sm">LA</span> Equipe Lastro · ontem, 16:40</div>
+      <p class="bubble">Oi, Marina! O inventário já está com o responsável técnico. Assim que você divulgar a pesquisa, fechamos a análise de resultados.</p>
+      <a class="btn btn-secondary btn-sm" href="portal-mensagens.html" style="justify-self:start">Abrir conversa</a>
+    </section>
+  </div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+<script>
+  const S = ['Levantamento', 'Avaliação', 'Entrega', 'Acompanhamento', 'Ajustes', 'Revisão'];
+  const M = {
+    1: { h: 'Estamos no <b>mês 1 de 6</b>: levantamento e enquadramento. Falta a empresa confirmar os dados e responder o levantamento.', t: 'Confirme os dados da empresa e responda o levantamento.', p: 'Prazo: 20/11/2026 · leva cerca de 10 minutos. A Lastro usa isso para decidir o caminho (PGR ou AEP).', b: 'Abrir pendência', r: 'Disponíveis depois da avaliação (mês 2) e da análise do psicólogo.' },
+    2: { h: 'Estamos no <b>mês 2 de 6</b>: avaliação psicossocial. A pesquisa está aberta; falta a empresa divulgar o link e liberar horário para as conversas.', t: 'Divulgue o link da pesquisa aos colaboradores.', p: 'Prazo: 20/11/2026 · mensagem pronta para WhatsApp e cartaz com QR já disponíveis.', b: 'Abrir pendência', r: 'Disponíveis após a análise do psicólogo, prevista para o mês 3.' },
+    3: { h: 'Estamos no <b>mês 3 de 6</b>: entrega. O PGR/AEP e o relatório estão prontos para você dar ciência e agendar a devolutiva.', t: 'Dê ciência nos documentos e agende a devolutiva.', p: 'Prazo: 05/12/2026 · a devolutiva é feita com a direção e com os trabalhadores, em grupo.', b: 'Ver documentos', r: 'Resultados publicados. Veja por fator e por grupo (a partir de 5 pessoas).' },
+    4: { h: 'Estamos no <b>mês 4 de 6</b>: acompanhamento. Agora é executar as medidas do plano de ação e guardar a prova.', t: 'Execute as medidas do plano e anexe a evidência.', p: '2 medidas vencem em 15/01/2027 · foto, ata, treinamento ou comunicado servem como prova.', b: 'Abrir plano de ação', r: 'Resultados do ciclo disponíveis para consulta.' },
+    5: { h: 'Estamos no <b>mês 5 de 6</b>: ajustes. A Lastro valida as evidências e orienta correções.', t: 'Conclua as medidas pendentes antes da revisão.', p: '1 medida em atraso · a Lastro valida o que você anexar em até 3 dias úteis.', b: 'Abrir plano de ação', r: 'Resultados do ciclo disponíveis para consulta.' },
+    6: { h: 'Estamos no <b>mês 6 de 6</b>: revisão e eficácia. É hora de reavaliar e decidir sobre o próximo ciclo.', t: 'Responda a reavaliação e decida a renovação.', p: 'Prazo: 02/03/2027 · o comparativo entre ciclos aparece quando a coleta fecha.', b: 'Ver renovação', r: 'Comparação ciclo × ciclo disponível após a reavaliação.' }
+  };
+  function render(m) {
+    const d = M[m];
+    document.getElementById('helloP').innerHTML = d.h; document.getElementById('nextT').textContent = d.t; document.getElementById('nextP').textContent = d.p;
+    document.getElementById('nextB').firstChild.textContent = d.b + ' '; document.getElementById('resT').textContent = d.r;
+    document.getElementById('steps').innerHTML = S.map((s, i) => { const k = i + 1 < m ? 'done' : i + 1 === m ? 'now' : '';
+      return `<li class="step ${k}"><span class="node">${k === 'done' ? ic('check') : ''}</span><b>${s}</b><span>${k === 'done' ? 'Concluído' : k === 'now' ? 'Em andamento' : 'Mês ' + (i + 1)}</span></li>`; }).join('');
+  }
+  document.querySelectorAll('#mesSeg button').forEach(b => b.addEventListener('click', () => render(+b.dataset.v)));
+  render(2);
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Painel interno · Gestão do ciclo (A06) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+<style> .who { display:inline-flex; gap:6px; align-items:center; font-size:12px; color:var(--fg-2); } </style>
+</head>
+<body data-shell="interno" data-page="ciclo" data-crumb="Gestão do ciclo">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Gestão do ciclo</h1><p>Checklist de cada etapa. Quando tudo está feito, avance o cliente — ele vê a mudança no portal.</p></div>
+    <label class="field" style="min-width:260px">Cliente<select><option>Padaria Sol Nascente</option><option>Clínica Vida Plena</option><option>Mercadinho Bom Preço</option></select></label></section>
+  <section class="card"><div class="steps"><div class="step done"><span class="node"></span><b>1 Levantamento</b></div><div class="step now"><span class="node"></span><b>2 Avaliação</b></div><div class="step"><span class="node"></span><b>3 Entrega</b></div><div class="step"><span class="node"></span><b>4 Acompanhamento</b></div><div class="step"><span class="node"></span><b>5 Ajustes</b></div><div class="step"><span class="node"></span><b>6 Revisão</b></div></div></section>
+  <div class="cols">
+    <section class="card"><div class="card-head" style="padding:0 0 12px"><h2>Etapa 2 · Avaliação (nov/2026)</h2><span class="chip dark">Em andamento</span></div>
+      <div class="stack-s">
+        <div class="check"><input type="checkbox" checked> Pesquisa configurada e link gerado <span class="who">Ana · 10/11</span></div>
+        <div class="check"><input type="checkbox" checked> Cliente divulgou o link <span class="who">Cliente · 12/11</span></div>
+        <div class="check"><input type="checkbox"> Adesão acima de 50% <span class="who">62% hoje</span></div>
+        <div class="check"><input type="checkbox"> Entrevistas/oficina com a gestão <span class="who">RT · 25/11</span></div>
+        <div class="check"><input type="checkbox"> Análise agregada concluída <span class="who">Psicólogo</span></div>
+        <div class="check"><input type="checkbox"> Inventário v1 revisado <span class="who">RT · 18/11</span></div></div>
+      <div class="form-actions" style="margin-top:16px"><button class="btn btn-secondary" data-toast="Prazo ajustado (exemplo)">Ajustar datas</button><button class="btn btn-primary" disabled title="Faltam 4 itens">Avançar para a etapa 3</button></div></section>
+    <section class="card"><h2>Datas do ciclo</h2><div class="tl"><div class="tl-i"><span class="p dark"></span><div><b>Início · 29/10</b><span>Concluído</span></div></div><div class="tl-i"><span class="p dark"></span><div><b>Levantamento · até 12/11</b><span>Concluído</span></div></div><div class="tl-i"><span class="p"></span><div><b>Coleta termina · 22/11</b><span>Em andamento</span></div></div><div class="tl-i"><span class="p"></span><div><b>Entrega PGR/AEP · dez/2026</b><span>Previsto</span></div></div></div>
+      <div class="note" style="margin-top:12px"><i data-i="info"></i><span>Meses 4–5 (acompanhamento e ajustes) e mês 6 (revisão de eficácia) se abrem depois da entrega.</span></div></section>
+  </div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

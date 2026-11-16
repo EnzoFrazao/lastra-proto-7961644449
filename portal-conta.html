@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Portal · Conta e privacidade (P17) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+</head>
+<body data-shell="portal" data-page="conta" data-nav="" data-crumb="Conta e privacidade">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Conta e privacidade</h1><p>Seus dados de acesso e o que a Lastro faz com as informações da empresa.</p></div></section>
+  <div class="cols even">
+    <div class="stack">
+      <section class="card stack"><h2 style="margin:0">Perfil</h2><div class="inline"><span class="avatar lg">MC</span><div><b>Marina Costa</b><span class="muted-s" style="display:block">Sócia-administradora · Padaria Sol Nascente</span></div></div>
+        <label class="field">Nome<input type="text" value="Marina Costa"></label><label class="field">E-mail<input type="text" value="marina@padariasolnascente.example"></label><label class="field">WhatsApp (opcional)<input type="text" value="(98) 9 0000-0000"></label>
+        <button class="btn btn-primary btn-sm" style="justify-self:start" data-toast="Perfil salvo (exemplo)">Salvar</button></section>
+      <section class="card stack"><h2 style="margin:0">Segurança</h2>
+        <label class="field">Senha atual<input type="password" value="exemplo"></label><div class="grid2"><label class="field">Nova senha<input type="password"></label><label class="field">Repita<input type="password"></label></div>
+        <div class="setting"><div><b>Verificação em duas etapas</b><span class="s">Código por e-mail ao entrar (decisão em aberto nº 11)</span></div><label class="sw"><input type="checkbox"><i></i></label></div>
+        <button class="btn btn-secondary btn-sm" style="justify-self:start" data-toast="Senha alterada (exemplo)">Alterar senha</button></section>
+    </div>
+    <div class="stack">
+      <section class="card stack"><h2 style="margin:0">Seus dados (LGPD)</h2><p class="small muted">A Lastro trata os dados da empresa e dos usuários para executar o contrato. A pesquisa dos colaboradores é anônima: não guardamos quem respondeu.</p>
+        <div class="setting"><div><b>Baixar meus dados</b><span class="s">Cadastro, acessos e documentos da empresa</span></div><button class="btn btn-secondary btn-sm" data-toast="Pedido registrado (exemplo)"><i data-i="download"></i> Pedir cópia</button></div>
+        <div class="setting"><div><b>Corrigir dados</b><span class="s">Pelo botão Pedir alteração em Minha empresa</span></div><a class="btn btn-ghost btn-sm" href="portal-empresa.html">Abrir</a></div>
+        <div class="setting"><div><b>Encerrar a conta</b><span class="s">Documentos seguem guardados pelo prazo da norma 🔎</span></div><button class="btn btn-ghost btn-sm" data-open="dx">Saiba mais</button></div>
+        <div class="inline small"><a href="legais.html#privacidade">Política de privacidade</a> · <a href="legais.html#termos">Termos</a> · <a href="legais.html#cookies">Cookies</a></div></section>
+      <section class="card stack"><h2 style="margin:0">Onde você está conectado</h2>
+        <div class="setting"><div><b>Este computador · Chrome</b><span class="s">São Luís, MA · agora</span></div><span class="chip ok">Atual</span></div>
+        <div class="setting"><div><b>Celular · Safari</b><span class="s">São Luís, MA · ontem</span></div><button class="btn btn-ghost btn-sm" data-toast="Sessão encerrada (exemplo)">Sair</button></div></section>
+    </div>
+  </div>
+</main></div></div>
+<div class="modal" id="dx" role="dialog" aria-label="Encerrar a conta"><h2 class="h4">Encerrar a conta?</h2><p class="small muted">Ao encerrar, o acesso ao portal termina. Os documentos oficiais continuam guardados pela Lastro pelo prazo exigido pela norma (a confirmar 🔎) e podem ser entregues a você sob pedido.</p><div class="form-actions" style="justify-content:flex-end"><button class="btn btn-ghost" data-close>Voltar</button><button class="btn btn-danger" data-toast="Pedido de encerramento registrado (exemplo)" data-close>Pedir encerramento</button></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

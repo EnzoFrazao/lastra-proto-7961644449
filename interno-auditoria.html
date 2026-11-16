@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Painel interno · Auditoria (A16) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+</head>
+<body data-shell="interno" data-page="auditoria" data-crumb="Auditoria">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Auditoria</h1><p>Registro de quem acessou ou alterou dados de clientes e de colaboradores (LGPD, art. 37). Não pode ser editado.</p></div><button class="btn btn-secondary" data-toast="Registro exportado (exemplo)"><i data-i="download"></i> Exportar</button></section>
+  <div class="toolbar"><select class="inp" aria-label="Pessoa"><option>Todas as pessoas</option><option>Ana Ribeiro</option><option>RT 1</option><option>Psicólogo 2</option></select><select class="inp" aria-label="Tipo"><option>Todos os tipos</option><option>Leitura de dados</option><option>Edição</option><option>Assinatura</option><option>Exportação</option></select><select class="inp" aria-label="Período"><option>Últimos 30 dias</option><option>Últimos 7 dias</option></select></div>
+  <div class="card flat"><div class="scroll-x"><table class="t pad rows"><thead><tr><th>Quando</th><th>Pessoa</th><th>Ação</th><th>Cliente</th><th>Detalhe</th></tr></thead><tbody>
+    <tr><td>14/11 08:20</td><td>Psicólogo 2</td><td><span class="chip dark">Leitura</span></td><td>Padaria Sol Nascente</td><td>Abriu análise agregada</td></tr>
+    <tr><td>13/11 14:05</td><td>RT 1</td><td><span class="chip">Edição</span></td><td>Padaria Sol Nascente</td><td>Inventário v0.2 → v0.3</td></tr>
+    <tr><td>12/11 09:41</td><td>Ana Ribeiro</td><td><span class="chip">Edição</span></td><td>Padaria Sol Nascente</td><td>Contato do cliente</td></tr>
+    <tr><td>10/11 17:12</td><td>RT 2</td><td><span class="chip ok">Assinatura</span></td><td>Clínica Vida Plena</td><td>Enquadramento v1</td></tr>
+    <tr><td>09/11 11:30</td><td>Sócio administrador</td><td><span class="chip warn">Exportação</span></td><td>Todos</td><td>Lista de clientes (CSV)</td></tr></tbody></table></div>
+    <div class="pager"><span>5 de 214 registros</span><span class="inline"><button class="btn btn-ghost btn-sm" disabled>Anterior</button><button class="btn btn-ghost btn-sm">Próxima</button></span></div></div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

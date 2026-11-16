@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Painel interno · Mensagens (A12) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+<style>
+  .chatgrid { display:grid; grid-template-columns:340px minmax(0,1fr); background:var(--bg-card); border:1px solid var(--line); border-radius:var(--r-md); overflow:hidden; min-height:520px; }
+  .convs { border-right:1px solid var(--line); } .conv { display:grid; grid-template-columns:36px 1fr auto; gap:12px; padding:16px; border-top:1px solid var(--line); text-align:left; background:transparent; border-left:0; border-right:0; border-bottom:0; width:100%; align-items:start; } .conv:first-child { border-top:0; } .conv:hover { background:var(--bg-surface); } .conv[aria-pressed=true] { background:var(--bg-surface-strong); }
+  .conv b { font-size:14px; display:block; } .conv span.s { font-size:12px; color:var(--fg-2); display:block; line-height:1.35; margin-top:2px; }
+  .chat { display:flex; flex-direction:column; } .chat-h { padding:16px 24px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap; } .chat-b { padding:24px; flex:1; }
+  .composer { padding:16px 24px; border-top:1px solid var(--line); display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center; }
+  @media (max-width:900px) { .chatgrid { grid-template-columns:1fr; } .convs { border-right:0; border-bottom:1px solid var(--line); } }
+</style>
+</head>
+<body data-shell="interno" data-page="mensagens" data-crumb="Mensagens">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Mensagens</h1><p>Caixa única de todos os clientes. Atribua a uma pessoa, responda e marque como resolvida.</p></div></section>
+  <div class="toolbar"><select class="inp" aria-label="Filtro"><option>Abertas</option><option>Minhas</option><option>Sem responsável</option><option>Resolvidas</option></select><input class="inp" placeholder="Buscar" aria-label="Buscar" style="min-width:240px"></div>
+  <div class="chatgrid">
+    <div class="convs">
+      <button class="conv" aria-pressed="true"><span class="avatar sm">SN</span><div><b>Padaria Sol Nascente</b><span class="s">Posso mandar o link no grupo de WhatsApp?</span></div><span class="badge">1</span></button>
+      <button class="conv" aria-pressed="false"><span class="avatar sm soft">VP</span><div><b>Clínica Vida Plena</b><span class="s">Segunda via do boleto</span></div><span class="chip warn sm">Sem dono</span></button>
+      <button class="conv" aria-pressed="false"><span class="avatar sm soft">MB</span><div><b>Mercadinho Bom Preço</b><span class="s">Dúvida sobre o prazo do levantamento</span></div><span class="chip sm">Ana</span></button>
+    </div>
+    <div class="chat"><div class="chat-h"><div><b>Padaria Sol Nascente · Inventário e pesquisa</b><span class="muted-s" style="display:block">Aberta em 12/11 · responsável: Ana Ribeiro</span></div><div class="inline"><button class="btn btn-ghost btn-sm" data-toast="Atribuída (exemplo)">Atribuir</button><button class="btn btn-secondary btn-sm" data-toast="Marcada como resolvida (exemplo)">Resolver</button></div></div>
+      <div class="chat-b"><div class="thread"><div class="them"><p class="who">Ana Ribeiro · 12/11 10:20</p><p class="bubble">Oi, Marina! A pesquisa já está no ar.</p></div><div class="me">Oi! Posso mandar o link no grupo de WhatsApp da produção?</div></div></div>
+      <div class="composer"><input class="inp" placeholder="Responder ao cliente" aria-label="Responder"><button class="btn btn-primary" data-toast="Resposta enviada (exemplo)"><i data-i="send"></i> Enviar</button></div></div>
+  </div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

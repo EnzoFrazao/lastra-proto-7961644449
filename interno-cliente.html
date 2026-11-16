@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Painel interno · Ficha do cliente (A03) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+<style>
+  .kv { display:grid; grid-template-columns:180px 1fr; gap:10px 16px; font-size:14px; } .kv dt { color:var(--fg-2); } .kv dd { margin:0; font-weight:500; }
+  .tabs-wrap section[role=tabpanel] { padding-top:24px; display:grid; gap:20px; }
+  @media (max-width:720px) { .kv { grid-template-columns:1fr; gap:2px; } .kv dd { margin-bottom:10px; } }
+</style>
+</head>
+<body data-shell="interno" data-page="clientes" data-crumb="Padaria Sol Nascente">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><p class="crumbs"><a href="interno-clientes.html">Clientes</a> / Padaria Sol Nascente</p><h1 class="h2" style="margin-top:6px">Padaria Sol Nascente</h1><p>EPP · 50 empregados · CNAE 10.91-1/02 · grau de risco 2 · perfil AEP + DIR</p></div>
+    <div class="inline"><span class="chip dark">Mês 2 · Avaliação</span><button class="btn btn-secondary" data-toast="Aberto como cliente no portal (exemplo)"><i data-i="eye"></i> Ver como o cliente</button><a class="btn btn-primary" href="interno-ciclo.html">Abrir ciclo</a></div></section>
+
+  <div data-tabs class="tabs-wrap">
+    <div class="tabs" role="tablist" aria-label="Seções da ficha">
+      <button role="tab" data-tab="dados">Dados</button><button role="tab" data-tab="enquadramento">Enquadramento</button><button role="tab" data-tab="contrato">Contrato</button><button role="tab" data-tab="ciclo">Ciclo</button><button role="tab" data-tab="documentos">Documentos</button><button role="tab" data-tab="mensagens">Mensagens</button><button role="tab" data-tab="auditoria">Auditoria</button>
+    </div>
+
+    <section role="tabpanel">
+      <div class="cols even">
+        <article class="card"><h2>Empresa</h2><dl class="kv"><dt>Razão social</dt><dd>Padaria Sol Nascente Ltda.</dd><dt>CNPJ</dt><dd>00.000.000/0001-00</dd><dt>Endereço</dt><dd>São Luís — MA (dado de exemplo)</dd><dt>Setores</dt><dd>Produção, Atendimento, Entrega, Administrativo</dd><dt>Empregados CLT</dt><dd>50</dd></dl></article>
+        <article class="card"><h2>Contato e usuários</h2><dl class="kv"><dt>Responsável</dt><dd>Marina Costa · sócia-administradora</dd><dt>E-mail</dt><dd>marina@solnascente.example</dd><dt>Gestora de RH</dt><dd>Paula Reis · convite aceito</dd><dt>Contador</dt><dd>Escritório Faro · leitura · convite pendente</dd></dl></article>
+      </div>
+      <article class="card"><h2>Equipe responsável</h2><div class="grid3"><div><span class="label muted">Lastro</span><p class="h5" style="margin-top:4px">Ana Ribeiro</p></div><div><span class="label muted">Responsável técnico</span><p class="h5" style="margin-top:4px">RT 1</p></div><div><span class="label muted">Psicólogo</span><p class="h5" style="margin-top:4px">Psicólogo 2</p></div></div></article>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <article class="card stack"><div class="card-head" style="padding:0"><h2>Enquadramento assinado em 29/10/2026</h2><span class="chip ok">Vigente</span></div>
+        <div class="grid3"><div class="kpi"><span class="label">Caminho</span><p class="v" style="font-size:22px">AEP + DIR</p></div><div class="kpi"><span class="label">Grau de risco (NR-4)</span><p class="v" style="font-size:22px">2</p></div><div class="kpi"><span class="label">Motor de regras</span><p class="v" style="font-size:22px">2026-10-29</p></div></div>
+        <div class="note"><i data-i="info"></i><span>Se a empresa passar de 50 empregados ou mudar de atividade, o enquadramento precisa ser refeito. O sistema avisa a equipe.</span></div>
+        <div class="inline"><button class="btn btn-secondary" data-toast="Nova versão do enquadramento iniciada (exemplo)">Refazer enquadramento</button><a class="btn btn-ghost" href="interno-novo-cliente.html">Ver critérios</a></div></article>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <div class="cols even">
+        <article class="card"><h2>Contrato anual</h2><dl class="kv"><dt>Vigência</dt><dd>29/10/2026 a 28/10/2027</dd><dt>Ciclos</dt><dd>2 por ano (ciclo 1 em andamento)</dd><dt>Valor</dt><dd>Valor de exemplo — faixa a definir</dd><dt>Pagamento</dt><dd>12× no boleto</dd><dt>Renovação</dt><dd>Aviso 60 dias antes</dd></dl></article>
+        <article class="card"><h2>Parcelas</h2><div class="tl"><div class="tl-i"><span class="p dark"></span><div><b>1/12 · paga em 29/10</b><span>Exemplo</span></div></div><div class="tl-i"><span class="p dark"></span><div><b>2/12 · paga em 29/11</b><span>Exemplo</span></div></div><div class="tl-i"><span class="p"></span><div><b>3/12 · vence 29/12</b><span>Em aberto</span></div></div></div></article>
+      </div>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <article class="card"><h2>Ciclo 1 · mês 2 de 6</h2>
+        <div class="steps"><div class="step done"><span class="node"></span><b>1 Levantamento</b></div><div class="step now"><span class="node"></span><b>2 Avaliação</b></div><div class="step"><span class="node"></span><b>3 Entrega</b></div><div class="step"><span class="node"></span><b>4 Acompanhamento</b></div><div class="step"><span class="node"></span><b>5 Ajustes</b></div><div class="step"><span class="node"></span><b>6 Revisão</b></div></div>
+        <p class="small muted" style="margin-top:12px">Pesquisa com 62% de adesão (31 de 50). Coleta termina em 22/11.</p><a class="btn btn-secondary" href="interno-ciclo.html" style="margin-top:12px">Gerir ciclo</a></article>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <div class="card flat"><div class="scroll-x"><table class="t pad rows"><thead><tr><th>Documento</th><th>Versão</th><th>Situação</th><th>Atualizado</th></tr></thead><tbody>
+        <tr><td><b>Enquadramento</b></td><td>v1</td><td><span class="chip ok">Assinado</span></td><td>29/10</td></tr>
+        <tr><td><b>Contrato</b></td><td>v1</td><td><span class="chip ok">Assinado</span></td><td>29/10</td></tr>
+        <tr><td><b>Inventário de riscos</b></td><td>v0.3</td><td><span class="chip warn">Em revisão do RT</span></td><td>há 2 dias</td></tr></tbody></table></div></div>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <article class="card"><div class="thread"><div class="me">Oi Ana, vou divulgar hoje no grupo de WhatsApp.</div><div class="them"><p class="who">Ana Ribeiro · ontem 16:40</p><p class="bubble">Perfeito! A mensagem pronta está em Pesquisa e resultados.</p></div></div><a class="btn btn-secondary" href="interno-mensagens.html" style="margin-top:16px">Abrir na caixa de mensagens</a></article>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <article class="card"><h2>Quem mexeu nesta ficha</h2><div class="tl"><div class="tl-i"><span class="p dark"></span><div><b>Ana Ribeiro editou o contato do cliente</b><span>12/11 · 09:41</span></div></div><div class="tl-i"><span class="p"></span><div><b>RT 1 abriu o inventário v0.3</b><span>13/11 · 14:05</span></div></div><div class="tl-i"><span class="p"></span><div><b>Psicólogo 2 abriu a análise agregada</b><span>14/11 · 08:20</span></div></div></div><a class="btn btn-ghost" href="interno-auditoria.html" style="margin-top:12px">Ver auditoria completa</a></article>
+    </section>
+  </div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Portal · Plano de ação (P08, P15) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+</head>
+<body data-shell="portal" data-page="plano" data-crumb="Plano de ação">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Plano de ação</h1><p>As medidas combinadas para reduzir os riscos encontrados. Nos meses 4 e 5 é aqui que a empresa trabalha: executa, anexa a prova e a Lastro valida.</p></div>
+    <span class="chip">Publicado após a entrega (mês 3) · prévia</span></section>
+
+  <div class="banner"><div class="inline"><i data-i="info"></i><span><b>Quem atualiza o status?</b> Nesta proposta, a empresa marca e anexa a evidência; a Lastro valida. Decisão em aberto nº 1 da pauta dos sócios.</span></div></div>
+
+  <section class="kpis" style="grid-template-columns:repeat(4,1fr)">
+    <article class="card kpi"><span class="label">Medidas</span><p class="v num">6</p><p>no plano deste ciclo</p></article>
+    <article class="card kpi"><span class="label">Validadas</span><p class="v num">1</p><div class="bar dark" style="--v:17%"><i></i></div></article>
+    <article class="card kpi"><span class="label">Em andamento</span><p class="v num">3</p><p>1 aguardando validação da Lastro</p></article>
+    <article class="card kpi"><span class="label">Em atraso</span><p class="v num" style="color:var(--alert)">1</p><p>prazo 15/01/2027 (exemplo)</p></article>
+  </section>
+
+  <div data-tabs>
+    <div class="tabs" role="tablist"><button role="tab" data-tab="medidas">Medidas</button><button role="tab" data-tab="inventario">Inventário de riscos</button><button role="tab" data-tab="registros">Registros e treinamentos</button></div>
+
+    <section role="tabpanel">
+      <div class="card flat">
+        <div class="card-head"><div class="pillrow"><button aria-pressed="true">Todas</button><button>Minhas</button><button>Em atraso</button><button>Concluídas</button></div><span class="muted-s">Clique em uma medida para anexar a prova</span></div>
+        <div class="scroll-x"><table class="t pad rows"><thead><tr><th>Medida</th><th>Risco que reduz</th><th>Responsável</th><th>Prazo</th><th>Status</th><th>Prova</th></tr></thead><tbody>
+          <tr data-open="dm"><td><b>Revisar metas e prazos da produção</b></td><td>Sobrecarga de trabalho</td><td>Marina Costa</td><td>15/01</td><td><span class="chip warn">Em atraso</span></td><td><span class="muted-s">— nenhuma</span></td></tr>
+          <tr data-open="dm"><td><b>Criar escala de folgas do turno da manhã</b></td><td>Jornada prolongada</td><td>Marina Costa</td><td>31/01</td><td><span class="chip dark">Em andamento</span></td><td><span class="muted-s">1 anexo</span></td></tr>
+          <tr data-open="dm"><td><b>Treinar chefias em comunicação respeitosa</b></td><td>Relacionamentos</td><td>Carlos (sócio)</td><td>15/02</td><td><span class="chip info">Aguardando validação</span></td><td><span class="muted-s">2 anexos</span></td></tr>
+          <tr data-open="dm"><td><b>Definir descrição de funções do atendimento</b></td><td>Clareza de função</td><td>Marina Costa</td><td>28/02</td><td><span class="chip dark">Em andamento</span></td><td><span class="muted-s">—</span></td></tr>
+          <tr data-open="dm"><td><b>Comunicar mudanças de cardápio com antecedência</b></td><td>Mudanças no trabalho</td><td>Carlos (sócio)</td><td>28/02</td><td><span class="chip ghost">Não iniciada</span></td><td><span class="muted-s">—</span></td></tr>
+          <tr data-open="dm"><td><b>Divulgar canal interno de escuta</b></td><td>Apoio da liderança</td><td>Marina Costa</td><td>10/12</td><td><span class="chip ok">Validada</span></td><td><a href="#">Ata 05/12</a></td></tr></tbody></table></div>
+        <div class="pager"><span>6 medidas</span><span>Atualizado em 15/11/2026</span></div>
+      </div>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <div class="card flat"><div class="card-head"><h2>Inventário de riscos psicossociais</h2><span class="chip warn">v2 · em revisão pelo RT</span></div>
+        <div class="scroll-x"><table class="t pad"><thead><tr><th>Perigo</th><th>Fonte</th><th>Quem está exposto</th><th>Severidade</th><th>Probabilidade</th><th>Nível</th></tr></thead><tbody>
+          <tr><td><b>Sobrecarga de trabalho</b></td><td>Metas e prazos da produção</td><td>Produção</td><td>3</td><td>3</td><td><span class="chip warn">Alto</span></td></tr>
+          <tr><td><b>Jornada prolongada</b></td><td>Escala sem folga alternada</td><td>Produção, entrega</td><td>2</td><td>3</td><td><span class="chip warn">Alto</span></td></tr>
+          <tr><td><b>Relações com a chefia</b></td><td>Comunicação em picos de demanda</td><td>Atendimento</td><td>2</td><td>2</td><td><span class="chip info">Moderado</span></td></tr>
+          <tr><td><b>Clareza de função</b></td><td>Tarefas acumuladas sem definição</td><td>Atendimento</td><td>2</td><td>2</td><td><span class="chip info">Moderado</span></td></tr>
+          <tr><td><b>Mudanças sem aviso</b></td><td>Alterações de cardápio</td><td>Todos</td><td>1</td><td>2</td><td><span class="chip ok">Baixo</span></td></tr></tbody></table></div>
+        <div class="pager"><span>Nível = severidade × probabilidade · método do RT, versão do instrumento v1</span><a href="portal-documentos.html">Abrir documento</a></div></div>
+    </section>
+
+    <section role="tabpanel" hidden>
+      <div class="banner"><div class="inline"><span class="chip dark">Fase 2</span><span>Questionário sozinho não basta: entrevistas, grupos, observação da atividade e treinamentos também são prova. Esta aba reúne esses registros.</span></div></div>
+      <div class="card flat"><div class="scroll-x"><table class="t pad rows"><thead><tr><th>Data</th><th>Tipo</th><th>Setor</th><th>Participantes</th><th>Responsável</th><th>Evidência</th></tr></thead><tbody>
+        <tr><td>05/10/2026</td><td>Entrevista com a direção</td><td>—</td><td>2</td><td>Lastro</td><td><a href="#">Ata</a></td></tr>
+        <tr><td>22/10/2026</td><td>Observação da atividade</td><td>Produção</td><td>—</td><td>RT</td><td><a href="#">Relatório</a></td></tr>
+        <tr><td>12/11/2026</td><td>Grupo de conversa</td><td>Atendimento</td><td>6</td><td>Psicólogo</td><td><a href="#">Ata sem nomes</a></td></tr>
+        <tr><td>05/12/2026</td><td>Treinamento de chefias</td><td>Todos</td><td>9</td><td>Empresa</td><td><span class="chip">A anexar</span></td></tr></tbody></table></div></div>
+    </section>
+  </div>
+</main></div></div>
+
+<aside class="drawer" id="dm" aria-label="Medida do plano"><div class="drawer-h"><div><span class="label muted">Medida 1 de 6 · Sobrecarga de trabalho</span><h2 class="h4" style="margin-top:4px">Revisar metas e prazos da produção</h2></div><button class="iconbtn" data-close aria-label="Fechar"><i data-i="x"></i></button></div>
+  <div class="drawer-b">
+    <div class="inline"><span class="chip warn">Em atraso desde 15/01</span><span class="muted-s">Responsável: Marina Costa</span></div>
+    <p class="small">O que combinamos: redistribuir as metas semanais da produção para que ninguém precise trabalhar além do horário para cumpri-las.</p>
+    <label class="field">Status<select><option>Em andamento</option><option>Concluída — enviar para validação</option><option>Não iniciada</option></select></label>
+    <div class="uploadbox"><i data-i="upload" class="l"></i><b>Anexar evidência</b><span class="small">Foto, ata, comunicado ou lista de presença · PDF, JPG ou PNG · até 10 MB</span><button class="btn btn-secondary btn-sm" data-toast="Arquivo anexado (exemplo)">Escolher arquivo</button></div>
+    <label class="field">Comentário<textarea placeholder="Conte o que foi feito"></textarea></label>
+    <div class="note"><i data-i="shield"></i><span>Não anexe dados pessoais de quem respondeu a pesquisa. A evidência fica no dossiê da empresa.</span></div>
+    <div><span class="label muted">Histórico</span><div class="tl" style="margin-top:10px"><div class="tl-i"><span class="p"></span><div><b>Medida criada no plano de ação</b><span>05/12 · RT</span></div></div><div class="tl-i"><span class="p alert"></span><div><b>Prazo vencido</b><span>15/01 · automático</span></div></div></div></div>
+  </div>
+  <div class="drawer-f"><button class="btn btn-ghost" data-close>Cancelar</button><button class="btn btn-primary" data-toast="Enviado para validação (exemplo)" data-close>Enviar para validação</button></div></aside>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>

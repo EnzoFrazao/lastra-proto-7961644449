@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lastro — Painel interno · Revisão e assinatura (A10) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
+<style> .rv { display:grid; grid-template-columns:360px minmax(0,1fr); gap:20px; align-items:start; } .rv .docview { min-height:420px; } @media (max-width:1100px) { .rv { grid-template-columns:1fr; } } </style>
+</head>
+<body data-shell="interno" data-page="revisao" data-crumb="Revisão e assinatura">
+<div class="app"><div class="app-main"><main>
+  <section class="head"><div><h1 class="h2">Revisão e assinatura</h1><p>Fila de documentos em rascunho. Cada um passa por revisão do responsável técnico ou do psicólogo antes de ser assinado e publicado ao cliente.</p></div></section>
+  <div class="rv">
+    <section class="card flat"><div class="item sel"><span class="chip warn">3 dias</span><div><b>Inventário de riscos v0.3</b><span class="s">Padaria Sol Nascente · RT 1</span></div><i data-i="arrow"></i></div>
+      <div class="item"><span class="chip warn">4 dias</span><div><b>PGR v1</b><span class="s">Clínica Vida Plena · RT 2</span></div><i data-i="arrow"></i></div>
+      <div class="item"><span class="chip">1 dia</span><div><b>Relatório psicossocial</b><span class="s">Oficina Rota 135 · Psicólogo 2</span></div><i data-i="arrow"></i></div>
+      <div class="item"><span class="chip">hoje</span><div><b>Enquadramento v1</b><span class="s">Mercadinho Bom Preço · RT 1</span></div><i data-i="arrow"></i></div></section>
+    <section class="card stack"><div class="card-head" style="padding:0"><div><h2>Inventário de riscos v0.3</h2><span class="muted-s">Padaria Sol Nascente · instrumento v1.2 · norma 2026-10-29</span></div><span class="chip warn">Em revisão</span></div>
+      <div class="docview" aria-label="Pré-visualização (ilustração)"><i class="h"></i><i class="s"></i><i></i><i class="m"></i><i></i><i class="m"></i><i class="s"></i><i></i><i class="m"></i><i></i></div>
+      <div><span class="label muted">Comentários</span><div class="thread" style="margin-top:8px"><div class="them"><p class="who">Psicólogo 2 · ontem</p><p class="bubble">Conferir o texto do fator "Relações": amostra pequena na Entrega.</p></div></div></div>
+      <label class="field">Novo comentário<textarea rows="2" placeholder="Escreva aqui"></textarea></label>
+      <div class="note"><i data-i="sig"></i><span>Assinatura eletrônica avançada pelo RT. O documento só é publicado ao cliente depois de assinado.</span></div>
+      <div class="form-actions"><button class="btn btn-secondary" data-toast="Devolvido para ajustes (exemplo)">Pedir ajustes</button><button class="btn btn-primary" data-toast="Aprovado e enviado para assinatura (exemplo)">Aprovar e assinar</button></div></section>
+  </div>
+</main></div></div>
+<script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
+</body>
+</html>
