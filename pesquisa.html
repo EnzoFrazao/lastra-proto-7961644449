@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lastro — Pesquisa anônima (F01–F08) · protótipo</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Lastra — Pesquisa anônima (F01–F08) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/ui.css">
 <style>
   body { background:var(--bg-surface); min-height:100vh; }
@@ -20,13 +20,13 @@
   .screen { flex:1; overflow:auto; display:flex; flex-direction:column; padding:28px 24px 24px; }
   .bar { display:flex; align-items:center; justify-content:space-between; margin-bottom:26px; min-height:28px; }
   .org { font-size:13px; font-weight:600; color:var(--fg-2); display:flex; align-items:center; gap:8px; } .org i { width:28px; height:28px; border-radius:50%; background:var(--bg-surface-strong); display:grid; place-items:center; font-style:normal; font-size:11px; font-weight:700; color:var(--fg); }
-  .hero-ill { height:132px; border-radius:var(--r-md); background:var(--depth-1); position:relative; overflow:hidden; margin-bottom:26px; border:1px solid var(--line); } .hero-ill svg { position:absolute; inset:0; width:100%; height:100%; } .wv { animation:dr 8s linear infinite; } @keyframes dr { to { transform:translateX(-60px); } }
+  .hero-ill { height:132px; border-radius:var(--r-md); background:var(--strata-1); position:relative; overflow:hidden; margin-bottom:26px; border:1px solid var(--line); } .hero-ill svg { position:absolute; inset:0; width:100%; height:100%; }
   h1.t { font-size:26px; line-height:1.2; font-weight:600; letter-spacing:-.01em; } h2.t { font-size:24px; line-height:1.25; font-weight:600; }
   .sub { margin-top:12px; color:var(--fg-2); font-size:15px; line-height:1.55; }
-  .trust { list-style:none; padding:0; margin:22px 0 0; display:grid; gap:14px; } .trust li { display:grid; grid-template-columns:36px 1fr; gap:12px; align-items:start; font-size:14px; line-height:1.45; } .trust i { width:36px; height:36px; border-radius:50%; background:var(--water-soft); display:grid; place-items:center; } .trust svg.i { width:18px; height:18px; stroke-width:2; } .trust b { display:block; font-weight:600; }
+  .trust { list-style:none; padding:0; margin:22px 0 0; display:grid; gap:14px; } .trust li { display:grid; grid-template-columns:36px 1fr; gap:12px; align-items:start; font-size:14px; line-height:1.45; } .trust i { width:36px; height:36px; border-radius:50%; background:var(--tint); display:grid; place-items:center; } .trust svg.i { width:18px; height:18px; stroke-width:2; } .trust b { display:block; font-weight:600; }
   .spacer { flex:1; min-height:20px; }
   .btn.full { width:100%; padding:17px; font-size:17px; } .fine { margin-top:14px; font-size:12px; line-height:1.5; color:var(--fg-2); text-align:center; }
-  .hull { height:18px; background:var(--line); clip-path:polygon(0 0,100% 0,94% 100%,6% 100%); } .hull i { display:block; height:100%; background:var(--fg); width:var(--p,0%); transition:width var(--t-slow) var(--ease); }
+  .pslab { height:14px; background:var(--line); } .pslab i { display:block; height:100%; background:var(--fg); width:var(--p,0%); transition:width var(--t-slow) var(--ease); }
   .count { font-size:13px; font-weight:600; font-variant-numeric:tabular-nums; color:var(--fg-2); }
   .block { margin-top:24px; } .q { font-size:22px; line-height:1.3; font-weight:600; margin-top:10px; letter-spacing:-.005em; }
   .scale { display:grid; gap:10px; margin-top:22px; }
@@ -36,7 +36,7 @@
   .opt.sm { min-height:46px; font-size:15px; }
   .nav2 { display:grid; grid-template-columns:1fr 1.6fr; gap:12px; margin-top:22px; }
   .anon { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:16px; font-size:12px; color:var(--fg-2); } .anon svg.i { width:14px; height:14px; stroke-width:2; }
-  .center { text-align:center; margin:auto 0; } .big { width:72px; height:72px; border-radius:50%; background:var(--water-soft); display:grid; place-items:center; margin:0 auto 20px; } .big svg.i { width:32px; height:32px; stroke-width:2.5; }
+  .center { text-align:center; margin:auto 0; } .big { width:72px; height:72px; border-radius:50%; background:var(--tint); display:grid; place-items:center; margin:0 auto 20px; } .big svg.i { width:32px; height:32px; stroke-width:2.5; }
   .asm svg { height:84px; margin:0 auto 18px; display:block; overflow:visible; } .asm .p1, .asm .p2, .asm .p3 { transform-box:fill-box; animation:asm 700ms var(--ease-emph) both; } .asm .p1 { --x:-40px; --y:10px; } .asm .p2 { --x:0; --y:-40px; animation-delay:90ms; } .asm .p3 { --x:40px; --y:10px; animation-delay:180ms; }
   @keyframes asm { from { transform:translate(var(--x),var(--y)); opacity:0; } }
   .help { text-align:left; background:var(--bg-surface); border-radius:var(--r-md); padding:14px 16px; font-size:13px; line-height:1.5; margin-top:18px; } .help b { display:block; margin-bottom:2px; }
@@ -59,7 +59,7 @@
   const QS = [['Demandas do trabalho', 'Tenho prazos tão curtos que preciso trabalhar além do horário para cumpri-los.'], ['Demandas do trabalho', 'O volume de trabalho me deixa sem tempo para fazer as tarefas com cuidado.'], ['Autonomia', 'Tenho liberdade para decidir como organizar o meu trabalho.'], ['Apoio da liderança', 'Posso contar com o apoio da minha chefia quando preciso.']];
   const OPTS = ['Nunca', 'Raramente', 'Às vezes', 'Frequentemente', 'Sempre'];
   const SETORES = ['Produção', 'Atendimento', 'Entrega', 'Administrativo', 'Prefiro não dizer'];
-  const ILL = `<div class="hero-ill" aria-hidden="true"><svg viewBox="0 0 342 132" preserveAspectRatio="xMidYMid slice"><circle cx="290" cy="34" r="20" fill="var(--water-soft)"/><path d="M74 80h200l-24 34H98z" fill="var(--fg)"/><path d="M70 76h208v5H70z" fill="var(--fg-2)"/><path d="M92 58h28v18H92z" fill="var(--fg)"/><path d="M150 76l14-8 14 8-14 8z" fill="var(--water)"/><path d="M150 76v-14l14-8v14z" fill="var(--fg-2)"/><path d="M164 68l14-8v14l-14 8z" fill="var(--water-deep)"/><path d="M190 76l14-8 14 8-14 8z" fill="var(--water)"/><path d="M190 76l14 8v14l-14-8z" fill="var(--fg-2)"/><path d="M204 84l14-8v14l-14 8z" fill="var(--water-deep)"/><g class="wv"><path d="M-60 110q15 -8 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0V132H-60z" fill="var(--water)" fill-opacity=".6"/></g></svg></div>`;
+  const ILL = `<div class="hero-ill" aria-hidden="true"><svg viewBox="0 0 342 132" preserveAspectRatio="xMidYMid slice"><rect y="106" width="342" height="26" fill="var(--strata-3)"/><rect y="104" width="342" height="3" fill="var(--fg)"/><rect x="66" y="84" width="210" height="19" fill="var(--bg-deep)"/><rect x="96" y="63" width="150" height="19" fill="var(--bg-deep-surface)"/><rect x="126" y="42" width="90" height="19" fill="var(--neon)" stroke="var(--green)" stroke-width="1.5"/></svg></div>`;
   const ANON = `<p class="anon">${ic('shield')} Sua resposta é anônima</p>`;
   const bar = (right) => `<div class="bar"><span class="org"><i>SN</i>Padaria Sol Nascente</span>${right || ''}</div>`;
   const chrome = (inner, o = {}) => `<div class="screen">${inner}</div>`;
@@ -67,9 +67,9 @@
   const S = {
     f01: { t: 'Convite', h: () => `${bar('<span class="chip warn">exemplo</span>')}${ILL}<h1 class="t">A Padaria Sol Nascente quer ouvir como está o trabalho aqui.</h1><p class="sub">São cerca de 3 minutos e ninguém saberá quem respondeu.</p>
       <ul class="trust"><li><i>${ic('lock')}</i><div><b>Sua resposta é anônima</b>Não guardamos quem respondeu. Não há login nem nome.</div></li><li><i>${ic('group')}</i><div><b>Só aparecem grupos grandes</b>Resultados de grupos com menos de 5 pessoas nunca são mostrados.</div></li><li><i>${ic('pause')}</i><div><b>Você decide</b>Pode parar quando quiser. Responder é voluntário.</div></li></ul>
-      <div class="spacer"></div><button class="btn btn-primary full" data-go="f02">Começar ${ic('arrow')}</button><p class="fine">Esta pesquisa não é um canal de denúncia. Para isso, use o canal da empresa.<br>Conduzida pela Lastro · seus dados seguem a LGPD.</p>` },
+      <div class="spacer"></div><button class="btn btn-primary full" data-go="f02">Começar ${ic('arrow')}</button><p class="fine">Esta pesquisa não é um canal de denúncia. Para isso, use o canal da empresa.<br>Conduzida pela Lastra · seus dados seguem a LGPD.</p>` },
     f02: { t: 'Ciência e consentimento', h: () => `${bar()}<p class="label muted">Antes de começar</p><h2 class="t" style="margin-top:8px">O que acontece com as suas respostas</h2>
-      <ul class="trust"><li><i>${ic('check')}</i><div><b>O que guardamos</b>Só as respostas, sem nome, sem telefone e sem identificação do aparelho.</div></li><li><i>${ic('x')}</i><div><b>O que não guardamos</b>Quem você é. Nem a empresa nem a Lastro conseguem descobrir.</div></li><li><i>${ic('chart')}</i><div><b>Para que serve</b>Entender onde o trabalho pesa e o que melhorar. Só viram números de grupos com 5 pessoas ou mais.</div></li></ul>
+      <ul class="trust"><li><i>${ic('check')}</i><div><b>O que guardamos</b>Só as respostas, sem nome, sem telefone e sem identificação do aparelho.</div></li><li><i>${ic('x')}</i><div><b>O que não guardamos</b>Quem você é. Nem a empresa nem a Lastra conseguem descobrir.</div></li><li><i>${ic('chart')}</i><div><b>Para que serve</b>Entender onde o trabalho pesa e o que melhorar. Só viram números de grupos com 5 pessoas ou mais.</div></li></ul>
       <label class="ck2"><input type="checkbox" id="c2"> <span>Entendi e quero participar. Sei que é voluntário e que posso parar quando quiser.</span></label>
       <div class="spacer"></div><button class="btn btn-primary full" data-go="f03" id="b2" disabled>Continuar ${ic('arrow')}</button>${ANON}`,
       w: el => { const c = el.querySelector('#c2'), b = el.querySelector('#b2'); c.onchange = () => b.disabled = !c.checked; } },
@@ -78,7 +78,7 @@
       <div class="warnbox">${ic('info')}<span>Quanto mais detalhes você der, mais fácil seria alguém deduzir quem respondeu. Por isso pedimos só o setor, e você pode pular.</span></div>
       <div class="spacer"></div><div class="nav2"><button class="btn btn-secondary" data-go="f04">Pular</button><button class="btn btn-primary" data-go="f04">Continuar ${ic('arrow')}</button></div>${ANON}`,
       w: el => el.querySelectorAll('#sets .opt').forEach(b => b.onclick = () => el.querySelectorAll('#sets .opt').forEach(x => x.classList.toggle('on', x === b))) },
-    f04: { t: 'Pergunta (escala 1–5)', h: () => `${bar(`<span class="count" id="cnt"></span>`)}<div class="hull" aria-hidden="true"><i id="hf"></i></div>
+    f04: { t: 'Pergunta (escala 1–5)', h: () => `${bar(`<span class="count" id="cnt"></span>`)}<div class="pslab" aria-hidden="true"><i id="hf"></i></div>
       <div class="block"><p class="label muted" id="bl"></p><h2 class="q" id="q"></h2><div class="scale" role="radiogroup" aria-labelledby="q" id="sc"></div></div>
       <div class="nav2"><button class="btn btn-secondary" id="bk" type="button">Voltar</button><button class="btn btn-primary" id="nx" type="button" disabled>Próxima ${ic('arrow')}</button></div><div class="spacer"></div>${ANON}`,
       w: (el, go) => { let i = 0; const $ = s => el.querySelector(s);
@@ -87,7 +87,7 @@
           $('#nx').disabled = !ans[i]; $('#bk').style.visibility = i === 0 ? 'hidden' : 'visible'; $('#nx').firstChild.textContent = i === QS.length - 1 ? 'Concluir ' : 'Próxima '; $('#hf').style.setProperty('--p', (i / QS.length * 100) + '%'); }
         $('#sc').onclick = e => { const b = e.target.closest('.opt'); if (!b) return; ans[i] = +b.dataset.v; [...$('#sc').children].forEach(c => c.setAttribute('aria-checked', c === b)); $('#nx').disabled = false; };
         $('#nx').onclick = () => { if (i < QS.length - 1) { i++; r(); } else go('f05'); }; $('#bk').onclick = () => { if (i > 0) { i--; r(); } }; r(); } },
-    f05: { t: 'Pergunta aberta (opcional)', h: () => `${bar('<span class="count">Opcional</span>')}<div class="hull" aria-hidden="true"><i style="--p:100%"></i></div><h2 class="t" style="margin-top:22px">Quer acrescentar alguma coisa?</h2><p class="sub">O que mais pesa no seu trabalho hoje, ou o que ajudaria? Pode deixar em branco.</p>
+    f05: { t: 'Pergunta aberta (opcional)', h: () => `${bar('<span class="count">Opcional</span>')}<div class="pslab" aria-hidden="true"><i style="--p:100%"></i></div><h2 class="t" style="margin-top:22px">Quer acrescentar alguma coisa?</h2><p class="sub">O que mais pesa no seu trabalho hoje, ou o que ajudaria? Pode deixar em branco.</p>
       <textarea class="ta" placeholder="Escreva com suas palavras…" aria-label="Comentário opcional"></textarea>
       <div class="warnbox">${ic('warn')}<span><b>Não cite nomes de pessoas.</b> Isto não é um canal de denúncia. Para denunciar algo grave, use o canal da empresa (indicado no cartaz).</span></div>
       <div class="spacer"></div><div class="nav2"><button class="btn btn-secondary" data-go="f06">Pular</button><button class="btn btn-primary" data-go="f06">Continuar ${ic('arrow')}</button></div>${ANON}` },
@@ -104,7 +104,7 @@
   const ORDER = ['f01', 'f02', 'f03', 'f04', 'f05', 'f06', 'f07', 'f08a', 'f08b', 'f08c'];
   const root = document.getElementById('root');
   function mount(el, id, go) { el.innerHTML = `<div class="screen">${S[id].h()}</div>`; if (S[id].w) S[id].w(el, go); el.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => go(b.dataset.go)));
-    expandIcons(el); el.querySelectorAll('[data-logo]').forEach(x => x.innerHTML = window.LASTRO_LOGO && (() => { const L = LASTRO_LOGO; return `<svg viewBox="10 10 175 200" fill="currentColor" role="img" aria-label="Lastro"><path class="p1" d="${L.p1}"/><path class="p2" d="${L.p2}"/><path class="p3" d="${L.p3}"/></svg>`; })()); }
+    expandIcons(el); el.querySelectorAll('[data-logo]').forEach(x => x.innerHTML = window.LASTRA_LOGO && (() => { const L = LASTRA_LOGO; return `<svg viewBox="0 0 175 200" fill="currentColor" role="img" aria-label="Lastra"><path class="p1" d="${L.p1}"/><path class="p2" d="${L.p2}"/><path class="p3" d="${L.p3}"/></svg>`; })()); }
   function one(start) {
     let cur = start || 'f01';
     root.innerHTML = `<div class="one"><nav class="steps-l" aria-label="Telas do fluxo">${ORDER.map(k => `<button data-k="${k}"><span>${k.toUpperCase().replace('F08', 'F08 ')}</span><small>${S[k].t}</small></button>`).join('')}</nav><div><p class="cap"><b id="cid"></b></p><div class="phone" id="ph"></div></div>

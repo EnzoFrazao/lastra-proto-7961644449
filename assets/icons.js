@@ -18,7 +18,7 @@
     out: '<path d="M10 4H5v16h5M15 8l4 4-4 4M19 12H9"/>', pause: '<circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/>', group: '<circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.5 6 5.5"/>',
     star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.300 1 6.100L12 17l-5.400 2.900 1-6.100L3.200 9.500l6.100-.9z"/>', pin: '<path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
     phone: '<path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>', tree: '<path d="M12 3v6M5 21v-5h14v5M7 16v-4h10v4M12 9H6v3M12 9h6v3"/>',
-    trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>', refresh: '<path d="M20 12a8 8 0 1 1-2.500-5.800M20 4v5h-5"/>', ship: '<path d="M3 15h18l-3 5H6zM6 15V9h8v6M10 9V5h4"/>', menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
+    trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>', refresh: '<path d="M20 12a8 8 0 1 1-2.500-5.800M20 4v5h-5"/>', layers: '<path d="M4 6.5h16v3.5H4zM4 11h16v3.5H4zM4 15.5h16V19H4z"/>', menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
     external: '<path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/>', hash: '<path d="M5 9h14M5 15h14M10 4L8 20M16 4l-2 16"/>', target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 12h.01"/>'
   };
   let s = '<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">';

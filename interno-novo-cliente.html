@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lastro — Painel interno · Novo cliente e enquadramento (A04) · protótipo</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Lastra — Painel interno · Novo cliente e enquadramento (A04) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
 <style>
   .wiz { display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:24px; align-items:start; } .wsteps { display:flex; gap:6px; margin-bottom:6px; } .wsteps i { flex:1; height:6px; border-radius:3px; background:var(--line); } .wsteps i.on { background:var(--fg); }
-  .rule { display:grid; gap:10px; font-size:14px; } .rule .r { display:grid; grid-template-columns:20px 1fr; gap:10px; align-items:start; } .rule .r i { width:20px; height:20px; border-radius:50%; background:var(--water-soft); display:grid; place-items:center; } .rule .r i svg { width:11px; height:11px; stroke-width:3; }
+  .rule { display:grid; gap:10px; font-size:14px; } .rule .r { display:grid; grid-template-columns:20px 1fr; gap:10px; align-items:start; } .rule .r i { width:20px; height:20px; border-radius:50%; background:var(--tint); display:grid; place-items:center; } .rule .r i svg { width:11px; height:11px; stroke-width:3; }
   code.k { font-size:12px; background:var(--bg-surface-strong); padding:2px 6px; border-radius:3px; }
   @media (max-width:1100px) { .wiz { grid-template-columns:1fr; } }
 </style>
@@ -29,8 +29,8 @@
     </section>
     <aside class="stack">
       <section class="card deep stack"><span class="label" style="color:var(--fg-on-deep-2)">Sugestão do sistema</span><p class="h4">AEP + DIR · grau de risco 2</p>
-        <div class="rule"><div class="r"><i data-i="check" style="background:#fff;color:#013D31"></i><span>Porte EPP e atividade de grau 2 → caminho simplificado</span></div><div class="r"><i data-i="check" style="background:#fff;color:#013D31"></i><span>Sem agente de risco informado → PGR completo não exigido</span></div><div class="r"><i data-i="check" style="background:#fff;color:#013D31"></i><span>DIR possível se a AEP não achar riscos relevantes</span></div></div>
-        <p class="caption" style="color:var(--fg-on-deep-2)">Motor de regras versão 2026-11-15 · parâmetro <code class="k" style="background:rgba(255,255,255,.14);color:#fff">SUSPENSAO_STF_ATIVA = true</code> 🔎</p></section>
+        <div class="rule"><div class="r"><i data-i="check" style="background:var(--neon);color:var(--green)"></i><span>Porte EPP e atividade de grau 2 → caminho simplificado</span></div><div class="r"><i data-i="check" style="background:var(--neon);color:var(--green)"></i><span>Sem agente de risco informado → PGR completo não exigido</span></div><div class="r"><i data-i="check" style="background:var(--neon);color:var(--green)"></i><span>DIR possível se a AEP não achar riscos relevantes</span></div></div>
+        <p class="caption" style="color:var(--fg-on-deep-2)">Motor de regras versão 2026-11-15 · parâmetro <code class="k" style="background:rgba(255,255,255,.14);color:var(--fg-on-deep)">SUSPENSAO_STF_ATIVA = true</code> 🔎</p></section>
       <section class="card stack-s"><h3>Antes de contratar</h3><div class="check"><input type="checkbox" checked> Proposta enviada e aceita</div><div class="check"><input type="checkbox" checked> Contrato assinado</div><div class="check"><input type="checkbox"> Convite ao portal enviado</div></section>
     </aside>
   </div>

@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lastro — Portal · Pendências (P05) · protótipo</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Lastra — Portal · Pendências (P05) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
 </head>
 <body data-shell="portal" data-page="pendencias" data-crumb="Pendências">
 <div class="app"><div class="app-main"><main>
   <section class="head">
-    <div><h1 class="h2">Pendências</h1><p>Tudo o que está esperando uma ação — da sua empresa e da Lastro. Cada item tem prazo, responsável e, quando preciso, anexo.</p></div>
-    <div class="seg" data-seg="f" id="fSeg"><button data-v="todas" aria-pressed="true">Todas · 4</button><button data-v="empresa">Da empresa · 3</button><button data-v="lastro">Da Lastro · 1</button><button data-v="feitas">Concluídas · 5</button></div>
+    <div><h1 class="h2">Pendências</h1><p>Tudo o que está esperando uma ação — da sua empresa e da Lastra. Cada item tem prazo, responsável e, quando preciso, anexo.</p></div>
+    <div class="seg" data-seg="f" id="fSeg"><button data-v="todas" aria-pressed="true">Todas · 4</button><button data-v="empresa">Da empresa · 3</button><button data-v="lastra">Da Lastra · 1</button><button data-v="feitas">Concluídas · 5</button></div>
   </section>
 
   <div class="card flat" id="lista">
     <div class="item" data-w="empresa"><button class="ck" role="checkbox" aria-checked="false" aria-label="Marcar como feita"></button><div><b>Divulgar o link da pesquisa aos colaboradores</b><span class="s">Empresa · Marina Costa · mensagem pronta e cartaz com QR em Pesquisa e resultados</span></div><div class="inline"><span class="chip warn">20/11</span><button class="btn btn-secondary btn-sm" data-open="dr1">Abrir</button></div></div>
     <div class="item" data-w="empresa"><button class="ck" role="checkbox" aria-checked="false" aria-label="Marcar como feita"></button><div><b>Confirmar a lista de setores</b><span class="s">Empresa · usada só para agrupar resultados (nunca para identificar pessoas)</span></div><div class="inline"><span class="chip">27/11</span><button class="btn btn-secondary btn-sm" data-open="dr2">Abrir</button></div></div>
-    <div class="item" data-w="empresa"><button class="ck" role="checkbox" aria-checked="false" aria-label="Marcar como feita"></button><div><b>Liberar horário para entrevistas e grupos</b><span class="s">Empresa · escolher data e hora; a Lastro monta os grupos por setor</span></div><div class="inline"><span class="chip">05/12</span><button class="btn btn-secondary btn-sm" data-open="dr3">Abrir</button></div></div>
-    <div class="item" data-w="lastro"><span class="ck" style="border-style:dashed" title="Item da Lastro"></span><div><b>Revisar o inventário de riscos</b><span class="s">Lastro · responsável técnico · você acompanha, não precisa agir</span></div><span class="chip ok">Em andamento</span></div>
+    <div class="item" data-w="empresa"><button class="ck" role="checkbox" aria-checked="false" aria-label="Marcar como feita"></button><div><b>Liberar horário para entrevistas e grupos</b><span class="s">Empresa · escolher data e hora; a Lastra monta os grupos por setor</span></div><div class="inline"><span class="chip">05/12</span><button class="btn btn-secondary btn-sm" data-open="dr3">Abrir</button></div></div>
+    <div class="item" data-w="lastra"><span class="ck" style="border-style:dashed" title="Item da Lastra"></span><div><b>Revisar o inventário de riscos</b><span class="s">Lastra · responsável técnico · você acompanha, não precisa agir</span></div><span class="chip ok">Em andamento</span></div>
     <div class="item" data-w="feitas" hidden><button class="ck" role="checkbox" aria-checked="true" aria-label="Concluída"></button><div><b>Confirmar dados da empresa</b><span class="s">Concluída em 05/09 por Marina Costa</span></div><span class="chip ok">Feita</span></div>
     <div class="item" data-w="feitas" hidden><button class="ck" role="checkbox" aria-checked="true" aria-label="Concluída"></button><div><b>Responder o levantamento preliminar</b><span class="s">Concluída em 18/09 por Marina Costa</span></div><span class="chip ok">Feita</span></div>
     <div class="item" data-w="feitas" hidden><button class="ck" role="checkbox" aria-checked="true" aria-label="Concluída"></button><div><b>Assinar o contrato</b><span class="s">Concluída em 02/09 · documento no dossiê</span></div><span class="chip ok">Feita</span></div>
@@ -32,10 +32,10 @@
 
 <aside class="drawer" id="dr1" aria-label="Pendência: divulgar a pesquisa"><div class="drawer-h"><div><span class="label muted">Pendência · Empresa · prazo 20/11</span><h2 class="h4" style="margin-top:4px">Divulgar o link da pesquisa</h2></div><button class="iconbtn" data-close aria-label="Fechar"><i data-i="x"></i></button></div>
   <div class="drawer-b"><p class="small muted">Os colaboradores respondem pelo celular, sem login e sem nome. Quanto mais pessoas responderem, mais confiável é a leitura (acima de 50%).</p>
-    <div class="card soft stack-s"><span class="label muted">Link da pesquisa</span><div class="inline"><code style="font-size:14px;word-break:break-all">lastro.example/p/sol-nascente-7Q4K</code><button class="btn btn-secondary btn-sm" data-copy="lastro.example/p/sol-nascente-7Q4K"><i data-i="copy"></i> Copiar</button></div></div>
+    <div class="card soft stack-s"><span class="label muted">Link da pesquisa</span><div class="inline"><code style="font-size:14px;word-break:break-all">lastra.example/p/sol-nascente-7Q4K</code><button class="btn btn-secondary btn-sm" data-copy="lastra.example/p/sol-nascente-7Q4K"><i data-i="copy"></i> Copiar</button></div></div>
     <div class="card soft stack-s"><span class="label muted">Mensagem pronta para WhatsApp</span><p class="small">Pessoal, a Padaria Sol Nascente quer ouvir como está o trabalho aqui. É uma pesquisa anônima de 3 minutos. Ninguém vai saber quem respondeu. Link: …</p><button class="btn btn-secondary btn-sm" style="justify-self:start" data-copy="mensagem"><i data-i="copy"></i> Copiar mensagem</button></div>
     <div class="card soft inline"><i data-i="qr" class="xl"></i><div><b class="small">Cartaz com QR</b><span class="muted-s" style="display:block">Para colar no mural ou no caixa</span></div><button class="btn btn-secondary btn-sm spacer-auto" data-toast="Cartaz (PDF) baixado — exemplo"><i data-i="download"></i> Baixar</button></div>
-    <label class="field">Comentário para a Lastro (opcional)<textarea placeholder="Ex.: divulgamos no grupo do turno da manhã"></textarea></label></div>
+    <label class="field">Comentário para a Lastra (opcional)<textarea placeholder="Ex.: divulgamos no grupo do turno da manhã"></textarea></label></div>
   <div class="drawer-f"><button class="btn btn-ghost" data-close>Cancelar</button><button class="btn btn-primary" data-toast="Pendência marcada como feita (exemplo)" data-close>Marcar como feita</button></div></aside>
 <aside class="drawer" id="dr2" aria-label="Pendência: lista de setores"><div class="drawer-h"><div><span class="label muted">Pendência · Empresa · prazo 27/11</span><h2 class="h4" style="margin-top:4px">Confirmar a lista de setores</h2></div><button class="iconbtn" data-close aria-label="Fechar"><i data-i="x"></i></button></div>
   <div class="drawer-b"><p class="small muted">Diga quantas pessoas há em cada setor. Setores com menos de 5 pessoas são agrupados automaticamente nos resultados, para ninguém ser identificado.</p>
@@ -43,11 +43,11 @@
     <button class="btn btn-secondary btn-sm" style="justify-self:start"><i data-i="plus"></i> Adicionar setor</button></div>
   <div class="drawer-f"><button class="btn btn-ghost" data-close>Cancelar</button><button class="btn btn-primary" data-toast="Setores confirmados (exemplo)" data-close>Confirmar</button></div></aside>
 <aside class="drawer" id="dr3" aria-label="Pendência: entrevistas e grupos"><div class="drawer-h"><div><span class="label muted">Pendência · Empresa · prazo 05/12</span><h2 class="h4" style="margin-top:4px">Liberar horário para entrevistas e grupos</h2></div><button class="iconbtn" data-close aria-label="Fechar"><i data-i="x"></i></button></div>
-  <div class="drawer-b"><p class="small muted">Só data, hora e setor. A Lastro nunca mostra quem respondeu a pesquisa (decisão em aberto nº 4 da pauta).</p>
+  <div class="drawer-b"><p class="small muted">Só data, hora e setor. A Lastra nunca mostra quem respondeu a pesquisa (decisão em aberto nº 4 da pauta).</p>
     <div class="grid2"><label class="field">Data<input type="text" value="02/12/2026"></label><label class="field">Horário<input type="text" value="14:00 – 15:00"></label></div>
     <label class="field">Setor<select><option>Produção</option><option>Atendimento</option><option>Entrega</option></select></label>
     <div class="uploadbox"><i data-i="upload" class="l"></i><b>Anexar escala de trabalho</b><span class="small">PDF ou foto · até 10 MB</span></div></div>
-  <div class="drawer-f"><button class="btn btn-ghost" data-close>Cancelar</button><button class="btn btn-primary" data-toast="Horário enviado à Lastro (exemplo)" data-close>Enviar</button></div></aside>
+  <div class="drawer-f"><button class="btn btn-ghost" data-close>Cancelar</button><button class="btn btn-primary" data-toast="Horário enviado à Lastra (exemplo)" data-close>Enviar</button></div></aside>
 
 <script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
 <script>

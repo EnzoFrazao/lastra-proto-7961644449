@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lastro — Portal · Meu programa (P02–P04, P12) · protótipo</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Lastra — Portal · Meu programa (P02–P04, P12) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
 <style>
   .stp { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr); gap:24px; align-items:start; }
@@ -22,7 +22,7 @@
 <body data-shell="portal" data-page="programa" data-crumb="Meu programa">
 <div class="app"><div class="app-main"><main>
   <section class="head">
-    <div><h1 class="h2">Meu programa</h1><p>Programa Lastro NR-1 · contrato anual com 2 ciclos. Aqui você vê onde está, quando vence cada coisa e o que já ficou para trás.</p></div>
+    <div><h1 class="h2">Meu programa</h1><p>Programa Lastra NR-1 · contrato anual com 2 ciclos. Aqui você vê onde está, quando vence cada coisa e o que já ficou para trás.</p></div>
     <div class="inline"><span class="chip dark">Caminho: AEP (grau 1–2)</span><span class="chip">Ciclo 1 de 2 · mês 2 de 6</span></div>
   </section>
 
@@ -37,26 +37,26 @@
         <div class="card stp-list" id="stpList" role="group" aria-label="Etapas do ciclo"></div>
         <div class="card stack" id="stpDet" aria-live="polite"></div>
       </div>
-      <div class="note"><i data-i="info"></i><span>Perguntas sobre uma etapa? Use <a href="portal-mensagens.html"><b>Mensagens</b></a>. Fora do escopo do programa (NR-15/16, LTCAT, PCMSO, atendimento clínico) a Lastro avisa aqui quando surgir e indica o caminho.</span></div>
+      <div class="note"><i data-i="info"></i><span>Perguntas sobre uma etapa? Use <a href="portal-mensagens.html"><b>Mensagens</b></a>. Fora do escopo do programa (NR-15/16, LTCAT, PCMSO, atendimento clínico) a Lastra avisa aqui quando surgir e indica o caminho.</span></div>
     </section>
 
     <!-- P04 cronograma -->
     <section role="tabpanel" hidden>
       <div class="cols">
         <div class="card"><div class="monthhead"><h2 style="margin:0">Novembro de 2026</h2><button class="btn btn-secondary btn-sm" data-toast="Calendário exportado (.ics) — exemplo"><i data-i="download"></i> Exportar .ics</button></div><div class="cal" id="cal"></div>
-          <div class="legend" style="margin-top:14px"><span><i style="background:var(--fg)"></i>Prazo da empresa</span><span><i style="background:var(--water-soft)"></i>Prazo da Lastro</span><span><i style="background:var(--alert-soft)"></i>Atenção</span></div></div>
+          <div class="legend" style="margin-top:14px"><span><i style="background:var(--fg)"></i>Prazo da empresa</span><span><i style="background:var(--tint)"></i>Prazo da Lastra</span><span><i style="background:var(--alert-soft)"></i>Atenção</span></div></div>
         <div class="card"><h2>Próximos prazos</h2><div class="list">
           <div class="row"><span class="doc" style="background:var(--alert-soft);color:var(--alert)">20</span><div><b>Divulgar o link da pesquisa</b><span class="s">Empresa · nov</span></div><span class="chip warn">em 5 dias</span></div>
           <div class="row"><span class="doc">27</span><div><b>Confirmar a lista de setores</b><span class="s">Empresa · nov</span></div><span class="chip">em 12 dias</span></div>
-          <div class="row"><span class="doc">30</span><div><b>Coleta anônima encerra</b><span class="s">Lastro · fecha com ou sem meta</span></div><span class="chip ok">Lastro</span></div>
-          <div class="row"><span class="doc">05</span><div><b>Entrega do PGR/AEP</b><span class="s">Lastro · dez</span></div><span class="chip ok">Lastro</span></div></div></div>
+          <div class="row"><span class="doc">30</span><div><b>Coleta anônima encerra</b><span class="s">Lastra · fecha com ou sem meta</span></div><span class="chip ok">Lastra</span></div>
+          <div class="row"><span class="doc">05</span><div><b>Entrega do PGR/AEP</b><span class="s">Lastra · dez</span></div><span class="chip ok">Lastra</span></div></div></div>
       </div>
     </section>
 
     <!-- P02 contrato -->
     <section role="tabpanel" hidden>
       <div class="grid3">
-        <div class="card"><span class="label muted">Plano</span><p class="h4" style="margin-top:6px">Programa Lastro NR-1</p><p class="small muted" style="margin-top:6px">2 ciclos por ano · atendimento em São Luís</p></div>
+        <div class="card"><span class="label muted">Plano</span><p class="h4" style="margin-top:6px">Programa Lastra NR-1</p><p class="small muted" style="margin-top:6px">2 ciclos por ano · atendimento em São Luís</p></div>
         <div class="card"><span class="label muted">Vigência</span><p class="h4" style="margin-top:6px">02/09/2026 – 01/09/2027</p><p class="small muted" style="margin-top:6px">Renova em 12 meses · aviso 60 dias antes</p></div>
         <div class="card"><span class="label muted">Pagamento</span><p class="h4" style="margin-top:6px">12 parcelas</p><p class="small muted" style="margin-top:6px">Boleto ou Pix · valores de exemplo</p></div>
       </div>
@@ -79,20 +79,20 @@
 
     <!-- P12 histórico -->
     <section role="tabpanel" hidden>
-      <div class="card"><div class="empty"><svg class="scene-ill" viewBox="0 0 120 84" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 56h92l-12 18H26z"/><path d="M30 56V36h32v20M44 36V22h14v14"/><path d="M4 76c8-5 14-5 22 0s14 5 22 0 14-5 22 0 14 5 22 0 14-5 22 0" opacity=".5"/></svg><b>Este é o seu primeiro ciclo.</b><span>Quando ele terminar, o resumo, os documentos e a comparação com o ciclo seguinte ficam guardados aqui.</span><a class="btn btn-secondary btn-sm" href="portal-ajuda.html">Como funciona o histórico</a></div></div>
-      <div class="note"><i data-i="clock"></i><span>Pedidos e solicitações anteriores também aparecem aqui, com status e resposta da Lastro.</span></div>
+      <div class="card"><div class="empty"><svg class="scene-ill" viewBox="0 0 120 84" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M10 74h100"/><rect x="14" y="56" width="92" height="14"/><rect x="28" y="38" width="64" height="14"/><rect x="42" y="20" width="36" height="14" stroke-dasharray="4 4" opacity=".6"/></svg><b>Este é o seu primeiro ciclo.</b><span>Quando ele terminar, o resumo, os documentos e a comparação com o ciclo seguinte ficam guardados aqui.</span><a class="btn btn-secondary btn-sm" href="portal-ajuda.html">Como funciona o histórico</a></div></div>
+      <div class="note"><i data-i="clock"></i><span>Pedidos e solicitações anteriores também aparecem aqui, com status e resposta da Lastra.</span></div>
     </section>
   </div>
 </main></div></div>
 <script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>
 <script>
   const ST = [
-    { n: 'Levantamento', m: 'Mês 1', k: 'done', r: 'Lastro e empresa', d: '02/09 – 30/09', c: [['ok', 'Dados da empresa confirmados (CNPJ, CNAE, empregados, setores)', 'Empresa'], ['ok', 'Levantamento preliminar de perigos', 'Lastro'], ['ok', 'Enquadramento: porte, grau de risco (NR-4) e caminho AEP/DIR', 'RT'], ['ok', 'Consulta aos trabalhadores agendada', 'Empresa']], e: ['Enquadramento e grau de risco (assinado)'] },
-    { n: 'Avaliação', m: 'Mês 2', k: 'now', r: 'Lastro, empresa e psicólogo', d: '01/10 – 30/11', c: [['ok', 'Pesquisa anônima aberta', 'Lastro'], ['pend', 'Divulgar o link e o QR aos colaboradores', 'Empresa · 20/11'], ['pend', 'Liberar horário para entrevistas e grupos', 'Empresa · 27/11'], ['', 'Análise da organização do trabalho (jornadas, metas, escalas)', 'Lastro'], ['', 'Inventário de riscos psicossociais (rascunho)', 'RT']], e: ['Inventário de riscos (rascunho)'] },
-    { n: 'Entrega', m: 'Mês 3', k: '', r: 'RT, psicólogo e Lastro', d: '01/12 – 31/12', c: [['', 'PGR ou AEP com plano de ação, assinado pelo RT', 'RT'], ['', 'Relatório psicossocial, só dados agregados, assinado pelo psicólogo', 'Psicólogo'], ['', 'Dar ciência nos documentos', 'Empresa'], ['', 'Devolutiva coletiva com direção e trabalhadores', 'Lastro + empresa']], e: ['PGR/AEP', 'Relatório psicossocial', 'Plano de ação'] },
-    { n: 'Acompanhamento', m: 'Mês 4', k: '', r: 'Empresa, com apoio da Lastro', d: '01/01 – 31/01', c: [['', 'Executar as medidas do plano de ação', 'Empresa'], ['', 'Anexar a evidência de cada medida (foto, ata, treinamento, comunicado)', 'Empresa'], ['', 'Lastro valida e orienta', 'Lastro']], e: ['Dossiê de evidências (parcial)'] },
-    { n: 'Ajustes', m: 'Mês 5', k: '', r: 'Empresa, com apoio da Lastro', d: '01/02 – 28/02', c: [['', 'Concluir medidas pendentes', 'Empresa'], ['', 'Corrigir apontamentos da validação', 'Empresa']], e: ['Dossiê de evidências'] },
-    { n: 'Revisão', m: 'Mês 6', k: '', r: 'Lastro, psicólogo e empresa', d: '01/03 – 02/03', c: [['', 'Reavaliação (pesquisa curta ou repetida — a definir)', 'Empresa'], ['', 'Avaliação de eficácia e comparação ciclo × ciclo', 'Psicólogo'], ['', 'Decidir sobre o 2º ciclo', 'Empresa']], e: ['Relatório de eficácia', 'Dossiê fechado do ciclo'] }
+    { n: 'Levantamento', m: 'Mês 1', k: 'done', r: 'Lastra e empresa', d: '02/09 – 30/09', c: [['ok', 'Dados da empresa confirmados (CNPJ, CNAE, empregados, setores)', 'Empresa'], ['ok', 'Levantamento preliminar de perigos', 'Lastra'], ['ok', 'Enquadramento: porte, grau de risco (NR-4) e caminho AEP/DIR', 'RT'], ['ok', 'Consulta aos trabalhadores agendada', 'Empresa']], e: ['Enquadramento e grau de risco (assinado)'] },
+    { n: 'Avaliação', m: 'Mês 2', k: 'now', r: 'Lastra, empresa e psicólogo', d: '01/10 – 30/11', c: [['ok', 'Pesquisa anônima aberta', 'Lastra'], ['pend', 'Divulgar o link e o QR aos colaboradores', 'Empresa · 20/11'], ['pend', 'Liberar horário para entrevistas e grupos', 'Empresa · 27/11'], ['', 'Análise da organização do trabalho (jornadas, metas, escalas)', 'Lastra'], ['', 'Inventário de riscos psicossociais (rascunho)', 'RT']], e: ['Inventário de riscos (rascunho)'] },
+    { n: 'Entrega', m: 'Mês 3', k: '', r: 'RT, psicólogo e Lastra', d: '01/12 – 31/12', c: [['', 'PGR ou AEP com plano de ação, assinado pelo RT', 'RT'], ['', 'Relatório psicossocial, só dados agregados, assinado pelo psicólogo', 'Psicólogo'], ['', 'Dar ciência nos documentos', 'Empresa'], ['', 'Devolutiva coletiva com direção e trabalhadores', 'Lastra + empresa']], e: ['PGR/AEP', 'Relatório psicossocial', 'Plano de ação'] },
+    { n: 'Acompanhamento', m: 'Mês 4', k: '', r: 'Empresa, com apoio da Lastra', d: '01/01 – 31/01', c: [['', 'Executar as medidas do plano de ação', 'Empresa'], ['', 'Anexar a evidência de cada medida (foto, ata, treinamento, comunicado)', 'Empresa'], ['', 'Lastra valida e orienta', 'Lastra']], e: ['Dossiê de evidências (parcial)'] },
+    { n: 'Ajustes', m: 'Mês 5', k: '', r: 'Empresa, com apoio da Lastra', d: '01/02 – 28/02', c: [['', 'Concluir medidas pendentes', 'Empresa'], ['', 'Corrigir apontamentos da validação', 'Empresa']], e: ['Dossiê de evidências'] },
+    { n: 'Revisão', m: 'Mês 6', k: '', r: 'Lastra, psicólogo e empresa', d: '01/03 – 02/03', c: [['', 'Reavaliação (pesquisa curta ou repetida — a definir)', 'Empresa'], ['', 'Avaliação de eficácia e comparação ciclo × ciclo', 'Psicólogo'], ['', 'Decidir sobre o 2º ciclo', 'Empresa']], e: ['Relatório de eficácia', 'Dossiê fechado do ciclo'] }
   ];
   let sel = 1;
   const list = document.getElementById('stpList'), det = document.getElementById('stpDet');
@@ -109,7 +109,7 @@
   /* calendário: novembro de 2026 começa num domingo */
   const EV = { 4: [['Enquadramento assinado', 'al0']], 13: [['Pesquisa: 62% de adesão', '']], 20: [['Divulgar pesquisa', 'co'], ['Prazo!', 'al']], 27: [['Confirmar setores', 'co']], 30: [['Coleta encerra', '']] };
   let h = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map(d => `<div class="dh">${d}</div>`).join('');
-  for (let d = 1; d <= 30; d++) h += `<div>${d === 15 ? `<b style="background:var(--fg);color:#fff;width:22px;height:22px;border-radius:50%;display:grid;place-items:center">${d}</b>` : d}${(EV[d] || []).map(([t, c]) => `<span class="ev ${c === 'al0' ? '' : c}">${t}</span>`).join('')}</div>`;
+  for (let d = 1; d <= 30; d++) h += `<div>${d === 15 ? `<b style="background:var(--fg);color:var(--bg-page);width:22px;height:22px;border-radius:50%;display:grid;place-items:center">${d}</b>` : d}${(EV[d] || []).map(([t, c]) => `<span class="ev ${c === 'al0' ? '' : c}">${t}</span>`).join('')}</div>`;
   h += '<div class="mut"></div>'.repeat(5);
   document.getElementById('cal').innerHTML = h;
 </script>

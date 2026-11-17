@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lastro — Painel interno · Leads (A05) · protótipo</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Lastra — Painel interno · Leads (A05) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
 <style> .kb-card .meta { display:flex; gap:6px; flex-wrap:wrap; } .kb-card .s { font-size:12px; color:var(--fg-2); } .kb-card { cursor:pointer; } .kb-card:hover { border-color:var(--fg-2); } </style>
 </head>
 <body data-shell="interno" data-page="leads" data-crumb="Leads">
 <div class="app"><div class="app-main"><main>
-  <section class="head"><div><h1 class="h2">Leads</h1><p>Do primeiro contato ao contrato. Origem: diagnóstico grátis, solicitação de atendimento, WhatsApp ou indicação de contador.</p></div><button class="btn btn-primary" data-open="dl"><i data-i="plus"></i> Novo lead</button></section>
+  <section class="head"><div><h1 class="h2">Leads</h1><p>Do primeiro contato ao contrato. Origem: enquadramento grátis, solicitação de atendimento, WhatsApp ou indicação de contador.</p></div><button class="btn btn-primary" data-open="dl"><i data-i="plus"></i> Novo lead</button></section>
   <div class="kb">
     <div class="kb-col"><h3>Contato <span>2</span></h3>
-      <article class="kb-card" data-open="dl"><b>Studio Maré</b><span class="s">6 empregados · AEP provável</span><div class="meta"><span class="chip">Diagnóstico</span><span class="chip warn">Retorno hoje</span></div></article>
+      <article class="kb-card" data-open="dl"><b>Studio Aurora</b><span class="s">6 empregados · AEP provável</span><div class="meta"><span class="chip">Enquadramento</span><span class="chip warn">Retorno hoje</span></div></article>
       <article class="kb-card" data-open="dl"><b>Casa do Açaí</b><span class="s">12 empregados · WhatsApp</span><div class="meta"><span class="chip">WhatsApp</span></div></article></div>
     <div class="kb-col"><h3>Enquadramento <span>1</span></h3>
       <article class="kb-card" data-open="dl"><b>Barbearia Ponta d'Areia</b><span class="s">9 empregados · conferindo CNAE</span><div class="meta"><span class="chip">Contador</span></div></article></div>
@@ -26,9 +26,9 @@
   <p class="caption muted">Arraste de uma coluna para outra no sistema real (aqui o quadro é só ilustração). O funil não mostra valores: preço só depois das 15–20 entrevistas.</p>
 </main></div></div>
 <div class="scrim" data-close></div>
-<aside class="drawer" id="dl" aria-label="Lead"><div class="drawer-h"><div><span class="label muted">Lead · contato</span><h2 class="h4" style="margin-top:4px">Studio Maré</h2></div><button class="iconbtn" data-close aria-label="Fechar"><i data-i="x"></i></button></div>
-  <div class="drawer-b stack"><div class="grid2"><label class="field">Contato<input type="text" value="Luana Prado"></label><label class="field">WhatsApp<input type="text" value="(98) 00000-0000"></label><label class="field">Origem<select><option>Diagnóstico grátis</option><option>Solicitação</option><option>Contador</option></select></label><label class="field">Etapa<select><option>Contato</option><option>Enquadramento</option><option>Proposta</option><option>Contrato</option><option>Perdido</option></select></label></div>
-    <div class="note"><i data-i="info"></i><span>Resultado do diagnóstico: CLT sim · 6 empregados · grau 2 estimado · Simples sim → AEP provável.</span></div>
+<aside class="drawer" id="dl" aria-label="Lead"><div class="drawer-h"><div><span class="label muted">Lead · contato</span><h2 class="h4" style="margin-top:4px">Studio Aurora</h2></div><button class="iconbtn" data-close aria-label="Fechar"><i data-i="x"></i></button></div>
+  <div class="drawer-b stack"><div class="grid2"><label class="field">Contato<input type="text" value="Luana Prado"></label><label class="field">WhatsApp<input type="text" value="(98) 00000-0000"></label><label class="field">Origem<select><option>Enquadramento grátis</option><option>Solicitação</option><option>Contador</option></select></label><label class="field">Etapa<select><option>Contato</option><option>Enquadramento</option><option>Proposta</option><option>Contrato</option><option>Perdido</option></select></label></div>
+    <div class="note"><i data-i="info"></i><span>Enquadramento estimado: CLT sim · 6 empregados · grau 2 estimado · Simples sim → AEP provável.</span></div>
     <label class="field">Anotações<textarea rows="3">Pediu retorno hoje à tarde. Quer saber se precisa de PGR.</textarea></label></div>
   <div class="drawer-f"><button class="btn btn-ghost" data-close>Fechar</button><button class="btn btn-secondary" data-toast="Lead marcado como perdido (exemplo)" data-close>Marcar perdido</button><a class="btn btn-primary" href="interno-novo-cliente.html">Iniciar enquadramento</a></div></aside>
 <script src="assets/icons.js"></script><script src="assets/portal.js"></script><script src="assets/logo.js"></script>

@@ -2,17 +2,17 @@
 <html lang="pt-BR" data-theme="light">
 <head>
 <meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lastro — Solicitar atendimento (S13) · protótipo</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Lastra — Solicitar atendimento (S13) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="home.css"><link rel="stylesheet" href="assets/site.css">
-<script>try{var t=localStorage.getItem('lastro-tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem('lastra-tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <style>
   .sol { max-width:720px; margin:0 auto; } .sol .cardx { padding:40px; gap:20px; }
   .draft { display:flex; gap:6px; } .draft i { flex:1; height:8px; background:var(--line); clip-path:polygon(0 0,100% 0,94% 100%,6% 100%); transition:background var(--t-slow); } .draft i.on { background:var(--fg); }
   .stepl { display:flex; justify-content:space-between; font-size:13px; font-weight:600; color:var(--fg-2); }
   .acts { display:flex; justify-content:space-between; gap:12px; margin-top:8px; flex-wrap:wrap; }
   .radiocards { display:grid; gap:10px; } .rc { display:flex; gap:12px; align-items:flex-start; padding:14px 16px; border:1.5px solid var(--line); border-radius:var(--r-md); cursor:pointer; font-size:15px; background:var(--bg-card); } .rc input { margin-top:3px; accent-color:var(--fg); } .rc:has(input:checked) { border-color:var(--fg); background:var(--bg-surface); } .rc b { display:block; font-weight:600; } .rc span { font-size:13px; color:var(--fg-2); }
-  .bigok { display:grid; gap:14px; justify-items:start; } .bigok .big { width:64px; height:64px; border-radius:50%; background:var(--water-soft); display:grid; place-items:center; } .bigok .big svg.i { width:30px; height:30px; stroke-width:2.5; }
+  .bigok { display:grid; gap:14px; justify-items:start; } .bigok .big { width:64px; height:64px; border-radius:50%; background:var(--tint); display:grid; place-items:center; } .bigok .big svg.i { width:30px; height:30px; stroke-width:2.5; }
   .previewbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:28px; justify-content:center; font-size:13px; color:var(--fg-2); }
   @media (max-width:700px) { .sol .cardx { padding:24px; } }
 </style>
@@ -25,7 +25,7 @@
   <h1 class="h1" style="margin-top:14px">Conte sobre a sua empresa. A gente responde.</h1>
   <p class="lead">Três passos curtos. Você recebe o enquadramento e a proposta pelo WhatsApp ou e-mail.</p>
 </div></section>
-<section class="sec tight" data-wave style="--sec:var(--bg-page)"><div class="wrap">
+<section class="sec tight" data-strata style="--sec:var(--bg-page)"><div class="wrap">
   <div class="previewbar"><span>Ver estado:</span><div class="seg" id="st"><button data-v="form" aria-pressed="true">Preenchendo</button><button data-v="valid">Erro de validação</button><button data-v="erro">Erro de envio</button><button data-v="ok">Sucesso</button></div></div>
   <div class="sol"><form class="cardx static" id="fm" novalidate></form></div>
 </div></section>

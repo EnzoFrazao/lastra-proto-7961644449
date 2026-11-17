@@ -3,14 +3,11 @@
 <head>
 <meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lastro — Portal · Pesquisa e resultados (P06–P07) · protótipo</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Lastra — Portal · Pesquisa e resultados (P06–P07) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/ui.css">
 <style>
-  .gauge2 { display:grid; grid-template-columns:120px 1fr; gap:20px; align-items:center; }
-  .gauge2 svg { width:120px; height:140px; }
-  .gw { animation:gwv 6s ease-in-out infinite alternate; } @keyframes gwv { to { transform:translateX(-14px); } }
-  .daybars { display:flex; align-items:flex-end; gap:6px; height:84px; } .daybars i { flex:1; background:var(--water-deep); border-radius:3px 3px 0 0; height:var(--h); min-width:8px; opacity:.85; } .daybars i:last-child { opacity:1; }
+  .daybars { display:flex; align-items:flex-end; gap:6px; height:84px; } .daybars i { flex:1; background:var(--ok); border-radius:3px 3px 0 0; height:var(--h); min-width:8px; opacity:.85; } .daybars i:last-child { opacity:1; }
 </style>
 </head>
 <body data-shell="portal" data-page="resultados" data-crumb="Pesquisa e resultados">
@@ -29,13 +26,13 @@
       </div>
       <div class="cols even">
         <section class="card stack"><h2 style="margin:0">Divulgar a pesquisa</h2>
-          <div class="card soft stack-s"><span class="label muted">Link</span><div class="inline"><code style="font-size:14px;word-break:break-all">lastro.example/p/sol-nascente-7Q4K</code><button class="btn btn-secondary btn-sm" data-copy="link"><i data-i="copy"></i> Copiar</button></div></div>
+          <div class="card soft stack-s"><span class="label muted">Link</span><div class="inline"><code style="font-size:14px;word-break:break-all">lastra.example/p/sol-nascente-7Q4K</code><button class="btn btn-secondary btn-sm" data-copy="link"><i data-i="copy"></i> Copiar</button></div></div>
           <div class="card soft stack-s"><span class="label muted">Mensagem pronta (WhatsApp)</span><p class="small">Pessoal, a Padaria Sol Nascente quer ouvir como está o trabalho aqui. É anônima, leva 3 minutos e ninguém saberá quem respondeu.</p><button class="btn btn-secondary btn-sm" style="justify-self:start" data-copy="msg"><i data-i="copy"></i> Copiar mensagem</button></div>
           <div class="inline"><button class="btn btn-secondary btn-sm" data-toast="Cartaz com QR baixado — exemplo"><i data-i="qr"></i> Cartaz com QR</button><a class="btn btn-ghost btn-sm" href="pesquisa.html" target="_blank">Ver como o colaborador vê <i data-i="external"></i></a></div></section>
         <section class="card stack"><h2 style="margin:0">Adesão por setor</h2>
           <div><div class="hb"><span>Produção</span><div class="bar dark" style="--v:75%"><i></i></div><b>75%</b></div><div class="hb"><span>Atendimento</span><div class="bar dark" style="--v:60%"><i></i></div><b>60%</b></div><div class="hb"><span>Entrega</span><div class="bar warn" style="--v:36%"><i></i></div><b>36%</b></div><div class="hb"><span>Administrativo</span><div class="bar thin" style="--v:0%"></div><b><i data-i="lock" class="s"></i></b></div></div>
           <p class="small muted"><i data-i="lock" class="s"></i> Administrativo tem menos de 5 pessoas: o dado fica protegido e entra agrupado com outro setor nos resultados.</p>
-          <div class="note warn"><i data-i="warn"></i><span><b>Entrega está abaixo de 50%.</b> Vale um lembrete ao time antes de 30/11. Com adesão baixa, a Lastro registra a ressalva no relatório.</span></div></section>
+          <div class="note warn"><i data-i="warn"></i><span><b>Entrega está abaixo de 50%.</b> Vale um lembrete ao time antes de 30/11. Com adesão baixa, a Lastra registra a ressalva no relatório.</span></div></section>
       </div>
     </section>
 
@@ -49,8 +46,7 @@
         <div class="banner"><div class="inline"><i data-i="info"></i><span><b>Análise fechada em 05/12/2026</b> pelo psicólogo parceiro · 31 respostas · adesão 62% · instrumento v1 · norma vigente em 15/11/2026. Insumo técnico, não é laudo.</span></div><a class="btn btn-secondary btn-sm" href="portal-documentos.html">Ver relatório assinado</a></div>
         <div class="cols even">
           <section class="card"><h2>Nível geral de carga</h2>
-            <div class="gauge2"><svg viewBox="0 0 120 140" aria-hidden="true"><rect x="14" y="8" width="92" height="124" rx="10" fill="var(--bg-surface)" stroke="var(--line)" stroke-width="2"/><clipPath id="tk"><rect x="16" y="10" width="88" height="120" rx="8"/></clipPath><g clip-path="url(#tk)"><g class="gw"><path d="M-20 62 q12 -9 24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 V140 H-20z" fill="var(--water)" fill-opacity=".7"/></g></g><path d="M8 78h104" stroke="var(--alert)" stroke-width="3" stroke-dasharray="6 4"/></svg>
-              <div class="stack-s"><span class="chip warn" style="justify-self:start">Moderado a alto</span><p class="small">A água está <b>um pouco acima</b> da linha de carga em <b>Demandas</b>. Nos demais fatores ela fica abaixo.</p><p class="caption muted">A linha tracejada é o limite de atenção do instrumento.</p></div></div></section>
+            <div class="stack-s"><div class="between"><span class="chip warn">Moderado a alto</span><b class="num">68</b></div><div class="meter warn" style="--v:68%" role="img" aria-label="Nível geral de carga: 68 de 100, limite de atenção em 60"><i></i></div><div class="limit" aria-hidden="true"><span style="left:60%"></span></div><p class="small">A carga está <b>um pouco acima</b> do limite de atenção em <b>Demandas</b>. Nos demais fatores fica abaixo.</p><p class="caption muted">A marca vermelha é o limite de atenção do instrumento.</p></div></section>
           <section class="card"><h2>Por fator</h2>
             <div><div class="hb"><span>Demandas do trabalho</span><div class="bar warn" style="--v:68%"><i></i></div><b>68</b></div><div class="hb"><span>Autonomia e controle</span><div class="bar dark" style="--v:41%"><i></i></div><b>41</b></div><div class="hb"><span>Apoio da liderança</span><div class="bar dark" style="--v:35%"><i></i></div><b>35</b></div><div class="hb"><span>Relacionamentos</span><div class="bar dark" style="--v:52%"><i></i></div><b>52</b></div><div class="hb"><span>Clareza de função</span><div class="bar dark" style="--v:44%"><i></i></div><b>44</b></div><div class="hb"><span>Mudanças no trabalho</span><div class="bar dark" style="--v:58%"><i></i></div><b>58</b></div></div>
             <p class="caption muted" style="margin-top:10px">Índice de 0 a 100: quanto maior, mais atenção pede. Valores de exemplo.</p></section>
@@ -63,12 +59,12 @@
             <div class="hr"><b>Entrega · 4</b><span class="hc na" style="grid-column:2 / -1"><i data-i="lock" class="s"></i>&nbsp;Dados protegidos: menos de 5 respostas</span></div>
             <div class="hr"><b>Administrativo · 3</b><span class="hc na" style="grid-column:2 / -1"><i data-i="lock" class="s"></i>&nbsp;Dados protegidos: menos de 5 respostas</span></div>
           </div>
-          <div class="legend" style="margin-top:14px"><span><i style="background:#E3EEEA"></i>Baixo</span><span><i style="background:#9ED0BF"></i>Moderado</span><span><i style="background:#F6D3CD"></i>Alto</span><span><i style="background:#EBA79D"></i>Muito alto</span></div>
+          <div class="legend" style="margin-top:14px"><span><i style="background:var(--l1)"></i>Baixo</span><span><i style="background:var(--l3)"></i>Moderado</span><span><i style="background:var(--l4)"></i>Alto</span><span><i style="background:var(--l5)"></i>Muito alto</span></div>
           <p class="small muted" style="margin-top:10px">Entrega e Administrativo têm menos de 5 respostas e aparecem agrupados no relatório. O número ao lado do setor é a contagem de respostas, nunca de pessoas identificadas.</p></section>
         <section class="card"><h2>Comparação entre ciclos</h2><div class="empty" style="padding:20px"><i data-i="chart" class="l"></i><b>Disponível depois do 2º ciclo.</b><span>Quando a reavaliação do mês 6 fechar, esta área mostra o antes e o depois por fator.</span></div></section>
       </div>
 
-      <div data-seg-panel="r:baixa" hidden class="stack" style="gap:24px"><div class="banner warn"><div class="inline"><i data-i="warn"></i><span><b>Adesão de 41% — abaixo de 50%.</b> Os resultados são mostrados com ressalva e a Lastro recomenda ampliar a coleta antes de decidir ações grandes. O relatório registra essa limitação.</span></div><button class="btn btn-secondary btn-sm" data-toast="Pedido para reabrir a coleta enviado (exemplo)">Pedir mais 7 dias de coleta</button></div>
+      <div data-seg-panel="r:baixa" hidden class="stack" style="gap:24px"><div class="banner warn"><div class="inline"><i data-i="warn"></i><span><b>Adesão de 41% — abaixo de 50%.</b> Os resultados são mostrados com ressalva e a Lastra recomenda ampliar a coleta antes de decidir ações grandes. O relatório registra essa limitação.</span></div><button class="btn btn-secondary btn-sm" data-toast="Pedido para reabrir a coleta enviado (exemplo)">Pedir mais 7 dias de coleta</button></div>
         <div class="card"><div class="between"><h2 style="margin:0">Demandas do trabalho</h2><span class="chip warn">Leitura com ressalva</span></div><div class="hb"><span>Índice</span><div class="bar warn" style="--v:61%"><i></i></div><b>61</b></div><p class="small muted">Os outros fatores ficam visíveis, cada um com a mesma marca de ressalva.</p></div></div>
     </section>
   </div>

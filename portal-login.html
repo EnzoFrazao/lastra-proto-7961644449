@@ -3,18 +3,19 @@
 <head>
 <meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lastro — Entrar (P00 / S17) · protótipo</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Lastra — Entrar (P00 / S17) · protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/ui.css">
 <style>
   body { min-height:100vh; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); background:var(--bg-page); }
   .pane { padding:40px clamp(24px,6vw,88px); display:flex; flex-direction:column; min-height:100vh; }
   .pane-in { margin:auto 0; max-width:440px; width:100%; display:grid; gap:20px; }
-  .side-art { background:var(--bg-deep); color:#fff; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; padding:56px; }
-  .side-art svg.bgw { position:absolute; left:0; bottom:0; width:200%; height:55%; }
+  .side-art { background:var(--bg-deep); color:var(--fg-on-deep); position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; padding:56px; }
+  .side-art::after { content:""; position:absolute; inset:0; background:#FFFFFF; opacity:.07; pointer-events:none; -webkit-mask:url("assets/textura-hex.svg") center/110px auto; mask:url("assets/textura-hex.svg") center/110px auto; }
+  .side-art svg.bgw { position:absolute; left:0; bottom:0; width:100%; height:48%; }
   .side-art p { position:relative; max-width:34ch; font-size:26px; line-height:1.3; font-weight:600; }
   .side-art small { position:relative; color:var(--fg-on-deep-2); margin-top:14px; font-size:14px; display:block; }
-  .w1 { fill:#01493B; animation:dr 18s linear infinite; } .w2 { fill:#012B23; animation:dr 12s linear infinite reverse; } @keyframes dr { to { transform:translateX(-25%); } }
+  .w1 { fill:var(--bg-deep-surface); } .w2 { fill:var(--bg-deeper); }
   .tabsbar { display:flex; justify-content:space-between; align-items:center; }
   .links { font-size:14px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
   .btn.full { width:100%; }
@@ -24,7 +25,7 @@
 </head>
 <body>
 <section class="pane">
-  <div class="tabsbar"><a class="logo" data-logo="horizontal" style="height:30px" href="home.html" aria-label="Lastro — site"></a><a class="small" href="home.html">← Voltar ao site</a></div>
+  <div class="tabsbar"><a class="logo" data-logo="horizontal" style="height:30px" href="home.html" aria-label="Lastra — site"></a><a class="small" href="home.html">← Voltar ao site</a></div>
   <div class="pane-in">
     <span class="chip warn" style="justify-self:start">Protótipo — nada é enviado</span>
 
@@ -35,7 +36,7 @@
       <label class="field">Senha<input type="password" value="exemplo-123" autocomplete="current-password"></label>
       <div class="links"><label class="check"><input type="checkbox" checked> Manter conectado neste computador</label><a href="#" data-seg-go="esqueci">Esqueci a senha</a></div>
       <button class="btn btn-primary full" type="submit">Entrar <i data-i="arrow"></i></button>
-      <p class="small muted">Não tem acesso? O convite chega por e-mail depois da contratação. <a href="contato.html">Falar com a Lastro</a></p>
+      <p class="small muted">Não tem acesso? O convite chega por e-mail depois da contratação. <a href="contato.html">Falar com a Lastra</a></p>
     </form>
 
     <!-- primeiro acesso -->
@@ -75,7 +76,7 @@
 
     <!-- convite expirado -->
     <div data-seg-panel="est:expirado" hidden class="stack" style="gap:18px">
-      <div><h1 class="h3">Este convite expirou</h1><p class="muted small" style="margin-top:6px">Por segurança, o link de convite vale por 7 dias. Peça um novo à pessoa que convidou você ou à Lastro.</p></div>
+      <div><h1 class="h3">Este convite expirou</h1><p class="muted small" style="margin-top:6px">Por segurança, o link de convite vale por 7 dias. Peça um novo à pessoa que convidou você ou à Lastra.</p></div>
       <a class="btn btn-primary full" href="contato.html">Pedir novo convite</a>
     </div>
 
@@ -86,10 +87,10 @@
   <p class="caption muted">Endereço do portal em aberto: <code>app.</code> (recomendado) ou <code>/cliente</code> — decisão nº 1.</p>
 </section>
 <aside class="side-art" aria-hidden="true">
-  <svg class="bgw" viewBox="0 0 1600 300" preserveAspectRatio="none"><path class="w1" d="M0 120 q100 -40 200 0 t200 0 t200 0 t200 0 t200 0 t200 0 t200 0 t200 0 V300 H0z"/><path class="w2" d="M0 170 q80 -30 160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 V300 H0z"/></svg>
-  <span class="logo" data-logo="simbolo" style="height:72px;color:#fff;margin-bottom:28px;position:relative"></span>
-  <p>O chão firme da sua empresa, na ordem certa.</p>
-  <small>Programa Lastro NR-1 · São Luís, MA</small>
+  <svg class="bgw" viewBox="0 0 100 100" preserveAspectRatio="none"><rect class="w1" x="0" y="0" width="100" height="100"/><rect class="w2" x="0" y="55" width="100" height="45"/></svg>
+  <span class="logo" data-logo="simbolo" style="height:72px;color:var(--neon);margin-bottom:28px;position:relative"></span>
+  <p>O piso da sua empresa, na ordem certa.</p>
+  <small>Programa Lastra NR-1 · São Luís, MA</small>
 </aside>
 <script src="assets/icons.js"></script><script src="assets/logo.js"></script>
 <script>

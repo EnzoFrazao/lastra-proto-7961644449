@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lastro — mapa dos protótipos</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Lastra — mapa dos protótipos</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css">
-<script>try{var t=localStorage.getItem('lastro-tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem('lastra-tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <style>
   body { padding:56px 24px 96px; background:var(--bg-surface); }
   .w { max-width:1080px; margin:0 auto; display:grid; gap:40px; }
@@ -28,7 +28,7 @@
   <div><h1 class="h2">Mapa dos protótipos</h1><p class="lead" style="margin-top:12px">Todas as telas do inventário em HTML navegável, para discutir fluxo, funcionalidades e abas. Os dados são de exemplo e nada aqui está publicado.</p></div>
   <div class="note"><b>Como ver</b>
     <span>Clique em qualquer cartão. Dentro do portal e do painel interno os menus e botões navegam entre as telas. O tema escuro vale para o site (botão no cabeçalho ou <code>?tema=dark</code>).</span>
-    <span>Várias telas têm estados: <code>?estado=</code> (login, erros, solicitação), <code>?resultado=aep|pgr|mei</code> (diagnóstico), <code>?ver=todas</code> (pesquisa).</span>
+    <span>Várias telas têm estados: <code>?estado=</code> (login, erros, solicitação), <code>?resultado=aep|pgr|mei</code> (enquadramento), <code>?ver=todas</code> (pesquisa).</span>
     <span>Pontos marcados "proposta" não foram pedidos pelos sócios e entram na pauta para validar.</span></div>
   <div id="out" style="display:grid;gap:40px"></div>
 </div>
@@ -36,9 +36,9 @@
 <script>
   const G = [
     ['Site público', 'Vitrine, educação e captação', [
-      ['S01','Home','home.html','Página de vendas com a descida ao lastro'],
-      ['S02','Sobre a Lastro','sobre.html',''],['S03','NR-1 explicada','nr1.html',''],['S04','Serviços','servicos.html','Programa Lastro NR-1'],['S05','Como funciona','como-funciona.html','Mês a mês'],
-      ['S06','Por que a Lastro','por-que.html','Benefícios e diferenciais'],['S07','Diagnóstico grátis','diagnostico.html','4 perguntas'],['S08','Resultado do diagnóstico','diagnostico.html?resultado=aep','Variantes aep, pgr, mei'],
+      ['S01','Home','home.html','Página de vendas: não é promessa, é piso'],
+      ['S02','Sobre a Lastra','sobre.html',''],['S03','NR-1 explicada','nr1.html',''],['S04','Serviços','servicos.html','Programa Lastra NR-1'],['S05','Como funciona','como-funciona.html','Mês a mês'],
+      ['S06','Por que a Lastra','por-que.html','Benefícios e diferenciais'],['S07','Enquadramento grátis','enquadramento.html','4 perguntas'],['S08','Resultado do enquadramento estimado','enquadramento.html?resultado=aep','Variantes aep, pgr, mei'],
       ['S09','Conteúdos','conteudos.html',''],['S10','Artigo','artigo.html','Modelo de artigo'],['S11','FAQ','faq.html',''],['S12','Contato','contato.html',''],
       ['S13','Solicitar atendimento','solicitar.html','Em 3 passos'],['S14','Planos e contratação','planos.html','Faixas sem preço'],['S15','Para contadores','contadores.html','Proposta'],['S16','Verificar documento','verificar.html','Proposta'],
       ['S18','Legais','legais.html','Privacidade, termos, cookies, aviso de limites'],['S19','404 / 500 / manutenção','erro.html','Três estados']]],
@@ -50,14 +50,14 @@
       ['P16','Minha empresa','portal-empresa.html','Dados e usuários'],['P17','Conta e privacidade','portal-conta.html',''],['P18','Ajuda','portal-ajuda.html',''],['P19','Estados globais','portal-estados.html','Tour, vazio, erro, manutenção']]],
     ['Pesquisa anônima', 'Funcionário responde pelo celular, sem login', [
       ['F01–F08','Fluxo da pesquisa','pesquisa.html','Interativo, um celular'],['F01–F08','Todas as telas','pesquisa.html?ver=todas','Lado a lado']]],
-    ['Painel interno', 'Equipe Lastro e parceiros', [
+    ['Painel interno', 'Equipe Lastra e parceiros', [
       ['A00','Entrar','interno-login.html',''],['A01','Visão geral da carteira','interno-carteira.html',''],['A02','Clientes','interno-clientes.html',''],['A03','Ficha do cliente','interno-cliente.html','Sete abas'],['A04','Novo cliente e enquadramento','interno-novo-cliente.html',''],
       ['A05','Leads','interno-leads.html','Funil em colunas'],['A06','Gestão do ciclo','interno-ciclo.html',''],['A07–A08','Pesquisa e análise','interno-pesquisa.html','Coleta e leitura agregada'],['A09','Inventário e plano','interno-inventario.html',''],
       ['A10','Revisão e assinatura','interno-revisao.html',''],['A11','Documentos','interno-documentos.html',''],['A12','Mensagens','interno-mensagens.html',''],['A13','Parceiros','interno-parceiros.html',''],
       ['A14','Usuários e permissões','interno-usuarios.html',''],['A15','Cobrança e contratos','interno-cobranca.html',''],['A16','Auditoria','interno-auditoria.html',''],['A17–A18','Modelos e regras normativas','interno-config.html','']]]
   ];
   document.getElementById('out').innerHTML = G.map(([t, s, items]) => `<section><h2 class="h3">${t}<small>${s}</small></h2><div class="grid" style="margin-top:16px">${items.map(([id, n, h, d]) => `<a class="c" href="${h}"><span class="id">${id}</span><b>${n}</b>${d ? `<small>${d}</small>` : ''}</a>`).join('')}</div></section>`).join('');
-  document.getElementById('tema').onclick = () => { const r = document.documentElement, n = r.dataset.theme === 'dark' ? 'light' : 'dark'; r.dataset.theme = n; try { localStorage.setItem('lastro-tema', n); } catch (e) {} };
+  document.getElementById('tema').onclick = () => { const r = document.documentElement, n = r.dataset.theme === 'dark' ? 'light' : 'dark'; r.dataset.theme = n; try { localStorage.setItem('lastra-tema', n); } catch (e) {} };
 </script>
 </body>
 </html>

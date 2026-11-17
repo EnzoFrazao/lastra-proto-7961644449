@@ -36,8 +36,8 @@
   ];
   const C = shell === 'interno' ? {
     groups: INTERNO, home: 'interno-carteira.html', prefix: 'Painel interno', chip: 'Dados de exemplo — clientes fictícios',
-    user: ['AR', 'Ana Ribeiro', 'Operação · Lastro'], search: 'Buscar cliente, documento ou CNPJ',
-    notes: [['Inventário aguardando revisão do RT', 'Padaria Sol Nascente · hoje, 09:12'], ['Novo lead pelo diagnóstico', 'Mercadinho Bom Preço · ontem, 17:03'], ['Prazo de entrega vence em 3 dias', 'Clínica Vida Plena · 18/11', 1]],
+    user: ['AR', 'Ana Ribeiro', 'Operação · Lastra'], search: 'Buscar cliente, documento ou CNPJ',
+    notes: [['Inventário aguardando revisão do RT', 'Padaria Sol Nascente · hoje, 09:12'], ['Novo lead pelo enquadramento', 'Mercadinho Bom Preço · ontem, 17:03'], ['Prazo de entrega vence em 3 dias', 'Clínica Vida Plena · 18/11', 1]],
     menu: [['users', 'Meu perfil', 'interno-usuarios.html'], ['help', 'Ajuda interna', '#'], ['out', 'Sair', 'interno-login.html']]
   } : {
     groups: PORTAL, home: 'portal-dashboard.html', prefix: 'Portal', chip: 'Dados de exemplo — empresa fictícia',
@@ -50,7 +50,7 @@
   const nav = C.groups.map(([label, items]) => (label ? `<p class="nav-label">${label}</p>` : '') +
     `<div class="nav-g">${items.map(([id, t, icon, href, b, k]) => `<a href="${href}" ${id === page ? 'class="on" aria-current="page"' : ''}>${I(icon)}${t}${b ? `<span class="badge ${k || ''}">${b}</span>` : ''}</a>`).join('')}</div>`).join('');
   const side = `<aside class="side" id="side" aria-label="Navegação">
-    <a class="brand logo" data-logo="horizontal" style="height:32px" href="${C.home}" aria-label="Lastro — início"></a>
+    <a class="brand logo" data-logo="horizontal" style="height:32px" href="${C.home}" aria-label="Lastra — início"></a>
     ${shell === 'interno' ? '<span class="env">Painel interno</span>' : ''}
     <nav class="nav">${nav}</nav>
     <div class="side-bottom">
