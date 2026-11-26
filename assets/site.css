@@ -4,7 +4,7 @@
 .mnav { position:fixed; inset:72px 0 0 0; background:var(--bg-page); z-index:49; padding:16px 24px 32px; display:grid; gap:0; align-content:start; overflow:auto; animation:rise-in var(--t-base) var(--ease); }
 .mnav a { padding:16px 4px; border-bottom:1px solid var(--line); text-decoration:none; font-size:18px; font-weight:500; display:flex; justify-content:space-between; }
 .mnav .btn { margin-top:20px; border:0; justify-content:center; }
-@media (max-width:1240px) { .menu-btn { display:grid; } }
+@media (max-width:1024px) { .menu-btn { display:grid; } }
 
 /* faixa de título das páginas internas */
 .phero { background:var(--strata-1); padding:72px 0 84px; position:relative; }

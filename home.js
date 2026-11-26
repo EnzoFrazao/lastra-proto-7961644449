@@ -18,7 +18,7 @@
   const Y_START = -140, Y_ON_PAPER = 328, Y_SUNK = 338, Y_AIR = 190, Y_REST = 222;   // topo da carga (px do viewBox)
 
   /* ---------- estados do hero ---------- */
-  const track = $('#hero'), stages = $$('.stage'), status = $('#status'), statusTxt = $('#statusTxt');
+  const track = $('#camadas'), stages = $$('.stage'), status = $('#status'), statusTxt = $('#statusTxt');
   const pauseBtn = $('#pauseBtn'), dots = $$('#dots button');
   // A cena roda em loop sozinha (LOOP segundos); a rolagem da página continua normal.
   const LOOP = 22, STAGE_AT = { a: .27, b: .6, c: .88 };
@@ -64,8 +64,19 @@
     setStage(p < .42 ? 'a' : p < .72 ? 'b' : 'c');
     requestAnimationFrame(frame);
   }
-  if (reduce) $('.hero-stick').style.cssText = 'height:auto;min-height:0;padding:110px 0 100px';
+  if (reduce) $('#camadas .hero-stick').style.cssText = 'height:auto;min-height:0;padding:110px 0 100px';
   requestAnimationFrame(frame);
+
+  /* ---------- hero novo: título em palavras (máscara) com marca-texto em "de repente."; cartão 3D inclina de leve com o mouse ---------- */
+  const hero = $('#hero'), h1 = $('#h1'), hcard = $('#hcard');
+  const words = h1.textContent.trim().split(/\s+/), nw = words.length;
+  const wh = words.map((w, i) => `<span class="hw" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`);
+  h1.setAttribute('aria-label', h1.textContent.trim());
+  h1.innerHTML = wh.slice(0, nw - 2).join(' ') + ' <span class="h-mark">' + wh.slice(nw - 2).join(' ') + '</span>';
+  if (!reduce) {
+    hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; hcard.style.setProperty('--px', (x * 12).toFixed(2) + 'deg'); hcard.style.setProperty('--py', (-y * 8).toFixed(2) + 'deg'); });
+    hero.addEventListener('pointerleave', () => { hcard.style.setProperty('--px', '0deg'); hcard.style.setProperty('--py', '0deg'); });
+  }
 
   /* ---------- reveal + contadores ---------- */
   function countUp(el) {

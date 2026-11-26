@@ -2,24 +2,27 @@
    <body data-page="nr1"> ; main com id="conteudo". Os links do menu são centralizados aqui. */
 (function () {
   const page = document.body.dataset.page || '';
-  const NAV = [['nr1', 'NR-1', 'nr1.html'], ['servicos', 'Serviços', 'servicos.html'], ['como', 'Como funciona', 'como-funciona.html'], ['porque', 'Por que a Lastra', 'por-que.html'], ['conteudos', 'Conteúdos', 'conteudos.html'], ['sobre', 'Sobre', 'sobre.html']];
-  const link = ([id, t, h]) => `<a href="${h}" ${id === page ? 'aria-current="page"' : ''}>${t}</a>`;
+  /* Menu enxuto (4 links). NR-1, FAQ e artigos ficam sob Conteúdos; Planos sob Serviços (o item ativo é o "pai"). */
+  const NAV = [['inicio', 'Início', 'home.html'], ['servicos', 'Serviços', 'servicos.html'], ['conteudos', 'Conteúdos', 'conteudos.html'], ['sobre', 'Sobre', 'sobre.html']];
+  const PARENT = { nr1: 'conteudos', faq: 'conteudos', artigo: 'conteudos', planos: 'servicos' };
+  const cur = PARENT[page] || page;
+  const link = ([id, t, h]) => `<a href="${h}" ${id === cur ? 'aria-current="page"' : ''}>${t}</a>`;
   const header = `<a class="skip sr-only" href="#conteudo">Ir para o conteúdo</a>
   <header class="site-header" id="topo"><div class="wrap hdr">
     <a href="home.html" class="logo" data-logo="horizontal" aria-label="Lastra — início" style="height:34px"></a>
     <nav class="nav" aria-label="Principal">${NAV.map(link).join('')}</nav>
     <div class="hdr-actions">
       <a class="area" href="portal-login.html" title="Leva ao portal (endereço em aberto: /cliente ou app.)">${ic('lock')}<span>Área do cliente</span></a>
-      <a class="btn btn-primary btn-sm cta-hdr" href="enquadramento.html">Enquadramento grátis ${ic('arrow', 'arrow')}</a>
+      <a class="btn btn-light btn-sm cta-hdr" href="enquadramento.html">Enquadramento grátis ${ic('arrow', 'arrow')}</a>
       <button class="theme-toggle" type="button" id="themeToggle" aria-label="Alternar tema claro e escuro">${ic('theme')}</button>
       <button class="menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav">${ic('menu')}</button>
     </div></div></header>
   <div class="mnav" id="mnav" hidden>${NAV.map(([id, t, h]) => `<a href="${h}">${t}${ic('arrow')}</a>`).join('')}<a href="faq.html">Dúvidas frequentes${ic('arrow')}</a><a href="contato.html">Contato${ic('arrow')}</a><a href="portal-login.html">Área do cliente${ic('lock')}</a><a class="btn btn-primary" href="enquadramento.html">Enquadramento grátis</a></div>`;
   const footer = `<footer class="footer on-deep" style="--sec:var(--bg-deeper)"><div class="wrap">
     <div class="fgrid">
-      <div><span class="logo" data-logo="horizontal" style="height:30px;color:#fff"></span><p class="small on-deep-2" style="margin-top:14px;max-width:34ch">Gestão de riscos psicossociais (NR-1) para pequenas empresas de São Luís, MA.</p><p class="small on-deep-2" style="margin-top:10px">[Instagram a definir]</p></div>
-      <div><h4>A Lastra</h4><ul><li><a href="sobre.html">Sobre</a></li><li><a href="por-que.html">Por que a Lastra</a></li><li><a href="contadores.html">Para contadores</a></li><li><a href="contato.html">Contato</a></li></ul></div>
-      <div><h4>Programa</h4><ul><li><a href="nr1.html">NR-1 explicada</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="como-funciona.html">Como funciona</a></li><li><a href="planos.html">Planos e contratação</a></li><li><a href="enquadramento.html">Enquadramento grátis</a></li></ul></div>
+      <div><span class="logo" data-logo="horizontal" style="height:30px;color:#fff"></span><p class="small on-deep-2" style="margin-top:14px;max-width:34ch">Inteligência em riscos do trabalho.</p><p class="small on-deep-2" style="margin-top:6px">São Luís, MA</p><p class="small on-deep-2" style="margin-top:10px">[Instagram a definir]</p></div>
+      <div><h4>A Lastra</h4><ul><li><a href="sobre.html">Sobre</a></li><li><a href="sobre.html#por-que">Por que a Lastra</a></li><li><a href="contadores.html">Para contadores</a></li><li><a href="contato.html">Contato</a></li></ul></div>
+      <div><h4>Programa</h4><ul><li><a href="nr1.html">NR-1 explicada</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="servicos.html#como-funciona">Como funciona</a></li><li><a href="planos.html">Planos e contratação</a></li><li><a href="enquadramento.html">Enquadramento grátis</a></li></ul></div>
       <div><h4>Ajuda e legal</h4><ul><li><a href="faq.html">Dúvidas frequentes</a></li><li><a href="conteudos.html">Conteúdos</a></li><li><a href="verificar.html">Verificar documento</a></li><li><a href="legais.html#privacidade">Privacidade e LGPD</a></li><li><a href="legais.html#termos">Termos</a></li><li><a href="legais.html#cookies">Cookies</a></li><li><a href="legais.html#limites">Aviso de limites</a></li></ul></div>
     </div>
     <p class="caption on-deep-2 fbottom">A Lastra entrega insumo técnico e documentação. Não emite laudo nem promete resultado de fiscalização. Dados de exemplo e números marcados 🔎 ainda serão verificados. Protótipo visual — não publicar.</p>
