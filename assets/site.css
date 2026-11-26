@@ -1,7 +1,7 @@
 /* Páginas internas do site (S02–S19). Usa tokens.css + home.css (cabeçalho, .sec, estratos, cartões, rodapé). */
 .nav a[aria-current=page] { background-size:100% 1.5px; font-weight:600; }
 .menu-btn { display:none; width:40px; height:40px; border-radius:50%; border:1px solid var(--line); background:transparent; place-items:center; color:var(--fg); }
-.mnav { position:fixed; inset:72px 0 0 0; background:var(--bg-page); z-index:49; padding:16px 24px 32px; display:grid; gap:0; align-content:start; overflow:auto; animation:rise-in var(--t-base) var(--ease); }
+.mnav { position:fixed; inset:80px 0 0 0; background:var(--bg-page); z-index:49; padding:16px 24px 32px; display:grid; gap:0; align-content:start; overflow:auto; animation:rise-in var(--t-base) var(--ease); }
 .mnav a { padding:16px 4px; border-bottom:1px solid var(--line); text-decoration:none; font-size:18px; font-weight:500; display:flex; justify-content:space-between; }
 .mnav .btn { margin-top:20px; border:0; justify-content:center; }
 @media (max-width:1024px) { .menu-btn { display:grid; } }
@@ -11,6 +11,7 @@
 .phero .crumbs { font-size:13px; color:var(--fg-2); margin-bottom:22px; } .phero .crumbs a { color:var(--fg-2); text-decoration:none; } .phero .crumbs a:hover { text-decoration:underline; color:var(--fg); }
 .phero h1 { max-width:20ch; } .phero .lead { max-width:62ch; margin-top:20px; }
 .phero.wide h1 { max-width:26ch; }
+.phero.center { background:var(--bg-page); text-align:center; padding:88px 0 56px; } .phero.center h1 { margin-inline:auto; max-width:22ch; } .phero.center .lead { margin-inline:auto; max-width:64ch; } .phero.center .cta-row { justify-content:center; }
 .phero .cta-row { margin-top:32px; }
 .sec.tight { padding:84px 0 92px; } .sec.tight + .sec.tight { padding-top:92px; }
 .sec h2.h2 { margin-top:12px; }
@@ -63,14 +64,12 @@ button.p { font:inherit; } .pills button.p { cursor:pointer; } .pills .p[aria-pr
 svg.i { width:20px; height:20px; flex:none; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; vertical-align:-4px; } svg.i.l { width:28px; height:28px; }
 .chip.dark { background:var(--fg); color:var(--bg-page); border-color:transparent; } .chip.sm { font-size:11px; padding:2px 8px; }
 
-/* rodapé completo e cookies */
-.fgrid { display:grid; grid-template-columns:1.4fr repeat(3,1fr); gap:40px; } .fgrid h4 { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-on-deep-2); margin-bottom:14px; font-weight:600; } .fgrid ul { list-style:none; padding:0; margin:0; display:grid; gap:10px; font-size:14px; } .fgrid a { text-decoration:none; opacity:.92; } .fgrid a:hover { text-decoration:underline; }
-.fbottom { margin-top:40px; padding-top:24px; border-top:1px solid var(--line-on-deep); max-width:none; }
+/* rodapé: ver .ft em home.css; cookies */
 .cookie { position:fixed; left:16px; right:16px; bottom:16px; max-width:760px; margin:0 auto; z-index:70; background:var(--bg-card); color:var(--fg); border:1px solid var(--line); border-radius:var(--r-md); box-shadow:var(--shadow); padding:20px 22px; display:grid; grid-template-columns:1fr auto; gap:18px; align-items:center; animation:rise-in var(--t-slow) var(--ease); }
 .cookie p { font-size:14px; line-height:1.5; } .cookie .acts { display:flex; gap:10px; flex-wrap:wrap; } .cookie .btn { padding:11px 16px; font-size:14px; }
 body:has(.cookie) .wa { bottom:150px; }
 @media (max-width:900px) {
-  .g2, .g3, .g4, .split, .doc-grid, .cta-band .wrap, .rowf, .fgrid, .cookie { grid-template-columns:1fr; }
+  .g2, .g3, .g4, .split, .doc-grid, .cta-band .wrap, .rowf, .cookie { grid-template-columns:1fr; }
   .doc-grid { gap:28px; } .toc { position:static; border-left:0; display:flex; flex-wrap:wrap; gap:6px; } .toc .label { width:100%; padding:0; } .toc a { padding:6px 12px; border:1px solid var(--line); border-radius:999px; margin:0; } .toc a:hover, .toc a.on { border-color:var(--fg); }
   .phero { padding:48px 0 72px; } .sec.tight { padding:64px 0 72px; } .split { gap:32px; } .cta-band .cta-row { justify-content:flex-start; } .g2, .g3, .g4 { gap:16px; }
   .cardx { padding:24px; } .prose { font-size:16px; }

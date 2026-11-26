@@ -18,15 +18,21 @@
       <button class="menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav">${ic('menu')}</button>
     </div></div></header>
   <div class="mnav" id="mnav" hidden>${NAV.map(([id, t, h]) => `<a href="${h}">${t}${ic('arrow')}</a>`).join('')}<a href="faq.html">Dúvidas frequentes${ic('arrow')}</a><a href="contato.html">Contato${ic('arrow')}</a><a href="portal-login.html">Área do cliente${ic('lock')}</a><a class="btn btn-primary" href="enquadramento.html">Enquadramento grátis</a></div>`;
-  const footer = `<footer class="footer on-deep" style="--sec:var(--bg-deeper)"><div class="wrap">
-    <div class="fgrid">
-      <div><span class="logo" data-logo="horizontal" style="height:30px;color:#fff"></span><p class="small on-deep-2" style="margin-top:14px;max-width:34ch">Inteligência em riscos do trabalho.</p><p class="small on-deep-2" style="margin-top:6px">São Luís, MA</p><p class="small on-deep-2" style="margin-top:10px">[Instagram a definir]</p></div>
-      <div><h4>A Lastra</h4><ul><li><a href="sobre.html">Sobre</a></li><li><a href="sobre.html#por-que">Por que a Lastra</a></li><li><a href="contadores.html">Para contadores</a></li><li><a href="contato.html">Contato</a></li></ul></div>
-      <div><h4>Programa</h4><ul><li><a href="nr1.html">NR-1 explicada</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="servicos.html#como-funciona">Como funciona</a></li><li><a href="planos.html">Planos e contratação</a></li><li><a href="enquadramento.html">Enquadramento grátis</a></li></ul></div>
-      <div><h4>Ajuda e legal</h4><ul><li><a href="faq.html">Dúvidas frequentes</a></li><li><a href="conteudos.html">Conteúdos</a></li><li><a href="verificar.html">Verificar documento</a></li><li><a href="legais.html#privacidade">Privacidade e LGPD</a></li><li><a href="legais.html#termos">Termos</a></li><li><a href="legais.html#cookies">Cookies</a></li><li><a href="legais.html#limites">Aviso de limites</a></li></ul></div>
+  const footer = `<footer class="ft">
+    <div class="wrap ft-grid">
+      <div class="ft-cta"><span class="logo" data-logo="horizontal" style="height:28px"></span><h2 class="ft-h">Uma empresa firme começa com uma conversa.</h2><a class="btn btn-primary" href="contato.html">Falar com a Lastra ${ic('arrow', 'arrow')}</a></div>
+      <nav class="ft-cols" aria-label="Rodapé">
+        <div><h4>Navegação</h4><ul><li><a href="home.html">Início</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="conteudos.html">Conteúdos</a></li><li><a href="sobre.html">Sobre</a></li></ul></div>
+        <div><h4>Comece</h4><ul><li><a href="enquadramento.html">Enquadramento grátis</a></li><li><a href="portal-login.html">Área do cliente</a></li><li><a href="planos.html">Planos</a></li><li><a href="faq.html">Dúvidas</a></li></ul></div>
+        <div><h4>Contato</h4><ul><li><a href="contato.html">Falar com a Lastra</a></li><li>São Luís, MA</li><li>[e-mail e Instagram a definir]</li></ul></div>
+      </nav>
     </div>
-    <p class="caption on-deep-2 fbottom">A Lastra entrega insumo técnico e documentação. Não emite laudo nem promete resultado de fiscalização. Dados de exemplo e números marcados 🔎 ainda serão verificados. Protótipo visual — não publicar.</p>
-  </div></footer>
+    <div class="ft-bar on-deep"><div class="wrap">
+      <p>© 2026 Lastra · São Luís, MA. Inteligência em riscos do trabalho. Insumo técnico, não emitimos laudo.</p>
+      <nav aria-label="Legal"><a href="legais.html#limites">Aviso de limites</a><a href="legais.html#termos">Termos</a><a href="legais.html#privacidade">Privacidade e LGPD</a></nav>
+      <p class="disc">A Lastra entrega insumo técnico e documentação e não promete resultado de fiscalização. Dados de exemplo e números marcados 🔎 ainda serão verificados. Protótipo visual — não publicar.</p>
+    </div></div>
+  </footer>
   <a class="wa" href="contato.html" aria-label="Falar pelo WhatsApp">${ic('wa')}</a>`;
   document.body.insertAdjacentHTML('afterbegin', header);
   document.body.insertAdjacentHTML('beforeend', footer);

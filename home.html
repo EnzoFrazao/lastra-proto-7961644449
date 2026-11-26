@@ -52,7 +52,7 @@
       <p class="lead">Ele se constrói gradualmente, em rotinas, metas e relações. A Lastra mede e organiza esse risco de acordo com a NR-1.</p>
       <div class="h-ctas">
         <a class="btn btn-light" href="#enquadramento">Fazer enquadramento grátis</a>
-        <a class="btn btn-secondary" href="#contato">Falar com a Lastra</a>
+        <a class="btn btn-secondary" href="contato.html">Falar com a Lastra</a>
       </div>
       <div class="h-checks">
         <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Leva 3 minutos</span>
@@ -78,292 +78,233 @@
   </div>
 </section>
 
-<!-- ============ 1b · FAIXA DE SELOS (Figma): lista em loop; parada com movimento reduzido ============ -->
-<section class="seals on-deep" aria-label="Compromissos da Lastra" style="--sec:var(--bg-deep)">
-  <div class="seals-track">
-    <ul class="seals-list"><li>Responsável técnico habilitado</li><li>Psicólogo com CRP</li><li>Anonimato garantido</li><li>Norma citada com fonte</li></ul>
-    <ul class="seals-list" aria-hidden="true"><li>Responsável técnico habilitado</li><li>Psicólogo com CRP</li><li>Anonimato garantido</li><li>Norma citada com fonte</li></ul>
-  </div>
-</section>
-
-<!-- ============ 1c · TRÊS CAMADAS — cena M0: papel cede, três camadas assentam, a carga repousa (rola em loop sozinha) ============ -->
-<section class="hero-track" id="camadas" data-zone="Superfície" aria-label="Três camadas">
-  <div class="hero-stick">
-    <div class="wrap hero-grid">
-      <div class="stages">
-        <div class="stage on" data-stage="a">
-          <p class="label eyebrow"><i></i>Sem a camada de baixo</p>
-          <h2 class="display">Quando a carga chega, o papel cede.</h2>
-          <p class="lead">Uma ação trabalhista pesa. Um documento solto, sem pesquisa, inventário nem registro, cede quando a carga chega.</p>
-        </div>
-        <div class="stage" data-stage="b">
-          <p class="label eyebrow"><i></i>Medir · Agir · Provar</p>
-          <h2 class="display">Três camadas, uma sobre a outra.</h2>
-          <p class="lead">Pesquisa anônima, inventário e trilha de evidências assentam em ordem: cada camada sustenta a seguinte. Sem pular etapa, sem enfeite.</p>
-        </div>
-        <div class="stage" data-stage="c">
-          <p class="label eyebrow"><i></i>A camada de baixo</p>
-          <h2 class="display">Papel não sustenta peso. <span class="hl">Pedra sustenta.</span></h2>
-          <p class="lead">A multa é o menor dos problemas. O que não foi suspenso é a reclamação trabalhista: o que a empresa sabia e o que fez a respeito? A Lastra deixa o registro.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#enquadramento">Fazer enquadramento grátis <svg class="arrow"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn-secondary" href="#contato">Falar com a Lastra</a>
-          </div>
-        </div>
+<!-- ============ 2 · TRÊS CAMADAS (Figma): a cena das lajes virou este cartão estático ============ -->
+<section class="sec" id="camadas" data-zone="Camada 1" style="--sec:var(--bg-page);padding-top:110px">
+  <div class="wrap split2">
+    <div class="mock reveal" role="img" aria-label="Ilustração: três lajes assentadas uma sobre a outra — pesquisa anônima, inventário e trilha de evidências — e o selo do responsável técnico.">
+      <div class="mock-head"><span>Responsável técnico</span><small>Assina</small></div>
+      <div class="mock-lines" aria-hidden="true"><i></i><i></i></div>
+      <div class="slabs" aria-hidden="true">
+        <div class="slab-r s3">Trilha de evidências</div>
+        <div class="slab-r s2">Inventário · formato PGR</div>
+        <div class="slab-r s1">Pesquisa anônima · piso de 5</div>
       </div>
-
-      <figure class="scene" id="scene">
-        <svg id="sceneSvg" viewBox="0 0 600 560" role="img" aria-label="Ilustração: uma carga rotulada ação trabalhista pesa sobre uma folha de papel, que cede; três lajes — pesquisa anônima, inventário e trilha de evidências — assentam uma sobre a outra no chão, e a carga repousa nivelada, com o selo assinado pelo responsável técnico.">
-          <g id="sceneAll">
-            <rect class="s-ground" x="0" y="440" width="600" height="120"/>
-            <rect class="s-line" x="0" y="438" width="600" height="3"/>
-            <rect class="s-paper" id="paper" x="110" y="428" width="380" height="10"/>
-            <g id="slab3" class="slab"><rect class="s-slab3" x="150" y="326" width="300" height="34"/><text class="s-txt ink" x="300" y="348" text-anchor="middle">Trilha de evidências</text></g>
-            <g id="slab2" class="slab"><rect class="s-slab2" x="120" y="364" width="360" height="34"/><text class="s-txt" x="300" y="386" text-anchor="middle">Inventário · formato PGR</text></g>
-            <g id="slab1" class="slab"><rect class="s-slab1" x="90" y="402" width="420" height="34"/><text class="s-txt" x="300" y="424" text-anchor="middle">Pesquisa anônima · piso de 5</text></g>
-            <g id="load"><rect class="s-load" x="180" y="0" width="240" height="100"/><text class="s-txt s-load-t" x="300" y="56" text-anchor="middle">Ação trabalhista</text></g>
-            <g id="seal"><rect class="s-seal" x="200" y="176" width="200" height="30" rx="3"/><text class="s-seal-t" x="300" y="196" text-anchor="middle">ASSINADO PELO RT</text></g>
-          </g>
-        </svg>
-        <figcaption class="status" id="status" data-state="bad"><i class="dot"></i><span id="statusTxt">Só papel por baixo</span></figcaption>
-        <div class="scene-ctrl">
-          <div class="dots" id="dots" role="group" aria-label="Etapas da animação"><button type="button" data-go="a" class="on" aria-label="Ver: o papel cede"></button><button type="button" data-go="b" aria-label="Ver: as camadas assentam"></button><button type="button" data-go="c" aria-label="Ver: a carga repousa"></button></div>
-          <button class="pause" id="pauseBtn" type="button" aria-pressed="false" aria-label="Pausar animação"><svg class="ic-pause" width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><rect x="2" y="1" width="3.500" height="12" rx="1"/><rect x="8.500" y="1" width="3.500" height="12" rx="1"/></svg><svg class="ic-play" width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M3 1.500v11l9-5.500z"/></svg></button>
-        </div>
-      </figure>
+      <p class="mock-foot"><svg><use href="#i-check"/></svg>Cada camada sustenta a seguinte.</p>
+    </div>
+    <div class="reveal" style="--d:90ms">
+      <h2 class="h1">Três camadas, uma sobre a outra.</h2>
+      <ul class="steps3">
+        <li><span class="ic3 n1" aria-hidden="true"><i></i><i></i><i></i></span><div><h3>Medir com pesquisas anônimas</h3><p>Pesquisa com piso de cinco respostas e inventário dos riscos do trabalho.</p></div></li>
+        <li><span class="ic3 n2" aria-hidden="true"><i></i><i></i><i></i></span><div><h3>Agir com plano de ação</h3><p>Medidas com responsável e prazo, sem virar projeto de RH.</p></div></li>
+        <li><span class="ic3 n3" aria-hidden="true"><i></i><i></i><i></i></span><div><h3>Provar com trilha de evidências</h3><p>Dossiê datado, assinado por quem responde tecnicamente.</p></div></li>
+      </ul>
+      <a class="btn btn-primary" href="servicos.html#como-funciona">Ver como funciona <svg class="arrow"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </section>
 
-<!-- ============ 2 · PROBLEMA ============ -->
-<section class="sec s-problema" id="problema" data-strata data-zone="Camada 1" style="--sec:var(--strata-1)">
+<!-- ============ 3 · PAPEL NÃO SUSTENTA PESO ============ -->
+<section class="sec on-deep s-pedra" id="pedra" data-strata data-zone="Base" style="--sec:var(--bg-deep)">
+  <div class="wrap split2">
+    <div class="reveal">
+      <p class="label on-deep-2">A camada de baixo</p>
+      <h2 class="h1" style="margin-top:14px">Papel não sustenta peso. <span class="hl">Pedra sustenta.</span></h2>
+      <p class="lead">A multa é o menor dos problemas. O que não foi suspenso é a reclamação trabalhista: o que a empresa sabia e o que fez a respeito? A Lastra deixa o registro.</p>
+      <div class="cta-row"><a class="btn btn-primary" href="servicos.html">Conhecer o programa <svg class="arrow"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="dossie reveal" style="--d:90ms">
+      <div class="dossie-head"><span>Dossiê de evidências</span><small>Ciclo 1</small></div>
+      <ul>
+        <li><svg><use href="#i-check"/></svg>Pesquisa anônima concluída</li>
+        <li><svg><use href="#i-check"/></svg>Inventário revisado pelo responsável técnico</li>
+        <li><svg><use href="#i-check"/></svg>Plano de ação com prazos</li>
+        <li><svg><use href="#i-check"/></svg>Relatório assinado pelo psicólogo</li>
+      </ul>
+      <div class="dossie-stats"><div class="stat-neon"><b>5+</b><span>Piso de anonimato</span></div><div class="stat-neon"><b>6m</b><span>Meses por ciclo</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 · A MULTA FOI SUSPENSA ============ -->
+<section class="sec" id="problema" data-zone="Camada 1" style="--sec:var(--bg-page)">
   <div class="wrap">
-    <p class="label muted reveal">A camada que ninguém olha</p>
-    <h2 class="h1 reveal">Ninguém elogia o piso — até ele faltar.</h2>
-    <p class="lead reveal narrow">A NR-1 passou a exigir que a empresa identifique e trate os riscos psicossociais do trabalho. Para uma empresa pequena, isso é mais um assunto sem dono.</p>
-
-    <div class="cards3">
-      <article class="card metric reveal">
-        <span class="chip">Vale desde</span>
-        <p class="num big" data-count-date>26/05/2026</p>
-        <p>A gestão de riscos psicossociais passou a fazer parte do GRO da NR-1 (Portaria MTE 1.419/2024).</p>
-        <p class="src caption muted">Fonte: MTE · verificar redação final 🔎</p>
+    <div class="sec-h reveal">
+      <h2 class="h1">A multa foi suspensa. A obrigação, não.</h2>
+      <p class="lead">Desde 26/05/2026 o risco psicossocial entra no gerenciamento de riscos da NR-1 (Portaria MTE 1.419/2024). O STF suspendeu as multas por enquanto; a obrigação continua.</p>
+    </div>
+    <div class="two-c">
+      <article class="oc off reveal">
+        <span class="tag">Suspensa por enquanto</span>
+        <h3>Multas e eficácia sancionatória</h3>
+        <p>O STF suspendeu a eficácia sancionatória da nova regra (ADPF 1316). A suspensão foi prorrogada em 24/09/2026 por 90 dias.</p>
       </article>
-      <article class="card metric reveal">
-        <span class="chip warn">Dado a verificar</span>
-        <p class="num big"><span data-count="546254">546.254</span></p>
-        <p>benefícios por transtornos mentais concedidos pelo INSS em 2025.</p>
-        <p class="src caption muted">Fonte: INSS/Previdência · conferir antes de publicar 🔎</p>
-      </article>
-      <article class="card metric reveal">
-        <span class="chip warn">Dado a verificar</span>
-        <p class="num big">~<span data-count="2650000">2,65</span> mi</p>
-        <p>de empresas com empregados no Brasil — quase todas pequenas.</p>
-        <p class="src caption muted">Fonte: a definir 🔎</p>
+      <article class="oc on reveal" style="--d:90ms">
+        <span class="tag">Continua valendo</span>
+        <h3>A obrigação de gerir riscos psicossociais</h3>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Identificar e tratar os riscos do trabalho</li>
+          <li><svg><use href="#i-check"/></svg>Registrar o que foi feito, com data e assinatura</li>
+          <li><svg><use href="#i-check"/></svg>Registros podem ser usados em ação trabalhista</li>
+        </ul>
       </article>
     </div>
-
-    <div class="stf reveal">
-      <div class="stf-head"><span class="chip ok">Atualizado em 15/11/2026</span><h3 class="h4">O que o STF suspendeu — e o que não</h3></div>
-      <div class="stf-cols">
-        <div><p class="label muted">Suspenso, por enquanto</p><p>A eficácia sancionatória: as multas pela nova regra (ADPF 1316). A suspensão foi prorrogada em 24/09/2026 por 90 dias.</p></div>
-        <div><p class="label">Continua valendo</p><p>A obrigação de gerir os riscos psicossociais — e o uso desses registros em ação trabalhista.</p></div>
-      </div>
-      <p class="src caption muted">Fonte: STF · ADPF 1316 · prazo exato a confirmar 🔎</p>
+    <div class="bar-cta reveal">
+      <p>A obrigação continua. Descubra em dois minutos se ela vale para a sua empresa.</p>
+      <a class="btn btn-light" href="#enquadramento">Enquadramento grátis <svg class="arrow"><use href="#i-arrow"/></svg></a>
     </div>
-
-    <div class="signs reveal">
-      <p class="label muted">Sinais de carga demais</p>
-      <ul><li>Metas impossíveis</li><li>Jornada sem fim</li><li>Chefia hostil</li><li>Zero autonomia</li><li>Assédio</li></ul>
-    </div>
+    <p class="src-line caption">Atualizado em 15/11/2026 · Fonte: STF, ADPF 1316 · prazo exato a confirmar 🔎</p>
   </div>
 </section>
 
-<!-- ============ 3 · SOLUÇÃO ============ -->
-<section class="sec s-solucao" id="solucao" data-strata data-zone="Camada 2" style="--sec:var(--strata-2)">
+<!-- ============ 5 · NÚMEROS ============ -->
+<section class="sec" id="numeros" data-zone="Camada 2" style="--sec:var(--bg-page);padding-top:0">
   <div class="wrap">
-    <p class="label muted reveal">A camada de baixo</p>
-    <h2 class="h1 reveal">Medir. Agir. Provar.</h2>
-    <p class="lead reveal narrow">Um programa de seis meses, feito por gente de São Luís, com responsável técnico e psicólogo habilitados. Você participa pouco; a empresa ganha o registro completo.</p>
-    <div class="trio">
-      <article class="piece reveal" style="--d:0ms">
-        <span class="piece-ic n1" aria-hidden="true"><i></i><i></i><i></i></span>
-        <h3 class="h3">Medir</h3>
-        <p>Pesquisa anônima com os colaboradores e inventário dos riscos. Resultados só aparecem em grupos de 5 pessoas ou mais.</p>
-      </article>
-      <article class="piece reveal" style="--d:90ms">
-        <span class="piece-ic n2" aria-hidden="true"><i></i><i></i><i></i></span>
-        <h3 class="h3">Agir</h3>
-        <p>Plano de ação com medidas, responsáveis e prazos — o que a empresa pode mudar já, sem virar projeto de RH.</p>
-      </article>
-      <article class="piece reveal" style="--d:180ms">
-        <span class="piece-ic n3" aria-hidden="true"><i></i><i></i><i></i></span>
-        <h3 class="h3">Provar</h3>
-        <p>PGR ou AEP, relatório e dossiê assinados por quem responde tecnicamente, guardados no portal com histórico.</p>
-      </article>
+    <div class="stats4">
+      <div class="reveal"><b>26/05/26</b><span>Vigência da NR-1 para riscos psicossociais</span></div>
+      <div class="reveal" style="--d:70ms"><b>546 mil</b><span>Benefícios por transtornos mentais no INSS, em 2025 🔎</span></div>
+      <div class="reveal" style="--d:140ms"><b>2,65 mi</b><span>Empresas com empregados no Brasil, quase todas pequenas 🔎</span></div>
+      <div class="reveal" style="--d:210ms"><b>90 dias</b><span>Prorrogação da suspensão das multas, em 24/09/2026</span></div>
     </div>
-    <p class="note reveal"><svg width="18" height="18"><use href="#i-check"/></svg> A Lastra entrega o insumo técnico. Quem revisa e assina é o responsável técnico habilitado — não emitimos laudo.</p>
-    <div class="center reveal"><a class="btn btn-primary" href="#enquadramento">Ver se a NR-1 vale para mim <svg class="arrow"><use href="#i-arrow"/></svg></a></div>
+    <p class="src-line caption" style="text-align:center">Fontes: MTE (NR-1), INSS/Previdência, STF. Números marcados 🔎 ainda serão verificados antes de publicar.</p>
   </div>
 </section>
 
-<!-- ============ 4 · ENQUADRAMENTO GRÁTIS ============ -->
-<section class="sec s-diag" id="enquadramento" data-zone="Camada 2" style="--sec:var(--strata-2)">
+<!-- ============ 6 · QUATRO PERGUNTAS (enquadramento grátis) ============ -->
+<section class="sec s-diag" id="enquadramento" data-strata data-zone="Camada 2" style="--sec:var(--strata-1)">
   <div class="wrap diag-grid">
-    <div>
-      <p class="label muted reveal">Enquadramento grátis</p>
-      <h2 class="h1 reveal">Quatro perguntas. Dois minutos.</h2>
-      <p class="lead reveal">Sem cadastro. Cada resposta traz a fonte oficial. No fim, você leva o resultado para o contador.</p>
-    </div>
-    <div class="card diag reveal" id="diag" aria-live="polite">
+    <div class="card diag diag-dark reveal" id="diag" aria-live="polite">
       <div class="diag-progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
       <p class="label muted" id="dStep">Pergunta 1 de 4</p>
       <h3 class="h3" id="dQ"></h3>
       <div class="diag-opts" id="dOpts"></div>
       <div class="diag-nav"><button class="btn btn-secondary btn-sm" id="dBack" type="button" hidden>Voltar</button><span class="small muted" id="dHint">Escolha uma opção para continuar.</span></div>
     </div>
+    <div class="reveal" style="--d:90ms">
+      <p class="label muted">Enquadramento grátis</p>
+      <h2 class="h1" style="margin-top:14px">Quatro perguntas.</h2>
+      <p class="lead">Descubra se a NR-1 vale para a sua empresa e qual é o caminho: PGR, AEP ou DIR. Cada resposta traz a fonte oficial; no fim, você leva o resultado para o contador.</p>
+      <div class="checks2">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sem cadastro</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Fonte oficial em cada resposta</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ============ 5 · COMO FUNCIONA ============ -->
-<section class="sec s-como" id="como-funciona" data-strata data-zone="Camada 3" style="--sec:var(--strata-3)">
+<!-- ============ 7 · MEDIR. AGIR. PROVAR. ============ -->
+<section class="sec on-deep s-solucao" id="solucao" data-strata data-zone="Base" style="--sec:var(--bg-deep)">
   <div class="wrap">
-    <p class="label muted reveal">Como funciona</p>
-    <h2 class="h1 reveal">Seis meses. Três camadas assentadas.</h2>
-    <p class="lead reveal narrow">A cada etapa uma camada se assenta sobre a anterior. No sexto mês o ciclo fecha — e a próxima avaliação já tem com o que se comparar.</p>
-    <div class="timeline" id="timeline">
-      <div class="tl-line"><i id="tlFill"></i></div>
-      <ol>
-        <li><span class="tl-node"></span><span class="label muted">Mês 1</span><h3 class="h4">Levantamento</h3><p class="small">Enquadramento estimado da empresa, grau de risco e consulta ao responsável técnico.</p></li>
-        <li><span class="tl-node"></span><span class="label muted">Mês 2</span><h3 class="h4">Avaliação</h3><p class="small">Pesquisa anônima e inventário dos fatores de risco.</p></li>
-        <li><span class="tl-node"></span><span class="label muted">Mês 3</span><h3 class="h4">Entrega</h3><p class="small">PGR ou AEP, plano de ação e devolutiva coletiva.</p></li>
-        <li><span class="tl-node"></span><span class="label muted">Mês 4</span><h3 class="h4">Acompanhamento</h3><p class="small">Medidas em andamento, dúvidas respondidas pelo portal.</p></li>
-        <li><span class="tl-node"></span><span class="label muted">Mês 5</span><h3 class="h4">Ajustes</h3><p class="small">Plano revisto com o que mudou na empresa.</p></li>
-        <li><span class="tl-node"></span><span class="label muted">Mês 6</span><h3 class="h4">Revisão</h3><p class="small">Eficácia das medidas, dossiê fechado e renovação do ciclo.</p></li>
-      </ol>
-      <div class="tl-cube" aria-hidden="true" id="tlCube"><i></i><i></i><i></i></div>
+    <div class="sec-h reveal">
+      <h2 class="h1">Medir. Agir. Provar.</h2>
+      <p class="lead">Um programa anual, com dois ciclos de seis meses, feito por gente de São Luís. Você participa pouco; a empresa ganha o registro completo.</p>
     </div>
-    <div class="center reveal"><a class="btn btn-primary" href="#contato">Quero conversar sobre o meu ciclo <svg class="arrow"><use href="#i-arrow"/></svg></a></div>
+    <div class="step1 reveal">
+      <div>
+        <span class="n">01</span>
+        <h3>Enquadramento grátis</h3>
+        <p>Quatro perguntas, dois minutos, sem cadastro. Cada resposta traz a fonte oficial.</p>
+        <a class="btn" href="#enquadramento">Começar enquadramento <svg class="arrow"><use href="#i-arrow"/></svg></a>
+      </div>
+      <span class="logo" data-logo="simbolo" style="height:120px" aria-hidden="true"></span>
+    </div>
+    <div class="trio2">
+      <article class="wcard reveal"><span class="n">02</span><h3>Medir</h3><p>Pesquisa anônima e inventário dos riscos. Resultados só aparecem em grupos de 5 pessoas ou mais.</p><a class="link-arrow" href="servicos.html#como-funciona">Como medir <svg><use href="#i-arrow"/></svg></a></article>
+      <article class="wcard reveal" style="--d:90ms"><span class="n">03</span><h3>Agir</h3><p>Plano de ação com medidas, responsáveis e prazos, dentro do que a empresa pode mudar já.</p><a class="link-arrow" href="servicos.html#como-funciona">Como agir <svg><use href="#i-arrow"/></svg></a></article>
+      <article class="wcard reveal" style="--d:180ms"><span class="n">04</span><h3>Provar</h3><p>PGR ou AEP, relatório e dossiê assinados por quem responde tecnicamente, guardados no portal.</p><a class="link-arrow" href="servicos.html#como-funciona">Como provar <svg><use href="#i-arrow"/></svg></a></article>
+    </div>
   </div>
 </section>
 
-<!-- ============ 6 · RECEBE / NÃO FAZ ============ -->
-<section class="sec s-recebe" id="recebe" data-zone="Camada 3" style="--sec:var(--strata-3)">
-  <div class="wrap two">
-    <article class="card reveal">
-      <h3 class="h3">O que você recebe</h3>
-      <ul class="ticks">
-        <li>PGR ou AEP, conforme o enquadramento da empresa</li>
-        <li>Relatório psicossocial com resultados por grupo (n ≥ 5)</li>
-        <li>Plano de ação com responsável e prazo</li>
-        <li>Dossiê de evidências com assinatura e verificação</li>
-        <li>Acesso ao portal durante todo o ciclo</li>
-        <li>Devolutiva coletiva para a equipe</li>
-      </ul>
-    </article>
-    <article class="card reveal" style="--d:90ms">
-      <h3 class="h3">O que a Lastra não faz</h3>
-      <ul class="crosses">
-        <li>Não emite laudo nem faz avaliação psicológica individual</li>
-        <li>Não substitui NR-15/16, LTCAT ou PCMSO</li>
-        <li>Não promete isenção de multa nem resultado de fiscalização</li>
-        <li>Não identifica quem respondeu a pesquisa</li>
-        <li>Não é canal de denúncia</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-<!-- ============ 7 · POR QUE A LASTRA ============ -->
-<section class="sec on-deep s-por" id="por-que" data-strata data-zone="Base" style="--sec:var(--bg-deep)">
+<!-- ============ 8 · PLANOS ============ -->
+<section class="sec" id="planos" data-zone="Camada 3" style="--sec:var(--bg-page)">
   <div class="wrap">
-    <p class="label reveal on-deep-2">Por que a Lastra</p>
-    <h2 class="h1 reveal">Não é promessa. <span class="hl">É piso.</span></h2>
-    <div class="cards4">
-      <article class="dcard reveal"><h3 class="h4">Honestidade normativa</h3><p class="small">Dizemos o que a norma exige — e o que o STF suspendeu. Cada afirmação traz fonte e data. Não prometemos isenção de multa: prometemos trilha defensável.</p></article>
-      <article class="dcard reveal" style="--d:70ms"><h3 class="h4">Anonimato por desenho</h3><p class="small">Não guardamos quem respondeu. Grupos com menos de 5 pessoas nunca aparecem.</p></article>
-      <article class="dcard reveal" style="--d:140ms"><h3 class="h4">Preço anual, sem surpresa</h3><p class="small">Um contrato por ano, dois ciclos, pago uma vez — ou em até 12 parcelas.</p></article>
-      <article class="dcard reveal" style="--d:210ms"><h3 class="h4">Gente de São Luís</h3><p class="small">Atendimento local, com responsável técnico e psicólogo habilitados no Maranhão.</p></article>
+    <div class="sec-h reveal">
+      <h2 class="h1">Planos</h2>
+      <p class="lead">Valores sob consulta: a cotação depende do porte da empresa e do grau de risco da atividade.</p>
     </div>
+    <div class="plans">
+      <article class="plan reveal">
+        <p class="label">Plano 1</p>
+        <ul class="ticks"><li>Programa Lastra NR-1 completo</li><li>2 ciclos de 6 meses por ano</li><li>Acesso ao portal</li></ul>
+        <p class="price">Sob consulta</p>
+        <p class="small muted">Para empresas com até 19 empregados ◇</p>
+        <a class="btn btn-primary" href="contato.html">Pedir proposta</a>
+      </article>
+      <article class="plan reveal" style="--d:90ms">
+        <p class="label">Plano 2</p>
+        <ul class="ticks"><li>Programa Lastra NR-1 completo</li><li>2 ciclos de 6 meses por ano</li><li>Acesso ao portal</li></ul>
+        <p class="price">Sob consulta</p>
+        <p class="small muted">Para empresas de 20 a 49 empregados ◇</p>
+        <a class="btn btn-primary" href="contato.html">Pedir proposta</a>
+      </article>
+    </div>
+    <p class="plans-note reveal">50 empregados ou mais: fale com a Lastra. ◇ Faixas provisórias, a confirmar. Pagamento à vista com desconto ou em até 12 vezes. <a href="planos.html">Ver planos e contratação</a></p>
   </div>
 </section>
 
-<!-- ============ 8 · PROVA ============ -->
-<section class="sec on-deep s-prova" id="prova" data-zone="Base" style="--sec:var(--bg-deep)">
+<!-- ============ 9 · QUEM ASSINA ============ -->
+<section class="sec" id="prova" data-zone="Camada 3" style="--sec:var(--strata-1);padding-top:100px;padding-bottom:110px">
   <div class="wrap">
-    <h2 class="h2 reveal">Quem assina o trabalho</h2>
-    <div class="prova-grid">
-      <div class="reveal"><span class="chip ghost on-deep-chip">Responsável técnico de SST</span><p class="small on-deep-2">Profissional habilitado, registro no conselho. Assina PGR/AEP e inventário.</p></div>
-      <div class="reveal" style="--d:80ms"><span class="chip ghost on-deep-chip">Psicólogo · CRP-22/MA</span><p class="small on-deep-2">Analisa os resultados agregados e assina o relatório psicossocial.</p></div>
-    </div>
-    <div class="placeholder reveal" role="note">
-      <span class="label">Espaço reservado</span>
-      <p>Depoimentos de clientes entram aqui quando existirem. A Lastra ainda não tem clientes — nenhum depoimento será inventado.</p>
+    <div class="sec-h reveal"><h2 class="h2">Quem assina o trabalho</h2></div>
+    <div class="sign-grid">
+      <article class="cardx static reveal"><span class="chip">Responsável técnico de SST</span><p>Assina o PGR ou a AEP e o inventário de riscos. Registrado no conselho de classe.</p></article>
+      <article class="cardx static reveal" style="--d:90ms"><span class="chip">Psicólogo · CRP-22/MA</span><p>Analisa os resultados agregados e assina o relatório psicossocial, com sigilo profissional.</p></article>
     </div>
   </div>
 </section>
 
-<!-- ============ 9 · CONTRATAÇÃO ============ -->
-<section class="sec on-deep s-contrata" id="contratacao" data-zone="Base" style="--sec:var(--bg-deep)">
+<!-- ============ 10 · O QUE VOCÊ RECEBE ============ -->
+<section class="sec on-deep s-recebe" id="recebe" data-strata data-zone="Base" style="--sec:var(--bg-deep)">
   <div class="wrap">
-    <p class="label on-deep-2 reveal">Contratação</p>
-    <h2 class="h1 reveal">Um contrato por ano. Dois ciclos.</h2>
-    <p class="lead reveal narrow on-deep-2">Você contrata uma vez e tem acompanhamento no semestre. O valor depende do número de empregados e do grau de risco da atividade.</p>
-    <div class="cards3 faixas">
-      <article class="dcard reveal"><span class="label on-deep-2">Faixa 1 ◇</span><h3 class="h3">Até 19 empregados</h3><p class="small">Valor sob consulta</p></article>
-      <article class="dcard reveal" style="--d:80ms"><span class="label on-deep-2">Faixa 2 ◇</span><h3 class="h3">20 a 49 empregados</h3><p class="small">Valor sob consulta</p></article>
-      <article class="dcard reveal" style="--d:160ms"><span class="label on-deep-2">Faixa 3 ◇</span><h3 class="h3">50 ou mais</h3><p class="small">Valor sob consulta</p></article>
-    </div>
-    <p class="small on-deep-2 reveal">◇ Faixas provisórias, a confirmar. Pagamento à vista com desconto ou em até 12 vezes.</p>
-    <div class="reveal"><a class="btn btn-light" href="#contato">Pedir proposta <svg class="arrow"><use href="#i-arrow"/></svg></a></div>
-  </div>
-</section>
-
-<!-- ============ 10 · FAQ ============ -->
-<section class="sec on-deep s-faq" id="faq" data-zone="Base" style="--sec:var(--bg-deep)">
-  <div class="wrap faq-grid">
-    <div><p class="label on-deep-2 reveal">Dúvidas</p><h2 class="h1 reveal">O que costumam perguntar.</h2></div>
-    <div class="faq reveal">
-      <details open><summary>Minha empresa é obrigada?<svg><use href="#i-plus"/></svg></summary><p>Se você tem pelo menos um empregado CLT, a NR-1 vale para a sua empresa desde 26/05/2026. MEI sem empregado fica fora. O enquadramento grátis acima estima em dois minutos; o responsável técnico confirma na contratação.</p></details>
-      <details><summary>Ainda há multa?<svg><use href="#i-plus"/></svg></summary><p>O STF suspendeu a eficácia sancionatória por enquanto (ADPF 1316). A obrigação continua e os registros podem ser usados em ação trabalhista. Atualizado em 15/11/2026.</p></details>
-      <details><summary>Os funcionários serão identificados?<svg><use href="#i-plus"/></svg></summary><p>Não. A pesquisa é anônima, sem login, e resultados de grupos com menos de 5 pessoas nunca aparecem.</p></details>
-      <details><summary>A Lastra assina o PGR?<svg><use href="#i-plus"/></svg></summary><p>Quem assina é o responsável técnico habilitado, no escopo dele. A Lastra entrega o insumo técnico — não emitimos laudo.</p></details>
-      <details><summary>Por que Lastra?<svg><use href="#i-plus"/></svg></summary><p>Lastra é a pedra lisa que se assenta no chão — a laje. É a primeira camada, a que recebe a carga de tudo que vem depois, e a única que ninguém olha. É o que a gente faz: a empresa não compra um documento bonito, compra a camada embaixo dele. E a palavra também é verbo: lastrar é acrescentar firmeza. A Lastra lastra a sua empresa.</p></details>
-      <details><summary>Quanto custa?<svg><use href="#i-plus"/></svg></summary><p>Depende do número de empregados e do grau de risco. O contrato é anual, com pagamento à vista ou em até 12 vezes. Peça uma proposta.</p></details>
+    <div class="sec-h reveal"><h2 class="h1">O que você recebe em cada ciclo.</h2></div>
+    <div class="tiles">
+      <div class="tile reveal"><i><svg><use href="#i-check"/></svg></i>Pesquisa anônima</div>
+      <div class="tile reveal" style="--d:50ms"><i><svg><use href="#i-check"/></svg></i>Devolutiva coletiva</div>
+      <div class="tile reveal" style="--d:100ms"><i><svg><use href="#i-check"/></svg></i>Relatório psicossocial</div>
+      <div class="tile hi reveal" style="--d:150ms"><i><svg><use href="#i-check"/></svg></i>PGR ou AEP assinado</div>
+      <div class="tile reveal"><i><svg><use href="#i-check"/></svg></i>Plano de ação</div>
+      <div class="tile reveal" style="--d:50ms"><i><svg><use href="#i-check"/></svg></i>Acompanhamento por 6 meses</div>
+      <div class="tile reveal" style="--d:100ms"><i><svg><use href="#i-check"/></svg></i>Dossiê verificável</div>
+      <div class="tile reveal" style="--d:150ms"><i><svg><use href="#i-check"/></svg></i>Acesso ao portal</div>
     </div>
   </div>
 </section>
 
-<!-- ============ 11 · CTA FINAL ============ -->
-<section class="sec on-deep s-final" id="contato" data-strata data-zone="Base" style="--sec:var(--bg-deeper)">
-  <div class="wrap final-grid">
-    <div>
-      <span class="logo" data-logo="simbolo" style="height:64px"></span>
-      <h2 class="h1 reveal">O chão firme começa com uma conversa.</h2>
-      <p class="lead on-deep-2 reveal">Conte quantos empregados a empresa tem. Respondemos pelo WhatsApp com o enquadramento estimado e a proposta.</p>
+<!-- ============ 11 · CONTEÚDOS SEM JURIDIQUÊS ============ -->
+<section class="sec" id="conteudos" data-zone="Camada 1" style="--sec:var(--bg-page)">
+  <div class="wrap">
+    <div class="sec-h reveal"><h2 class="h1">Conteúdos sem juridiquês</h2></div>
+    <div class="cards3">
+      <a class="art reveal" href="artigo.html"><div class="th" aria-hidden="true"></div><h3>O que mudou na NR-1 com os riscos psicossociais</h3><p class="meta"><span>15 nov 2026</span><span>5 min de leitura</span></p></a>
+      <a class="art reveal" href="artigo.html" style="--d:90ms"><div class="th" style="--w:56%" aria-hidden="true"></div><h3>O STF suspendeu a multa. E agora, o que vale?</h3><p class="meta"><span>15 nov 2026</span><span>4 min de leitura</span></p></a>
+      <a class="art reveal" href="artigo.html" style="--d:180ms"><div class="th" style="--w:34%" aria-hidden="true"></div><h3>Sinais de carga demais: metas, jornada e autonomia</h3><p class="meta"><span>12 nov 2026</span><span>6 min de leitura</span></p></a>
     </div>
-    <form class="card form reveal" onsubmit="event.preventDefault();this.querySelector('.ok').hidden=false;">
-      <label>Seu nome<input type="text" placeholder="Como devemos chamar você?" required></label>
-      <label>Empresa<input type="text" placeholder="Nome da empresa"></label>
-      <label>WhatsApp<input type="tel" placeholder="(98) 9 0000-0000" required></label>
-      <label>Quantos empregados?<select><option>Selecione</option><option>Até 19</option><option>20 a 49</option><option>50 ou mais</option></select></label>
-      <label class="check"><input type="checkbox" required> Concordo em ser contatado e com o uso dos dados conforme a LGPD.</label>
-      <button class="btn btn-primary" type="submit">Pedir contato <svg class="arrow"><use href="#i-arrow"/></svg></button>
-      <p class="ok small" hidden>Recebido (protótipo: nada foi enviado). Resposta em até 1 dia útil — prazo a confirmar.</p>
-    </form>
+    <p class="more reveal"><a class="link-arrow" href="conteudos.html">Ver todos os conteúdos <svg><use href="#i-arrow"/></svg></a></p>
   </div>
 </section>
 </main>
 
-<footer class="footer on-deep" style="--sec:var(--bg-deeper)">
-  <div class="wrap foot">
-    <div><span class="logo" data-logo="horizontal" style="height:30px"></span><p class="tagline">Inteligência em riscos do trabalho.</p><p class="small on-deep-2">São Luís, MA</p></div>
-    <nav class="small" aria-label="Rodapé"><a href="faq.html">Dúvidas</a><a href="contato.html">Contato</a><a href="planos.html">Planos</a><a href="legais.html#privacidade">Privacidade e LGPD</a><a href="legais.html#termos">Termos</a><a href="legais.html#cookies">Cookies</a><a href="legais.html#limites">Aviso de limites</a><a href="#">[Instagram a definir]</a></nav>
-    <p class="caption on-deep-2 disc">A Lastra entrega insumo técnico e documentação. Não emite laudo nem promete resultado de fiscalização. Papel não sustenta peso. Dados de exemplo e números marcados 🔎 ainda serão verificados. Protótipo visual — não publicar.</p>
+<footer class="ft">
+  <div class="wrap ft-grid">
+    <div class="ft-cta">
+      <span class="logo" data-logo="horizontal" style="height:28px"></span>
+      <h2 class="ft-h">Uma empresa firme começa com uma conversa.</h2>
+      <a class="btn btn-primary" href="contato.html">Falar com a Lastra <svg class="arrow"><use href="#i-arrow"/></svg></a>
+    </div>
+    <nav class="ft-cols" aria-label="Rodapé">
+      <div><h4>Navegação</h4><ul><li><a href="home.html">Início</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="conteudos.html">Conteúdos</a></li><li><a href="sobre.html">Sobre</a></li></ul></div>
+      <div><h4>Comece</h4><ul><li><a href="enquadramento.html">Enquadramento grátis</a></li><li><a href="portal-login.html">Área do cliente</a></li><li><a href="planos.html">Planos</a></li><li><a href="faq.html">Dúvidas</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="contato.html">Falar com a Lastra</a></li><li>São Luís, MA</li><li>[e-mail e Instagram a definir]</li></ul></div>
+    </nav>
   </div>
+  <div class="ft-bar on-deep"><div class="wrap">
+    <p>© 2026 Lastra · São Luís, MA. Inteligência em riscos do trabalho. Insumo técnico, não emitimos laudo.</p>
+    <nav aria-label="Legal"><a href="legais.html#limites">Aviso de limites</a><a href="legais.html#termos">Termos</a><a href="legais.html#privacidade">Privacidade e LGPD</a></nav>
+    <p class="disc">A Lastra entrega insumo técnico e documentação e não promete resultado de fiscalização. Dados de exemplo e números marcados 🔎 ainda serão verificados. Protótipo visual — não publicar.</p>
+  </div></div>
 </footer>
 
-<a class="wa" href="#contato" aria-label="Falar pelo WhatsApp"><svg width="26" height="26"><use href="#i-wa"/></svg></a>
+<a class="wa" href="contato.html" aria-label="Falar pelo WhatsApp"><svg width="26" height="26"><use href="#i-wa"/></svg></a>
 
 <script src="assets/logo.js"></script>
 <script src="home.js"></script>
