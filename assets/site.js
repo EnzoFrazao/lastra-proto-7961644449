@@ -19,25 +19,27 @@
     </div></div></header>
   <div class="mnav" id="mnav" hidden>${NAV.map(([id, t, h]) => `<a href="${h}">${t}${ic('arrow')}</a>`).join('')}<a href="faq.html">Dúvidas frequentes${ic('arrow')}</a><a href="contato.html">Contato${ic('arrow')}</a><a href="portal-login.html">Área do cliente${ic('lock')}</a><a class="btn btn-primary" href="enquadramento.html">Enquadramento grátis</a></div>`;
   const footer = `<footer class="ft">
-    <div class="wrap ft-grid">
-      <div class="ft-cta"><span class="logo" data-logo="horizontal" style="height:28px"></span><h2 class="ft-h">Uma empresa firme começa com uma conversa.</h2><a class="btn btn-primary" href="contato.html">Falar com a Lastra ${ic('arrow', 'arrow')}</a></div>
-      <nav class="ft-cols" aria-label="Rodapé">
-        <div><h4>Navegação</h4><ul><li><a href="home.html">Início</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="conteudos.html">Conteúdos</a></li><li><a href="sobre.html">Sobre</a></li></ul></div>
-        <div><h4>Comece</h4><ul><li><a href="enquadramento.html">Enquadramento grátis</a></li><li><a href="portal-login.html">Área do cliente</a></li><li><a href="planos.html">Planos</a></li><li><a href="faq.html">Dúvidas</a></li></ul></div>
-        <div><h4>Contato</h4><ul><li><a href="contato.html">Falar com a Lastra</a></li><li>São Luís, MA</li><li>[e-mail e Instagram a definir]</li></ul></div>
-      </nav>
-    </div>
-    <div class="ft-bar on-deep"><div class="wrap">
-      <p>© 2026 Lastra · São Luís, MA. Inteligência em riscos do trabalho. Insumo técnico, não emitimos laudo.</p>
-      <nav aria-label="Legal"><a href="legais.html#limites">Aviso de limites</a><a href="legais.html#termos">Termos</a><a href="legais.html#privacidade">Privacidade e LGPD</a></nav>
-      <p class="disc">A Lastra entrega insumo técnico e documentação e não promete resultado de fiscalização. Dados de exemplo e números marcados 🔎 ainda serão verificados. Protótipo visual — não publicar.</p>
-    </div></div>
-  </footer>
+  <div class="ft-main">
+    <div class="ft-cta"><h2 class="ft-h">Uma empresa firme começa com uma conversa.</h2><a class="btn btn-light" href="contato.html">Contato</a></div>
+    <nav class="ft-cols" aria-label="Rodapé">
+      <div><h4>Navegação</h4><ul><li><a href="home.html">Início</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="conteudos.html">Conteúdos</a></li><li><a href="sobre.html">Sobre</a></li></ul></div>
+      <div><h4>Comece</h4><ul><li><a href="enquadramento.html">Enquadramento</a></li><li><a href="portal-login.html">Área do cliente</a></li><li><a href="planos.html">Planos</a></li><li><a href="faq.html">Dúvidas</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="contato.html">contato@lastra.example</a></li></ul><div class="ft-soc"><a href="contato.html" aria-label="Facebook"><img src="assets/figma/s1.svg" alt=""></a><a href="contato.html" aria-label="Instagram"><img src="assets/figma/s2.svg" alt=""></a><a href="contato.html" aria-label="X"><img src="assets/figma/s3.svg" alt=""></a><a href="contato.html" aria-label="LinkedIn"><img src="assets/figma/s4.svg" alt=""></a></div></div>
+    </nav>
+  </div>
+  <div class="ft-bar on-deep">
+    <div class="ft-bar-in"><p>© 2026 Lastra · São Luís, MA. Insumo técnico, não emitimos laudo.</p><nav aria-label="Legal"><a href="legais.html#limites">Aviso de limites</a><a href="legais.html#termos">Termos</a><a href="legais.html#privacidade">Privacidade e LGPD</a></nav></div>
+    <p class="disc">Protótipo visual: dados de exemplo e números marcados com * ainda serão verificados. Não publicar.</p>
+  </div>
+</footer>
   <a class="wa" href="contato.html" aria-label="Falar pelo WhatsApp">${ic('wa')}</a>`;
   document.body.insertAdjacentHTML('afterbegin', header);
   document.body.insertAdjacentHTML('beforeend', footer);
   document.querySelectorAll('.wa svg').forEach(s => { s.setAttribute('width', 26); s.setAttribute('height', 26); s.style.width = '26px'; s.style.height = '26px'; });
 
+
+  /* cabeçalho compacto ao rolar (Figma: 146 px no topo) */
+  (function () { const hd = document.querySelector('.site-header'); if (!hd) return; const f = () => hd.classList.toggle('compact', scrollY > 24); addEventListener('scroll', f, { passive: true }); f(); })();
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 

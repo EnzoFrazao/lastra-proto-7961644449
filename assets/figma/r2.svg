@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#195;&#141;cone" clip-path="url(#clip0_0_43)">
+<path id="Vector" d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="#E4FC24"/>
+<g id="Group">
+<path id="Vector_2" d="M12.4999 12.4999V25.8327C12.4999 26.2747 12.6755 26.6986 12.988 27.0112C13.3006 27.3237 13.7245 27.4993 14.1665 27.4993H27.4993" stroke-width="1.49994" stroke-linecap="round" stroke-linejoin="round" stroke="#013D31"/>
+<path id="Vector_3" d="M24.9994 24.1661V17.4997" stroke-width="1.49994" stroke-linecap="round" stroke-linejoin="round" stroke="#013D31"/>
+<path id="Vector_4" d="M20.8329 24.1661V14.1665" stroke-width="1.49994" stroke-linecap="round" stroke-linejoin="round" stroke="#013D31"/>
+<path id="Vector_5" d="M16.6664 24.1661V21.6662" stroke-width="1.49994" stroke-linecap="round" stroke-linejoin="round" stroke="#013D31"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_43">
+<rect width="40" height="40" fill="white"/>
+</clipPath>
+</defs>
+</svg>

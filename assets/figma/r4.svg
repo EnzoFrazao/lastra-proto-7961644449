@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#195;&#141;cone" clip-path="url(#clip0_0_30)">
+<path id="Vector" d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="#013D31"/>
+<g id="Group">
+<path id="Vector_2" d="M26.666 20.8329C26.666 24.9994 23.7495 27.0827 20.2829 28.2909C20.1014 28.3524 19.9042 28.3495 19.7246 28.2826C16.2498 27.0827 13.3332 24.9994 13.3332 20.8329V14.9998C13.3332 14.7788 13.421 14.5668 13.5773 14.4106C13.7335 14.2543 13.9455 14.1665 14.1665 14.1665C15.8331 14.1665 17.9164 13.1665 19.3663 11.8999C19.5428 11.7491 19.7674 11.6662 19.9996 11.6662C20.2318 11.6662 20.4564 11.7491 20.6329 11.8999C22.0912 13.1749 24.1661 14.1665 25.8327 14.1665C26.0537 14.1665 26.2657 14.2543 26.4219 14.4106C26.5782 14.5668 26.666 14.7788 26.666 14.9998V20.8329Z" stroke-width="1.49994" stroke-linecap="round" stroke-linejoin="round" stroke="#E4FC24"/>
+<path id="Vector_3" d="M17.4997 19.9996L19.1663 21.6662L22.4995 18.333" stroke-width="1.49994" stroke-linecap="round" stroke-linejoin="round" stroke="#E4FC24"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_30">
+<rect width="40" height="40" fill="white"/>
+</clipPath>
+</defs>
+</svg>

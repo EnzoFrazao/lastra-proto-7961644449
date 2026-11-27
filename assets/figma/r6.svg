@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#195;&#141;cone" clip-path="url(#clip0_0_9)">
+<path id="Vector" d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="#E4FC24"/>
+<g id="Group">
+<path id="Vector_2" d="M23.3328 27.4993V25.8327C23.3328 24.9487 22.9816 24.1009 22.3565 23.4758C21.7314 22.8507 20.8836 22.4995 19.9996 22.4995H14.9998C14.1158 22.4995 13.268 22.8507 12.6429 23.4758C12.0178 24.1009 11.6666 24.9487 11.6666 25.8327V27.4993" stroke-width="1.49994" stroke-linecap="round" stroke-linejoin="round" stroke="#013D31"/>
+<path id="Vector_3" d="M20.8329 15.8331C20.8329 17.674 19.3406 19.1663 17.4997 19.1663C15.6588 19.1663 14.1665 17.674 14.1665 15.8331C14.1665 13.9922 15.6588 12.4999 17.4997 12.4999C19.3406 12.4999 20.8329 13.9922 20.8329 15.8331Z" stroke-width="1.49994" stroke-linecap="round" stroke-linejoin="round" stroke="#013D31"/>
+<path id="Vector_4" d="M28.3326 27.4993V25.8327C28.332 25.0942 28.0862 24.3767 27.6338 23.793C27.1813 23.2094 26.5478 22.7925 25.8327 22.6078" stroke-width="1.49994" stroke-linecap="round" stroke-linejoin="round" stroke="#013D31"/>
+<path id="Vector_5" d="M23.3328 12.6082C24.0498 12.7918 24.6853 13.2088 25.1391 13.7934C25.5929 14.3781 25.8392 15.0972 25.8392 15.8373C25.8392 16.5774 25.5929 17.2964 25.1391 17.8811C24.6853 18.4657 24.0498 18.8827 23.3328 19.0663" stroke-width="1.49994" stroke-linecap="round" stroke-linejoin="round" stroke="#013D31"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_9">
+<rect width="40" height="40" fill="white"/>
+</clipPath>
+</defs>
+</svg>
